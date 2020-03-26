@@ -1,0 +1,38 @@
+(define(problem miconic051)
+(:domain miconic)
+(:objects
+    p0 p1 p2 p3 p4 - Person
+    f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 - Floor
+)
+
+(:htn
+    :tasks
+    (and
+           (solve-elevator)
+    )
+    :ordering ( )
+    :constraints ( )
+)
+
+(:init
+    (lift-at f0)
+    (goal p0)
+    (goal p1)
+    (goal p2)
+    (goal p3)
+    (goal p4)
+    (origin p0 f3)
+    (destination p0 f1)
+    (origin p1 f2)
+    (destination p1 f3)
+    (origin p2 f3)
+    (destination p2 f1)
+    (origin p3 f3)
+    (destination p3 f2)
+    (origin p4 f2)
+    (destination p4 f4)
+)
+
+;(:goal
+;)
+)

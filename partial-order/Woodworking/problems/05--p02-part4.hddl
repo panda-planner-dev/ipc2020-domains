@@ -1,0 +1,71 @@
+(define
+	(problem p05__p02_part4)
+	(:domain  woodworking_legal_fewer_htn_groundings)
+	(:objects
+		natural - acolour
+		blue - acolour
+		walnut - awood
+		rough - surface
+		smooth - surface
+		verysmooth - surface
+		colourfragments - treatmentstatus
+		untreated - treatmentstatus
+		glazed - treatmentstatus
+		varnished - treatmentstatus
+		s5 - aboardsize
+		s6 - aboardsize
+		large - apartsize
+		medium - apartsize
+		small - apartsize
+		glazer0 - glazer
+		spray_varnisher0 - spray_varnisher
+		b0 - board
+		p0 - part
+		p1 - part
+		p2 - part
+	)
+	(:htn
+		:parameters ()
+		:subtasks (and
+		 (task0 (process p0 blue verysmooth smooth))
+		 (task1 (process p1 blue smooth smooth))
+		 (task2 (process p2 blue rough smooth))
+		)
+	)
+	(:init
+		(has_colour spray_varnisher0 blue)
+		(has_colour glazer0 blue)
+		(is_smooth smooth)
+		(boardsize_successor s5 s6)
+		(available p0)
+		(colour p0 natural)
+		(surface_condition p0 verysmooth)
+		(treatment p0 glazed)
+		(unused p1)
+		(goalsize p1 small)
+		(available p2)
+		(colour p2 blue)
+		(surface_condition p2 rough)
+		(treatment p2 glazed)
+		(boardsize b0 s6)
+		(wood b0 walnut)
+		(surface_condition b0 smooth)
+		(available b0)
+		(colour p1 natural)
+	)
+	(:goal
+		(and
+		(available p0)
+		(colour p0 blue)
+		(treatment p0 varnished)
+		(available p1)
+		(wood p1 walnut)
+		(surface_condition p1 smooth)
+		(treatment p1 glazed)
+		(available p2)
+		(colour p2 blue)
+		(surface_condition p2 smooth)
+		(treatment p2 glazed)
+		)
+	)
+)

@@ -1,0 +1,223 @@
+(define(problem generischesLinearesVerkabelungsproblemTiefe6)
+(:domain verkabelung)
+(:objects
+    ;; Available Types
+    plugType1 - PlugType
+    plugType2 - PlugType
+    plugType3 - PlugType
+    plugType4 - PlugType
+    plugType5 - PlugType
+    plugType6 - PlugType
+    data - SignalType
+    ;; Cables
+    cableWithPlugType1 - Cable
+    cableWithPlugType2 - Cable
+    cableWithPlugType3 - Cable
+    cableWithPlugType4 - Cable
+    cableWithPlugType5 - Cable
+    cableWithPlugType6 - Cable
+    ;; Devices
+    pc printer - Device
+    ;; Adapters
+    adapterFromPlugType1ToPlugType2 - Adapter
+    adapterFromPlugType2ToPlugType3 - Adapter
+    adapterFromPlugType3ToPlugType4 - Adapter
+    adapterFromPlugType4ToPlugType5 - Adapter
+    adapterFromPlugType5ToPlugType6 - Adapter
+    ;; Cable - Ports
+    cableWithPlugType1-a - Port
+    cableWithPlugType1-b - Port
+    cableWithPlugType2-a - Port
+    cableWithPlugType2-b - Port
+    cableWithPlugType3-a - Port
+    cableWithPlugType3-b - Port
+    cableWithPlugType4-a - Port
+    cableWithPlugType4-b - Port
+    cableWithPlugType5-a - Port
+    cableWithPlugType5-b - Port
+    cableWithPlugType6-a - Port
+    cableWithPlugType6-b - Port
+    ;; Device - Ports
+    printer-aPlugType6 pc-bPlugType1 - Port
+    ;; Adapter - Ports
+    adapterFromPlugType1ToPlugType2-aPlugType1 - Port
+    adapterFromPlugType1ToPlugType2-bPlugType2 - Port
+    adapterFromPlugType2ToPlugType3-aPlugType2 - Port
+    adapterFromPlugType2ToPlugType3-bPlugType3 - Port
+    adapterFromPlugType3ToPlugType4-aPlugType3 - Port
+    adapterFromPlugType3ToPlugType4-bPlugType4 - Port
+    adapterFromPlugType4ToPlugType5-aPlugType4 - Port
+    adapterFromPlugType4ToPlugType5-bPlugType5 - Port
+    adapterFromPlugType5ToPlugType6-aPlugType5 - Port
+    adapterFromPlugType5ToPlugType6-bPlugType6 - Port
+)
+
+(:htn
+    :tasks
+    (and
+           (ConnectDevices pc printer data)
+    )
+    :ordering ( )
+    :constraints ( )
+)
+
+(:init
+    ;; PC
+    (isPartOf pc-bPlugType1 pc)
+    (isPlugType pc-bPlugType1 plugType1)
+    (isPlugFace pc-bPlugType1 female)
+    (isPlugDirection pc-bPlugType1 out)
+    (isSignalSource pc-bPlugType1 data)
+    ;; Printer
+    (isPartOf printer-aPlugType6 printer)
+    (isPlugType printer-aPlugType6 plugType6)
+    (isPlugFace printer-aPlugType6 female)
+    (isPlugDirection printer-aPlugType6 in)
+    (isSignalDestination printer-aPlugType6 data)
+    ;; Adapter 1->2
+    (isPartOf adapterFromPlugType1ToPlugType2-aPlugType1 adapterFromPlugType1ToPlugType2)
+    (isPartOf adapterFromPlugType1ToPlugType2-bPlugType2 adapterFromPlugType1ToPlugType2)
+    (isPlugType adapterFromPlugType1ToPlugType2-aPlugType1 plugType1)
+    (isPlugType adapterFromPlugType1ToPlugType2-bPlugType2 plugType2)
+    (isPlugFace adapterFromPlugType1ToPlugType2-aPlugType1 female)
+    (isPlugFace adapterFromPlugType1ToPlugType2-bPlugType2 female)
+    (isPlugDirection adapterFromPlugType1ToPlugType2-aPlugType1 both)
+    (isPlugDirection adapterFromPlugType1ToPlugType2-bPlugType2 both)
+    (isSignalRepeater adapterFromPlugType1ToPlugType2-aPlugType1 adapterFromPlugType1ToPlugType2-bPlugType2 data)
+    (isSignalRepeater adapterFromPlugType1ToPlugType2-bPlugType2 adapterFromPlugType1ToPlugType2-aPlugType1 data)
+    (isSignalSource adapterFromPlugType1ToPlugType2-aPlugType1 data)
+    (isSignalSource adapterFromPlugType1ToPlugType2-bPlugType2 data)
+    (isSignalDestination adapterFromPlugType1ToPlugType2-aPlugType1 data)
+    (isSignalDestination adapterFromPlugType1ToPlugType2-bPlugType2 data)
+    ;; Adapter 2->3
+    (isPartOf adapterFromPlugType2ToPlugType3-aPlugType2 adapterFromPlugType2ToPlugType3)
+    (isPartOf adapterFromPlugType2ToPlugType3-bPlugType3 adapterFromPlugType2ToPlugType3)
+    (isPlugType adapterFromPlugType2ToPlugType3-aPlugType2 plugType2)
+    (isPlugType adapterFromPlugType2ToPlugType3-bPlugType3 plugType3)
+    (isPlugFace adapterFromPlugType2ToPlugType3-aPlugType2 female)
+    (isPlugFace adapterFromPlugType2ToPlugType3-bPlugType3 female)
+    (isPlugDirection adapterFromPlugType2ToPlugType3-aPlugType2 both)
+    (isPlugDirection adapterFromPlugType2ToPlugType3-bPlugType3 both)
+    (isSignalRepeater adapterFromPlugType2ToPlugType3-aPlugType2 adapterFromPlugType2ToPlugType3-bPlugType3 data)
+    (isSignalRepeater adapterFromPlugType2ToPlugType3-bPlugType3 adapterFromPlugType2ToPlugType3-aPlugType2 data)
+    (isSignalSource adapterFromPlugType2ToPlugType3-aPlugType2 data)
+    (isSignalSource adapterFromPlugType2ToPlugType3-bPlugType3 data)
+    (isSignalDestination adapterFromPlugType2ToPlugType3-aPlugType2 data)
+    (isSignalDestination adapterFromPlugType2ToPlugType3-bPlugType3 data)
+    ;; Adapter 3->4
+    (isPartOf adapterFromPlugType3ToPlugType4-aPlugType3 adapterFromPlugType3ToPlugType4)
+    (isPartOf adapterFromPlugType3ToPlugType4-bPlugType4 adapterFromPlugType3ToPlugType4)
+    (isPlugType adapterFromPlugType3ToPlugType4-aPlugType3 plugType3)
+    (isPlugType adapterFromPlugType3ToPlugType4-bPlugType4 plugType4)
+    (isPlugFace adapterFromPlugType3ToPlugType4-aPlugType3 female)
+    (isPlugFace adapterFromPlugType3ToPlugType4-bPlugType4 female)
+    (isPlugDirection adapterFromPlugType3ToPlugType4-aPlugType3 both)
+    (isPlugDirection adapterFromPlugType3ToPlugType4-bPlugType4 both)
+    (isSignalRepeater adapterFromPlugType3ToPlugType4-aPlugType3 adapterFromPlugType3ToPlugType4-bPlugType4 data)
+    (isSignalRepeater adapterFromPlugType3ToPlugType4-bPlugType4 adapterFromPlugType3ToPlugType4-aPlugType3 data)
+    (isSignalSource adapterFromPlugType3ToPlugType4-aPlugType3 data)
+    (isSignalSource adapterFromPlugType3ToPlugType4-bPlugType4 data)
+    (isSignalDestination adapterFromPlugType3ToPlugType4-aPlugType3 data)
+    (isSignalDestination adapterFromPlugType3ToPlugType4-bPlugType4 data)
+    ;; Adapter 4->5
+    (isPartOf adapterFromPlugType4ToPlugType5-aPlugType4 adapterFromPlugType4ToPlugType5)
+    (isPartOf adapterFromPlugType4ToPlugType5-bPlugType5 adapterFromPlugType4ToPlugType5)
+    (isPlugType adapterFromPlugType4ToPlugType5-aPlugType4 plugType4)
+    (isPlugType adapterFromPlugType4ToPlugType5-bPlugType5 plugType5)
+    (isPlugFace adapterFromPlugType4ToPlugType5-aPlugType4 female)
+    (isPlugFace adapterFromPlugType4ToPlugType5-bPlugType5 female)
+    (isPlugDirection adapterFromPlugType4ToPlugType5-aPlugType4 both)
+    (isPlugDirection adapterFromPlugType4ToPlugType5-bPlugType5 both)
+    (isSignalRepeater adapterFromPlugType4ToPlugType5-aPlugType4 adapterFromPlugType4ToPlugType5-bPlugType5 data)
+    (isSignalRepeater adapterFromPlugType4ToPlugType5-bPlugType5 adapterFromPlugType4ToPlugType5-aPlugType4 data)
+    (isSignalSource adapterFromPlugType4ToPlugType5-aPlugType4 data)
+    (isSignalSource adapterFromPlugType4ToPlugType5-bPlugType5 data)
+    (isSignalDestination adapterFromPlugType4ToPlugType5-aPlugType4 data)
+    (isSignalDestination adapterFromPlugType4ToPlugType5-bPlugType5 data)
+    ;; Adapter 5->6
+    (isPartOf adapterFromPlugType5ToPlugType6-aPlugType5 adapterFromPlugType5ToPlugType6)
+    (isPartOf adapterFromPlugType5ToPlugType6-bPlugType6 adapterFromPlugType5ToPlugType6)
+    (isPlugType adapterFromPlugType5ToPlugType6-aPlugType5 plugType5)
+    (isPlugType adapterFromPlugType5ToPlugType6-bPlugType6 plugType6)
+    (isPlugFace adapterFromPlugType5ToPlugType6-aPlugType5 female)
+    (isPlugFace adapterFromPlugType5ToPlugType6-bPlugType6 female)
+    (isPlugDirection adapterFromPlugType5ToPlugType6-aPlugType5 both)
+    (isPlugDirection adapterFromPlugType5ToPlugType6-bPlugType6 both)
+    (isSignalRepeater adapterFromPlugType5ToPlugType6-aPlugType5 adapterFromPlugType5ToPlugType6-bPlugType6 data)
+    (isSignalRepeater adapterFromPlugType5ToPlugType6-bPlugType6 adapterFromPlugType5ToPlugType6-aPlugType5 data)
+    (isSignalSource adapterFromPlugType5ToPlugType6-aPlugType5 data)
+    (isSignalSource adapterFromPlugType5ToPlugType6-bPlugType6 data)
+    (isSignalDestination adapterFromPlugType5ToPlugType6-aPlugType5 data)
+    (isSignalDestination adapterFromPlugType5ToPlugType6-bPlugType6 data)
+    ;; Cable 1
+    (isPartOf cableWithPlugType1-a cableWithPlugType1)
+    (isPartOf cableWithPlugType1-b cableWithPlugType1)
+    (isPlugType cableWithPlugType1-a plugType1)
+    (isPlugType cableWithPlugType1-b plugType1)
+    (isPlugFace cableWithPlugType1-a male)
+    (isPlugFace cableWithPlugType1-b male)
+    (isPlugDirection cableWithPlugType1-a both)
+    (isPlugDirection cableWithPlugType1-b both)
+    (isSignalRepeater cableWithPlugType1-a cableWithPlugType1-b data)
+    (isSignalRepeater cableWithPlugType1-b cableWithPlugType1-a data)
+    ;; Cable 2
+    (isPartOf cableWithPlugType2-a cableWithPlugType2)
+    (isPartOf cableWithPlugType2-b cableWithPlugType2)
+    (isPlugType cableWithPlugType2-a plugType2)
+    (isPlugType cableWithPlugType2-b plugType2)
+    (isPlugFace cableWithPlugType2-a male)
+    (isPlugFace cableWithPlugType2-b male)
+    (isPlugDirection cableWithPlugType2-a both)
+    (isPlugDirection cableWithPlugType2-b both)
+    (isSignalRepeater cableWithPlugType2-a cableWithPlugType2-b data)
+    (isSignalRepeater cableWithPlugType2-b cableWithPlugType2-a data)
+    ;; Cable 3
+    (isPartOf cableWithPlugType3-a cableWithPlugType3)
+    (isPartOf cableWithPlugType3-b cableWithPlugType3)
+    (isPlugType cableWithPlugType3-a plugType3)
+    (isPlugType cableWithPlugType3-b plugType3)
+    (isPlugFace cableWithPlugType3-a male)
+    (isPlugFace cableWithPlugType3-b male)
+    (isPlugDirection cableWithPlugType3-a both)
+    (isPlugDirection cableWithPlugType3-b both)
+    (isSignalRepeater cableWithPlugType3-a cableWithPlugType3-b data)
+    (isSignalRepeater cableWithPlugType3-b cableWithPlugType3-a data)
+    ;; Cable 4
+    (isPartOf cableWithPlugType4-a cableWithPlugType4)
+    (isPartOf cableWithPlugType4-b cableWithPlugType4)
+    (isPlugType cableWithPlugType4-a plugType4)
+    (isPlugType cableWithPlugType4-b plugType4)
+    (isPlugFace cableWithPlugType4-a male)
+    (isPlugFace cableWithPlugType4-b male)
+    (isPlugDirection cableWithPlugType4-a both)
+    (isPlugDirection cableWithPlugType4-b both)
+    (isSignalRepeater cableWithPlugType4-a cableWithPlugType4-b data)
+    (isSignalRepeater cableWithPlugType4-b cableWithPlugType4-a data)
+    ;; Cable 5
+    (isPartOf cableWithPlugType5-a cableWithPlugType5)
+    (isPartOf cableWithPlugType5-b cableWithPlugType5)
+    (isPlugType cableWithPlugType5-a plugType5)
+    (isPlugType cableWithPlugType5-b plugType5)
+    (isPlugFace cableWithPlugType5-a male)
+    (isPlugFace cableWithPlugType5-b male)
+    (isPlugDirection cableWithPlugType5-a both)
+    (isPlugDirection cableWithPlugType5-b both)
+    (isSignalRepeater cableWithPlugType5-a cableWithPlugType5-b data)
+    (isSignalRepeater cableWithPlugType5-b cableWithPlugType5-a data)
+    ;; Cable 6
+    (isPartOf cableWithPlugType6-a cableWithPlugType6)
+    (isPartOf cableWithPlugType6-b cableWithPlugType6)
+    (isPlugType cableWithPlugType6-a plugType6)
+    (isPlugType cableWithPlugType6-b plugType6)
+    (isPlugFace cableWithPlugType6-a male)
+    (isPlugFace cableWithPlugType6-b male)
+    (isPlugDirection cableWithPlugType6-a both)
+    (isPlugDirection cableWithPlugType6-b both)
+    (isSignalRepeater cableWithPlugType6-a cableWithPlugType6-b data)
+    (isSignalRepeater cableWithPlugType6-b cableWithPlugType6-a data)
+)
+
+(:goal
+    (pAim)
+)
+)

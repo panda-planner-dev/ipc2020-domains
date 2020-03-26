@@ -1,0 +1,154 @@
+(define
+	(problem p07__p03_part1)
+	(:domain  woodworking_legal_fewer_htn_groundings)
+	(:objects
+		blue - acolour
+		natural - acolour
+		green - acolour
+		black - acolour
+		mauve - acolour
+		teak - awood
+		mahogany - awood
+		rough - surface
+		smooth - surface
+		verysmooth - surface
+		colourfragments - treatmentstatus
+		untreated - treatmentstatus
+		glazed - treatmentstatus
+		varnished - treatmentstatus
+		s5 - aboardsize
+		s0 - aboardsize
+		s3 - aboardsize
+		s1 - aboardsize
+		s10 - aboardsize
+		s2 - aboardsize
+		s9 - aboardsize
+		s8 - aboardsize
+		s6 - aboardsize
+		s7 - aboardsize
+		s4 - aboardsize
+		large - apartsize
+		medium - apartsize
+		small - apartsize
+		highspeed_saw0 - highspeed_saw
+		glazer0 - glazer
+		grinder0 - grinder
+		immersion_varnisher0 - immersion_varnisher
+		planer0 - planer
+		spray_varnisher0 - spray_varnisher
+		b0 - board
+		b1 - board
+		b2 - board
+		b3 - board
+		p4 - part
+		p0 - part
+		p1 - part
+		p6 - part
+		p7 - part
+		p5 - part
+		p8 - part
+		p3 - part
+		p2 - part
+	)
+	(:htn
+		:parameters (?p0_process_process_newSurfaceVar - surface ?p0_process_process_oldSurfaceVar - surface ?p1_process_process_oldSurfaceVar - surface ?p2_process_process_newSurfaceVar - surface ?p2_process_process_oldSurfaceVar - surface ?p3_process_process_colourVar - acolour ?p3_process_process_oldSurfaceVar - surface ?p4_process_process_colourVar - acolour ?p4_process_process_newSurfaceVar - surface ?p4_process_process_oldSurfaceVar - surface)
+		:subtasks (and
+		 (task0 (process p0 green ?p0_process_process_oldSurfaceVar ?p0_process_process_newSurfaceVar))
+		 (task1 (process p2 mauve ?p2_process_process_oldSurfaceVar ?p2_process_process_newSurfaceVar))
+		 (task2 (process p3 ?p3_process_process_colourVar ?p3_process_process_oldSurfaceVar verysmooth))
+		 (task3 (process p4 ?p4_process_process_colourVar ?p4_process_process_oldSurfaceVar ?p4_process_process_newSurfaceVar))
+		 (task4 (process p1 black ?p1_process_process_oldSurfaceVar verysmooth))
+		)
+	)
+	(:init
+		(has_colour spray_varnisher0 mauve)
+		(has_colour spray_varnisher0 black)
+		(has_colour spray_varnisher0 green)
+		(has_colour spray_varnisher0 natural)
+		(has_colour immersion_varnisher0 black)
+		(has_colour immersion_varnisher0 mauve)
+		(has_colour immersion_varnisher0 mauve)
+		(has_colour immersion_varnisher0 green)
+		(has_colour immersion_varnisher0 natural)
+		(has_colour glazer0 mauve)
+		(has_colour glazer0 natural)
+		(machine_present grinder0)
+		(machine_present planer0)
+		(is_smooth smooth)
+		(is_smooth verysmooth)
+		(empty highspeed_saw0)
+		(grind_treatment_change glazed untreated)
+		(grind_treatment_change colourfragments untreated)
+		(grind_treatment_change untreated untreated)
+		(grind_treatment_change varnished colourfragments)
+		(unused p0)
+		(goalsize p0 large)
+		(unused p1)
+		(goalsize p1 large)
+		(unused p2)
+		(goalsize p2 medium)
+		(unused p3)
+		(goalsize p3 large)
+		(unused p4)
+		(goalsize p4 small)
+		(available p5)
+		(colour p5 blue)
+		(wood p5 teak)
+		(surface_condition p5 rough)
+		(treatment p5 glazed)
+		(goalsize p5 large)
+		(unused p6)
+		(goalsize p6 small)
+		(unused p7)
+		(goalsize p7 medium)
+		(unused p8)
+		(goalsize p8 large)
+		(boardsize b0 s6)
+		(wood b0 teak)
+		(surface_condition b0 rough)
+		(available b0)
+		(boardsize b1 s7)
+		(wood b1 teak)
+		(surface_condition b1 smooth)
+		(available b1)
+		(boardsize b2 s7)
+		(wood b2 mahogany)
+		(surface_condition b2 rough)
+		(available b2)
+		(boardsize b3 s3)
+		(wood b3 mahogany)
+		(surface_condition b3 smooth)
+		(available b3)
+		(boardsize_successor s0 s1)
+		(boardsize_successor s1 s2)
+		(boardsize_successor s2 s3)
+		(boardsize_successor s3 s4)
+		(boardsize_successor s4 s5)
+		(boardsize_successor s5 s6)
+		(boardsize_successor s6 s7)
+		(boardsize_successor s7 s8)
+		(boardsize_successor s8 s9)
+		(boardsize_successor s9 s10)
+	)
+	(:goal
+		(and
+		(available p0)
+		(colour p0 green)
+		(treatment p0 varnished)
+		(available p1)
+		(colour p1 black)
+		(surface_condition p1 verysmooth)
+		(treatment p1 varnished)
+		(available p2)
+		(colour p2 mauve)
+		(wood p2 teak)
+		(available p3)
+		(surface_condition p3 verysmooth)
+		(treatment p3 glazed)
+		(available p4)
+		(wood p4 mahogany)
+		(treatment p4 varnished)
+		(treatment p1 varnished)
+		)
+	)
+)

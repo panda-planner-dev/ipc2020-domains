@@ -1,0 +1,37 @@
+(define
+	(problem p04_A_AutoTraincar_bis)
+	(:domain  UMTranslog)
+	(:objects
+		Eisenbahnwagen - Auto_Traincar
+		Lokomotive - Train
+		MaseratiMC12 - Cars
+		UlmStuttgartRailRoute - Rail_Route
+		HauptbahnhofUlm - Train_Station
+		HauptbahnhofStuttgart - Train_Station
+		Ulm - City
+		Stuttgart - City
+	)
+	(:htn
+		:parameters ()
+		:subtasks (and
+		 (task0 (transport MaseratiMC12 HauptbahnhofUlm HauptbahnhofStuttgart))
+		)
+	)
+	(:init
+		(In_City HauptbahnhofUlm Ulm)
+		(In_City HauptbahnhofStuttgart Stuttgart)
+		(At_Vehicle Eisenbahnwagen HauptbahnhofUlm)
+		(At_Vehicle Lokomotive HauptbahnhofUlm)
+		(Connects UlmStuttgartRailRoute HauptbahnhofUlm HauptbahnhofStuttgart)
+		(Available UlmStuttgartRailRoute)
+		(Available Lokomotive)
+		(PV_Compatible MaseratiMC12 Eisenbahnwagen)
+		(RV_Compatible UlmStuttgartRailRoute Lokomotive)
+		(At_Package MaseratiMC12 HauptbahnhofUlm)
+	)
+	(:goal
+		(and
+		(Delivered MaseratiMC12)
+		)
+	)
+)
