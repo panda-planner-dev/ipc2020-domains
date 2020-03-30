@@ -16,7 +16,8 @@
 	(:htn
 		:parameters ()
 		:subtasks (and
-		 (task0 (transport Toshiba_Laptops O27 O28))
+			(task0 (move_vehicle_no_traincar Pferd Rathaus Albecker_Strasse Bibliothek))
+			(task1 (transport Toshiba_Laptops O27 O28))
 		)
 	)
 	(:init
