@@ -2,7 +2,7 @@
 
 (:requirements
   :typing
-  :hierachie)
+  :hierarchy)
 
 (:types rover waypoint store camera objective mode lander - object)
 

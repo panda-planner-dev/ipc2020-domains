@@ -2,7 +2,7 @@
 
 (:requirements
   :typing
-  :hierachie)
+  :hierarchy)
 
 (:types place locatable - object depot distributor - place truck hoist surface - locatable pallet crate - surface)
 

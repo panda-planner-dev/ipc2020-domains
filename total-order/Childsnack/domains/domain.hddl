@@ -2,7 +2,7 @@
 
 (:requirements
   :typing
-  :hierachie)
+  :hierarchy)
 
 (:types child bread-portion content-portion sandwich tray place)
 

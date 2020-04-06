@@ -1,5 +1,5 @@
 (define (domain someDomain)
-	(:requirements :typing :hierachie)
+	(:requirements :typing :hierarchy)
 	(:predicates
 		(turnA)
 		(turnB)
