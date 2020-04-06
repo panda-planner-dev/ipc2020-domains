@@ -1,5 +1,5 @@
 (define (domain barman_agent)
-(:requirements :adl :typing :equality)
+(:requirements :hierarchy :adl :typing :equality)
 
 (:types 
 	container dispenser level beverage hand - anything

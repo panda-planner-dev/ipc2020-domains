@@ -12,7 +12,7 @@
 ; - make a totally-ordered version
 
 (define (domain entertainment)
-  (:requirements :typing)
+  (:requirements :hierarchy :typing)
   (:types
       equipment connector - object
   )

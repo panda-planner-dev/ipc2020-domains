@@ -1,5 +1,5 @@
 (define (domain minecraft)
-  (:requirements :typing)
+  (:requirements :hierarchy :typing)
 
   (:types
       location blocktype direction numbers - object
