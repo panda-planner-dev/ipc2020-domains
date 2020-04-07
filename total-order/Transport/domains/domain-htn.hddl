@@ -1,5 +1,5 @@
 (define (domain domain_htn)
-	(:requirements :typing :hierachie)
+	(:requirements :typing :hierarchy)
 	(:types
 		package - locatable
 		capacity_number - object

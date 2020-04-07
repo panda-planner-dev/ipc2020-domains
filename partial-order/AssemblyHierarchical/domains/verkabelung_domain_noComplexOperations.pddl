@@ -1,5 +1,5 @@
 (define (domain verkabelung)
-(:requirements :typing :action-costs :hierachie )
+(:requirements :typing :action-costs :hierarchy )
 (:types
     Port AbstractDevice - Object
     AbstractCable Device - AbstractDevice

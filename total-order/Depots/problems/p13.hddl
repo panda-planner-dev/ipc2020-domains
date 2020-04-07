@@ -1,6 +1,6 @@
 (define (problem depotprob5646 )
 (:domain Depot )
-(:requirements :typing :hierachie)
+(:requirements :typing :hierarchy)
 
 (:objects
 depot0 depot1 depot2 - depot

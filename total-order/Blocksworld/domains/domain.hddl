@@ -2,7 +2,7 @@
 
 (:requirements
   :typing
-  :hierachie)
+  :hierarchy)
 
 (:types block)
 

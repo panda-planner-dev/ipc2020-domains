@@ -1,5 +1,5 @@
 (define (domain UMTranslog)
-	(:requirements :typing :hierachie)
+	(:requirements :typing :hierarchy)
 	(:types
 		Regular_Truck - Regular_Vehicle
 		Regular_Truck - Truck
