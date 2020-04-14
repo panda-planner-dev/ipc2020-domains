@@ -1,0 +1,118 @@
+(define (domain blocks)
+  (:requirements :strips)
+  (:types ARM BLOCK)
+  (:predicates
+    (hand-empty ?a - ARM)
+    (clear ?b - BLOCK)
+    (holding ?b - BLOCK ?a - ARM)
+    (on ?top - BLOCK ?bottom - BLOCK)
+    (on-table ?b - BLOCK)
+    (goal_on ?t - BLOCK ?b - BLOCK)
+    (goal_on-table ?b - BLOCK)
+    (goal_clear ?b - BLOCK)
+    (done ?b - BLOCK))
+  (:tasks
+    (achieve-goals ?a - ARM)
+    (release ?a - ARM)
+    (putdown ?b - BLOCK)
+    (stack ?b ?d - BLOCK)
+    (acquire ?b - BLOCK ?a - ARM))
+
+  (:method mark-done-table
+    :task (achieve-goals ?a)
+    :parameters (?b - BLOCK ?a - ARM)
+    :precondition (and (goal_on-table ?b) (on-table ?b))
+    :effect (done ?b)
+    :tasks ((achieve-goals ?a)))
+
+  (:method mark-done-on
+    :task (achieve-goals ?a)
+    :parameters (?b ?d - BLOCK ?a - ARM)
+    :precondition (and (goal_on ?b ?d) (on ?b ?d) (done ?d))
+    :effect (done ?b)
+    :tasks ((achieve-goals ?a)))
+
+  (:method pickup-ready-block
+    :task (achieve-goals ?a)
+    :parameters (?b ?d - BLOCK ?a - ARM)
+    :precondition (and (clear ?b) (on-table ?b) (goal_on ?b ?d) (done ?d) (clear ?d))
+    :tasks ((acquire ?b ?a) (release ?a)))
+
+  (:method unstack-block
+    :task (achieve-goals ?a)
+    :parameters (?b - BLOCK ?a - ARM)
+    :precondition (and (clear ?b) 
+        (exists (?d - BLOCK) (on ?b ?d)))
+    :tasks ((acquire ?b ?a) (release ?a)))
+
+  (:method release-stack
+    :task (release ?a)
+    :parameters (?b ?d - BLOCK ?a - ARM)
+    :precondition (and (holding ?b ?a) (goal_on ?b ?d) (done ?d) (clear ?d))
+    :effect (and (not (goal_on ?b ?d)) (done ?b))
+    :tasks ((stack ?b ?d) (achieve-goals ?a)))
+
+  (:method release-table-done
+    :task (release ?a)
+    :parameters (?b - BLOCK ?a - ARM)
+    :precondition (and (holding ?b ?a) (goal_on-table ?b))
+    :effect (and (not (goal_on-table ?b)) (done ?b))
+    :tasks ((putdown ?b) (achieve-goals ?a)))
+
+  (:method release-table
+    :task (release ?a)
+    :parameters (?b - BLOCK ?a - ARM)
+    :precondition (and (holding ?b ?a) (not (goal_on-table ?b)))
+    :tasks ((putdown ?b) (achieve-goals ?a)))
+ 
+  (:method done
+    :parameters (?a - ARM)
+    :precondition (forall (?b - BLOCK) (done ?b))
+    :task (achieve-goals ?a))
+   
+  (:action pickup
+    :parameters (?b - BLOCK ?a - ARM)
+    :task (acquire ?b ?a)
+    :precondition (and (hand-empty ?a) (clear ?b) (on-table ?b))
+    :effect (and
+      (not (hand-empty ?a))
+      (not (clear ?b)) 
+      (not (on-table ?b))
+      (holding ?b ?a)))
+
+  (:action putdown
+    :parameters (?b - BLOCK ?a - ARM)
+    :task (putdown ?b)
+    :precondition (holding ?b ?a)
+    :effect (and
+      (hand-empty ?a)
+      (not (holding ?b ?a))
+      (on-table ?b) (clear ?b)))
+
+  (:action stack
+    :parameters (?top ?bottom - BLOCK ?a - ARM)
+    :task (stack ?top ?bottom)
+    :precondition (and
+      (holding ?top ?a)
+      (clear ?bottom))
+    :effect (and
+      (hand-empty ?a)
+      (not (holding ?top ?a))
+      (not (clear ?bottom))
+      (on ?top ?bottom)
+      (clear ?top)))
+
+  (:action unstack
+    :parameters (?top - BLOCK ?bottom - BLOCK ?a - ARM)
+    :task (acquire ?top ?a)
+    :precondition (and
+      (hand-empty ?a)
+      (clear ?top)
+      (on ?top ?bottom))
+    :effect (and
+      (not (hand-empty ?a))
+      (not (clear ?top))
+      (not (on ?top ?bottom))
+      (holding ?top ?a)
+      (clear ?bottom))))
+
