@@ -1,0 +1,111 @@
+(define
+ (problem pfile_030)
+ (:domain blocks)
+ (:objects b1
+           b2
+           b3
+           b4
+           b5
+           b6
+           b7
+           b8
+           b9
+           b10
+           b11
+           b12
+           b13
+           b14
+           b15
+           b16
+           b17
+           b18
+           b19
+           b20
+           b21
+           b22
+           b23
+           b24
+           b25
+           b26
+           b27
+           b28
+           b29
+           b30
+           - BLOCK)
+ (:init
+  (hand-empty)
+  (clear b1)
+  (on-table b28)
+  (on b1 b12)
+  (on b12 b15)
+  (on b15 b30)
+  (on b30 b28)
+  (clear b6)
+  (on-table b25)
+  (on b6 b27)
+  (on b27 b25)
+  (clear b9)
+  (on-table b24)
+  (on b9 b17)
+  (on b17 b22)
+  (on b22 b7)
+  (on b7 b5)
+  (on b5 b29)
+  (on b29 b10)
+  (on b10 b3)
+  (on b3 b26)
+  (on b26 b24)
+  (clear b19)
+  (on-table b16)
+  (on b19 b2)
+  (on b2 b16)
+  (clear b14)
+  (on-table b13)
+  (on b14 b11)
+  (on b11 b23)
+  (on b23 b21)
+  (on b21 b4)
+  (on b4 b18)
+  (on b18 b20)
+  (on b20 b8)
+  (on b8 b13))
+ (:goal (and
+         (clear b7)
+         (on-table b28)
+         (on b7 b26)
+         (on b26 b9)
+         (on b9 b27)
+         (on b27 b20)
+         (on b20 b16)
+         (on b16 b15)
+         (on b15 b14)
+         (on b14 b28)
+         (clear b10)
+         (on-table b25)
+         (on b10 b25)
+         (clear b12)
+         (on-table b22)
+         (on b12 b22)
+         (clear b4)
+         (on-table b21)
+         (on b4 b6)
+         (on b6 b13)
+         (on b13 b3)
+         (on b3 b1)
+         (on b1 b19)
+         (on b19 b29)
+         (on b29 b23)
+         (on b23 b17)
+         (on b17 b21)
+         (clear b18)
+         (on-table b8)
+         (on b18 b24)
+         (on b24 b8)
+         (clear b11)
+         (on-table b5)
+         (on b11 b30)
+         (on b30 b5)
+         (clear b2)
+         (on-table b2)))
+             (:tasks (task0 (achieve-goals)))
+)
