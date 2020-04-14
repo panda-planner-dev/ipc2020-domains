@@ -88,7 +88,7 @@ for  h in range(1, worldSize+2):
 		for w in range(0,worldSize+1):
 			out.write("(empty l-"+ str(h) + "-"+ str(l) +"-"+ str(w) +") ")
 
-out.write("\n \n(is-first) (isone n1) \n")
+out.write("\n \n (isone n1) \n")
 
 for n in range(0, worldSize):
 	out.write("(prev n"+ str(n+1) + " n"+ str(n) + ") ")
