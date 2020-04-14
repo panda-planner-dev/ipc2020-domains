@@ -1,0 +1,73 @@
+(define (domain towers)
+ (:requirements :strips :disjunctive-preconditions)
+ (:types RING - OBJ TOWER - OBJ)
+ (:predicates
+  (on ?r - RING ?o - OBJ)
+  (goal_on ?r - RING ?o - OBJ)
+  (towerTop ?o - OBJ ?t - TOWER)
+  (smallerThan ?r - RING ?o - OBJ))
+ (:tasks
+   (shiftTower ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+   (selectDirection ?r - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+   (rotateTower ?t1 - TOWER ?T2 - TOWER ?t3 - TOWER)
+   (exchange ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+   (move ?t1 - TOWER ?t2 - TOWER))
+
+ (:method shiftTower
+  ; shift tower from ?t1 to ?t3 using ?t2
+  :parameters (?r - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (shiftTower ?t1 ?t2 ?t3)
+  :precondition (towerTop ?r ?t1)
+  :tasks ((selectDirection ?r ?t1 ?t2 ?t3)))
+
+ (:method selectedDirection
+  :parameters (?r - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (selectDirection ?r ?t1 ?t2 ?t3)
+  :precondition (on ?r ?t1)
+  :tasks ((rotateTower ?t1 ?t3 ?t2)))
+
+ (:method selectDirection
+  :parameters (?r - RING ?r1 - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (selectDirection ?r ?t1 ?t2 ?t3)
+  :precondition (on ?r ?r1)
+  :tasks ((selectDirection ?r1 ?t1 ?t3 ?t2)))
+ 
+ (:method rotateTower
+  :parameters (?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (rotateTower ?t1 ?t2 ?t3)
+  :tasks ((move ?t1 ?t2) (exchange ?t1 ?t2 ?t3)))
+
+ (:method exchangeClear
+  :parameters (?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (exchange ?t1 ?t2 ?t3)
+  :precondition (and (towerTop ?t1 ?t1) (towerTop ?t3 ?t3)))
+
+ (:method exchangeLR
+  :parameters (?r1 - RING ?o3 - OBJ ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (exchange ?t1 ?t2 ?t3)
+  :precondition (and (towerTop ?r1 ?t1) (towerTop ?o3 ?t3) (smallerThan ?r1 ?o3))
+  :tasks ((move ?t1 ?t3) (rotateTower ?t2 ?t3 ?t1)))
+
+ (:method exchangeRL
+  :parameters (?o1 - OBJ ?r3 - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
+  :task (exchange ?t1 ?t2 ?t3)
+  :precondition (and (towerTop ?o1 ?t1) (towerTop ?r3 ?t3) (smallerThan ?r3 ?o1))
+  :tasks ((move ?t3 ?t1) (rotateTower ?t2 ?t3 ?t1)))
+
+ (:action move
+  :parameters (?r - RING ?o1 - OBJ ?t1 - TOWER ?o2 - OBJ ?t2 - TOWER)
+  :task (move ?t1 ?t2)
+  :precondition (and
+    (towerTop ?r ?t1)
+    (towerTop ?o2 ?t2)
+    (on ?r ?o1) 
+    (smallerThan ?r ?o2))
+  :effect (and
+    (not (on ?r ?o1)) 
+    (on ?r ?o2)
+    (not (towerTop ?r ?t1))
+    (towerTop ?o1 ?t1) 
+    (not (towerTop ?o2 ?t2))
+    (towerTop ?r ?t2))))
+
+
