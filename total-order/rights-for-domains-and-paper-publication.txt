@@ -1,0 +1,148 @@
+Pro Domäne folgende Infos:
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+--> 19 Domänen!
+
+    
+    
+    
+    
+(von uns)
+AssemblyHierarchical
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+    
+
+Barman
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Barman-BDI
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Blocksworld-GTOHP
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Blocksworld-HPDDL
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Childsnack
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Depots
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+(von uns)
+Entertainment
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Gripper_new  <--- @GREGOR: können wir bitte das "new" streichen?
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Hiking
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Miconic
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+(von uns)
+Minecraft-Area  +  Minecraft-Normal  +  Minecraft-Player
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Multiarm-Blocksworld
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Robot
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+    
+
+Rover-GTOHP
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Satellite-GTOHP
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Towers
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
