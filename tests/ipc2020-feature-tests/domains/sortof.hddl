@@ -1,0 +1,20 @@
+(define (domain test-domain)
+	(:requirements :typing :hierachie)
+
+	(:types A - B)
+
+	(:task task1 :parameters ())
+
+	(:method donothing
+		:parameters (?b - B)
+		:task (task1)
+		:subtasks (and
+			(noop ?b)
+		)
+		:constraints (and (sortof ?b - A))
+	)
+	
+	(:action noop
+		:parameters (?b - B)
+	)
+)
