@@ -2,6 +2,10 @@
 	(:requirements :typing :hierachie)
 
 	(:types A)
+	
+	(:predicates
+    	(foo ?a - A)
+	)
 
 	(:task task1 :parameters ())
 
