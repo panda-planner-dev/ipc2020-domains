@@ -17,7 +17,7 @@
 
 
 
- (:method shiftTower
+ (:method m-shiftTower
   ; shift tower from ?t1 to ?t3 using ?t2
   :parameters (?r - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
   :task (shiftTower ?t1 ?t2 ?t3)
@@ -32,14 +32,14 @@
   :ordered-tasks (and (rotateTower ?t1 ?t3 ?t2)))
 
 
- (:method selectDirection
+ (:method m-selectDirection
   :parameters (?r - RING ?r1 - RING ?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
   :task (selectDirection ?r ?t1 ?t2 ?t3)
   :precondition (on ?r ?r1)
   :ordered-tasks (and (selectDirection ?r1 ?t1 ?t3 ?t2)))
 
  
- (:method rotateTower
+ (:method m-rotateTower
   :parameters (?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
   :task (rotateTower ?t1 ?t2 ?t3)
   :ordered-tasks (and (move_abstract ?t1 ?t2) (exchange ?t1 ?t2 ?t3)))
