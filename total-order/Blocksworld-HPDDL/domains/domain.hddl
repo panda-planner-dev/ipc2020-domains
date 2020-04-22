@@ -78,7 +78,7 @@
     :ordered-tasks (and (putdown_abstract ?b) (achieve-goals)))
 
  
-  (:method done
+  (:method setdone
     :parameters ()
     :task (achieve-goals)
     :precondition (forall (?b - BLOCK) (done ?b)))
