@@ -3521,7 +3521,7 @@ wood stone earth
 (empty l-5-3-0) (empty l-5-3-1) (empty l-5-3-2) (empty l-5-3-3) (empty l-5-3-4) 
 (empty l-5-4-0) (empty l-5-4-1) (empty l-5-4-2) (empty l-5-4-3) (empty l-5-4-4) 
  
-(is-first) (isone n1) 
+(player-at l-1-0-0) (isone n1) 
 (prev n1 n0) (prev n2 n1) (prev n3 n2) (prev n4 n3) 
  ) 
  )
