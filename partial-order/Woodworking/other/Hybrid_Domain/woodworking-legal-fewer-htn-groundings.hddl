@@ -40,26 +40,98 @@
 
 	(:task grindNplane
 		:parameters (?newObj_variable10 - part ?grindNplane_variable1 - surface ?grindNplane_variable2 - acolour ?grindNplane_variable3 - treatmentstatus ?grindNplane_variable4 - surface ?grindNplane_variable5 - acolour ?grindNplane_variable6 - treatmentstatus)
+		:precondition 
+			(and
+				(available ?newObj_variable10)
+				(surface_condition ?newObj_variable10 ?grindNplane_variable1)
+				(colour ?newObj_variable10 ?grindNplane_variable2)
+				(treatment ?newObj_variable10 ?grindNplane_variable3)
+			)
+		:effect
+			(and
+				(not (surface_condition ?newObj_variable10 ?grindNplane_variable1))
+				(surface_condition ?newObj_variable10 ?grindNplane_variable4)
+				(not (colour ?newObj_variable10 ?grindNplane_variable2))
+				(colour ?newObj_variable10 ?grindNplane_variable5)
+				(not (treatment ?newObj_variable10 ?grindNplane_variable3))
+				(treatment ?newObj_variable10 ?grindNplane_variable6)
+			)
 	)
 
 	(:task do_colour
 		:parameters (?newObj_variable1 - part ?do_colour_variable1 - acolour ?do_colour_variable2 - machine)
+		:precondition 
+			(and
+				(available ?newObj_variable1)
+				(has_colour ?do_colour_variable2 ?do_colour_variable1)
+				(treatment ?newObj_variable1 untreated)
+			)
+		:effect
+			(and
+				(colour ?newObj_variable1 ?do_colour_variable1)
+			)
 	)
 
 	(:task cut_board
 		:parameters (?newObj_variable2 - board ?cut_board_variable1 - part ?cut_board_variable2 - highspeed_saw ?cut_board_variable3 - awood ?cut_board_variable4 - surface)
+		:precondition 
+			(and
+				(unused ?cut_board_variable1)
+				(in_highspeed_saw ?newObj_variable2 ?cut_board_variable2)
+				(wood ?newObj_variable2 ?cut_board_variable3)
+				(surface_condition ?newObj_variable2 ?cut_board_variable4)
+			)
+		:effect
+			(and
+				(not (unused ?cut_board_variable1))
+				(available ?cut_board_variable1)
+				(wood ?cut_board_variable1 ?cut_board_variable3)
+				(surface_condition ?cut_board_variable1 ?cut_board_variable4)
+			)
 	)
 
 	(:task cut_and_saw
 		:parameters (?newObj_variable25 - board ?newObj_variable26 - part ?newObj_variable27 - awood ?newObj_variable28 - surface)
+		:precondition 
+			(and
+				(unused ?newObj_variable26)
+				(wood ?newObj_variable25 ?newObj_variable27)
+				(surface_condition ?newObj_variable25 ?newObj_variable28)
+				(available ?newObj_variable25)
+			)
+		:effect
+			(and
+				(not (unused ?newObj_variable26))
+				(available ?newObj_variable26)
+				(wood ?newObj_variable26 ?newObj_variable27)
+				(surface_condition ?newObj_variable26 ?newObj_variable28)
+			)
 	)
 
 	(:task do_saw
 		:parameters (?newObj_variable3 - board ?do_saw_variable1 - part ?do_saw_variable2 - awood ?do_saw_variable3 - surface)
+		:precondition 
+			(and
+				(unused ?do_saw_variable1)
+				(available ?newObj_variable3)
+				(wood ?newObj_variable3 ?do_saw_variable2)
+				(surface_condition ?newObj_variable3 ?do_saw_variable3)
+			)
+		:effect
+			(and
+				(not (unused ?do_saw_variable1))
+				(available ?do_saw_variable1)
+				(wood ?do_saw_variable1 ?do_saw_variable2)
+				(surface_condition ?do_saw_variable1 ?do_saw_variable3)
+			)
 	)
 
 	(:task process
 		:parameters (?process_partVar - part ?process_colourVar - acolour ?process_oldSurfaceVar - surface ?process_newSurfaceVar - surface)
+		:effect
+			(and
+				(colour ?process_partVar ?process_colourVar)
+			)
 	)
 
 	(:method method0

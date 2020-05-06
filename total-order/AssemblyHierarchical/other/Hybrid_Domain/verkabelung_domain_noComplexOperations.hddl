@@ -32,10 +32,16 @@
 
 (:task ValidateDeviceConnection
     :parameters (?d1 ?d2 - AbstractDevice ?t - SignalType)
+    :precondition (and
+        (pGuard)
+    )
 )
 
 (:task ValidatePortConnection
     :parameters (?p1 ?p2 - Port ?t - SignalType)
+    :precondition (and 
+        (pGuard)
+    )
 )
 
 
@@ -46,6 +52,9 @@
 
 (:task connect
     :parameters (?p1 ?p2 - Port)
+    :precondition (and 
+        (not (pGuard))
+    )
 )
 
 

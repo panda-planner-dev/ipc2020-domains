@@ -40,56 +40,38 @@
 
 	(:task calibrate_abs
 		:parameters (?rover - rover ?camera - camera)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task empty_store
 		:parameters (?s - store ?rover - rover)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task get_image_data
 		:parameters (?objective - objective ?mode - mode)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task get_rock_data
 		:parameters (?waypoint - waypoint)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task get_soil_data
 		:parameters (?waypoint - waypoint)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task navigate_abs
 		:parameters (?rover - rover ?to - waypoint)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task send_image_data
 		:parameters (?rover - rover ?objective - objective ?mode - mode)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task send_rock_data
 		:parameters (?rover - rover ?waypoint - waypoint)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task send_soil_data
 		:parameters (?rover - rover ?waypoint - waypoint)
-		:precondition ()
-		:effect ()
 	)
 
 	(:method m_empty_store_1_ordering_0

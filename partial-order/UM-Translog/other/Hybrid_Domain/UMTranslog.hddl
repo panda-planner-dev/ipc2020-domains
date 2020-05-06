@@ -201,86 +201,128 @@
 
 	(:task transport
 		:parameters (?t_p - Package ?t_lo - Location ?t_ld - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task pickup
 		:parameters (?p_p - Package)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task carry
 		:parameters (?c_p - Package ?c_lo - Location ?c_ld - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task carry_direct
 		:parameters (?cd_p - Package ?cd_lo - Location ?cd_ld - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task carry_between_tcenters
 		:parameters (?cbt_p - Package ?cbt_tco - TCenter ?cbt_tcd - TCenter)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task carry_via_hub
 		:parameters (?tch_p - Package ?tch_tco - TCenter ?tch_tcd - TCenter)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task load
 		:parameters (?l_p - Package ?l_v - Vehicle ?l_l - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task load_top
 		:parameters (?lt_p - Package ?lt_v - Vehicle ?lt_l - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task unload
 		:parameters (?ul_p - Package ?ul_v - Vehicle ?ul_l - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task unload_top
 		:parameters (?ult_p - Package ?ult_v - Vehicle ?ult_l - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task deliver
 		:parameters (?d_p - Package)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task move
 		:parameters (?m_v - Vehicle ?m_lo - Location ?m_ld - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_tt
 		:parameters (?hctt_p - Package ?hctt_o - TCenter ?hctt_co - City ?hctt_d - TCenter ?hctt_cd - City)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_ott
 		:parameters (?hcott_p - Package ?hcott_o - City_Location ?hcott_co - City ?hcott_t1 - TCenter ?hcott_d - TCenter ?hcott_cd - City)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_otd
 		:parameters (?hcotd_p - Package ?hcotd_o - TCenter ?hcotd_co - City ?hcotd_t1 - TCenter ?hcotd_d - Not_TCenter ?hcotd_cd - City)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_ottd
 		:parameters (?hcottd_p - Package ?hcottd_o - Not_TCenter ?hcottd_co - City ?hcottd_t1 - TCenter ?hcottd_t2 - TCenter ?hcottd_d - Not_TCenter ?hcottd_cd - City)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_cc
 		:parameters (?hccc_p - Package ?hccc_o - Not_TCenter ?hccc_co - City ?hccc_t - TCenter ?hccc_d - Not_TCenter ?hccc_cd - City)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_via_hub_not_hazardous
 		:parameters (?hcvhn_p - Package ?hcvhn_tco - TCenter ?hcvhn_ctco - City ?hcvhn_rctco - Region ?hcvhn_h - Hub ?hcvhn_tcd - TCenter ?hcvhn_ctcd - City ?hcvhn_rctcd - Region)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_via_hub_hazardous
 		:parameters (?hcvhh_p - Package ?hcvhh_tco - TCenter ?hcvhh_ctco - City ?hcvhh_rctco - Region ?hcvhh_h - Hub ?hcvhh_ch - City ?hcvhh_tcd - TCenter ?hcvhh_ctcd - City ?hcvhh_rctcd - Region)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_carry_direct
 		:parameters (?hcd_v - Vehicle ?hcd_p - Package ?hcd_o - Location ?hcd_d - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:task helper_move_traincar
 		:parameters (?hmt_v - Traincar ?hmt_t - Train ?hmt_o - Location ?hmt_d - Location)
+		:precondition ()
+		:effect ()
 	)
 
 	(:method method_transport_pi_ca_de

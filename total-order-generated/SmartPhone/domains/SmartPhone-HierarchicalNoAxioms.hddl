@@ -126,302 +126,202 @@
 
 	(:task add_Favourite
 		:parameters (?newObj_variable67 - Contact)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task add_NewFavourite
 		:parameters (?newObj_variable64 - Contact)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task attachInformation
 		:parameters (?newObj_variable4 - Message ?newObj_variable7 - Information)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task attachInformationToCall
 		:parameters (?newObj_variable146 - Call ?newObj_variable147 - TransferableByCall)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task attachInformationToEMail
 		:parameters (?newObj_variable142 - EMail ?newObj_variable143 - TransferableByEmail)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task attachInformationToSMS
 		:parameters (?newObj_variable144 - SMS ?newObj_variable145 - TransferableBySMS)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task attachMultipleInformation
 		:parameters (?newObj_variable195 - Message)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task call
 		:parameters (?newObj_variable49 - Contactable ?call_variable1 - Call)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task configure_Alarm
 		:parameters (?configure_Alarm_variable1 - Date)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task configure_Appointment
 		:parameters (?newObj_variable1 - Appointment ?configure_Appointment_variable1 - Date ?configure_Appointment_variable2 - Location)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task configure_Contact
 		:parameters (?newObj_variable34 - Contact ?configure_Contact_variable1 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task configure_Task
 		:parameters (?newObj_variable13 - Task)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task contact
 		:parameters (?newObj_variable204 - Contactable ?newObj_variable205 - Message)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_Appointment
 		:parameters (?newObj_variable16 - Appointment ?create_Appointment_variable1 - Location ?create_Appointment_variable2 - Date)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_Contact
 		:parameters (?newObj_variable32 - Contact ?create_Contact_variable2 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_NewAppointment
 		:parameters (?newObj_variable14 - Appointment ?create_NewAppointment_variable1 - Date ?create_NewAppointment_variable2 - Location)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_NewContact
 		:parameters (?newObj_variable54 - Contact ?create_NewContact_variable1 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_NewTask
 		:parameters (?newObj_variable27 - Task)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task create_Task
 		:parameters (?newObj_variable18 - Task)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Alarm
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Calendar
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Contacts
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_EMail
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Home
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Messages
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_People
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_People_AddFavourite
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Tasks
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enterMode_Telephone
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enter_Number_ForCall
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task enter_Number_ForSMS
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task extractsInformation
 		:parameters (?extractsInformation_variable1 - Contactable ?extractsInformation_variable2 - Message ?extractsInformation_variable3 - Information)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task extractsMultipleInformation
 		:parameters (?newObj_variable198 - Contactable ?newObj_variable199 - Message)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_Home
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_Home_From_SMS
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_Home_From_Telephone
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_NewMessage_Send
 		:parameters (?newObj_variable106 - Contactable ?press_NewMessage_Send_variable1 - SMS)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_People_Smallplus
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task press_Telephone_Call
 		:parameters (?newObj_variable72 - Contactable ?press_Call_variable1 - Call)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task select_Contacts_Details_Number
 		:parameters (?newObj_variable80 - Contact ?select_Contacts_Details_Number_variable1 - Call ?select_Contacts_Details_Number_variable2 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task select_EMail_EMailAccount
 		:parameters (?newObj_variable136 - EMailAccount)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task select_People_AddFavourite_Contact
 		:parameters (?newObj_variable40 - Contact)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task select_People_Favourite
 		:parameters (?newObj_variable48 - Contact ?newObj_variable71 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task select_People_FavouriteSelected_Number
 		:parameters (?newObj_variable82 - Contact ?select_People_FavouriteSelected_Number_variable1 - Call ?select_People_FavouriteSelected_Number_variable2 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task send_EMail
 		:parameters (?newObj_variable117 - Contactable ?send_EMail_variable1 - EMail)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task send_SMS
 		:parameters (?newObj_variable95 - Contactable ?send_SMS_variable1 - SMS)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task set_Alarm
 		:parameters (?set_Alarm_variable1 - Date)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task set_Contact_Connection
 		:parameters (?newObj_variable45 - Contact ?set_Contact_Connection_variable1 - Contactable)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task set_Contact_Picture
 		:parameters (?newObj_variable41 - Contact ?newObj_variable42 - Picture)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task transferMessage
 		:parameters (?newObj_variable219 - Contactable ?newObj_variable220 - Message)
-		:precondition ()
-		:effect ()
 	)
 
 	(:method method0

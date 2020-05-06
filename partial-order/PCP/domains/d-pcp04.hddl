@@ -13,14 +13,10 @@
 
 	(:task SG1
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:task SG2
 		:parameters ()
-		:precondition ()
-		:effect ()
 	)
 
 	(:method G1_S2t1_S_b_b

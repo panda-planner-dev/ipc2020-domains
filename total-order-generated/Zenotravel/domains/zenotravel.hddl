@@ -18,26 +18,18 @@
 
 	(:task transport-person
 		:parameters (?p - Person ?c - City)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task upper-move-aircraft
 		:parameters (?a - Aircraft ?c - City)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task move-aircraft
 		:parameters (?a - Aircraft ?c1 - City ?c2 - City)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task transport-aircraft
 		:parameters (?a - Aircraft ?c - City)
-		:precondition ()
-		:effect ()
 	)
 
 	(:method m1-ordering-0

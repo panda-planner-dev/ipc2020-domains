@@ -20,14 +20,35 @@
 
 	(:task do_observation
 		:parameters (?do_d - image_direction ?do_m - mode)
+		:effect
+			(and
+				(have_image ?do_d ?do_m)
+			)
 	)
 
 	(:task activate_instrument
 		:parameters (?ai_s - satellite ?ai_i - instrument)
+		:precondition 
+			(and
+				(on_board ?ai_i ?ai_s)
+			)
+		:effect
+			(and
+				(power_on ?ai_i)
+			)
 	)
 
 	(:task auto_calibrate
 		:parameters (?ac_s - satellite ?ac_i - instrument)
+		:precondition 
+			(and
+				(on_board ?ac_i ?ac_s)
+				(power_on ?ac_i)
+			)
+		:effect
+			(and
+				(calibrated ?ac_i)
+			)
 	)
 
 	(:method method0

@@ -18,26 +18,18 @@
 
 	(:task deliver
 		:parameters (?p - package ?l - location)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task get_to
 		:parameters (?v - vehicle ?l - location)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task load
 		:parameters (?v - vehicle ?l - location ?p - package)
-		:precondition ()
-		:effect ()
 	)
 
 	(:task unload
 		:parameters (?v - vehicle ?l - location ?p - package)
-		:precondition ()
-		:effect ()
 	)
 
 	(:method m_deliver_ordering_0
