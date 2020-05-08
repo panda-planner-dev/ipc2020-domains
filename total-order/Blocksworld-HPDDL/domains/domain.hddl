@@ -1,6 +1,6 @@
 (define (domain blocks)
 
-  (:requirements :strips :negative-preconditions)
+  (:requirements :typing :strips :negative-preconditions)
 
   (:types BLOCK)
 

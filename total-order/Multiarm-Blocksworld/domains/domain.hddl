@@ -1,6 +1,6 @@
 (define (domain blocks)
 
-  (:requirements :strips)
+  (:requirements :typing :strips)
 
   (:types ARM BLOCK)
 
