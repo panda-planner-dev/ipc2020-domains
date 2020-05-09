@@ -45,10 +45,10 @@
 		(not (contains ?x_0 ?x_1)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveContainsShakerCocktail ?x_2 ?x_1 ))
-		(t_1 (AchieveCleanShot ?x_0))
-		(t_2 (AchieveHolding ?x_3 ?x_2))
-		(t_3 (DoPourShakerToShot ?x_2 ?x_0 ?x_1))
+		(AchieveContainsShakerCocktail ?x_2 ?x_1 )
+		(AchieveCleanShot ?x_0)
+		(AchieveHolding ?x_3 ?x_2)
+		(DoPourShakerToShot ?x_2 ?x_0 ?x_1)
 	)
 )
 
@@ -69,12 +69,12 @@
 		(not (= ?x_4 ?x_3)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveCleanShaker ?x_0))
-		(t_1 (AchieveContainsShakerIngredient ?x_0 ?x_5))
-		(t_2 (AchieveContainsShakerIngredient ?x_0 ?x_2))
-		(t_3 (AchieveHolding ?x_4 ?x_0))
-		(t_4 (AchieveHandEmpty ?x_3))
-		(t_5 (shake ?x_1 ?x_5 ?x_2 ?x_0 ?x_4 ?x_3))
+		(AchieveCleanShaker ?x_0)
+		(AchieveContainsShakerIngredient ?x_0 ?x_5)
+		(AchieveContainsShakerIngredient ?x_0 ?x_2)
+		(AchieveHolding ?x_4 ?x_0)
+		(AchieveHandEmpty ?x_3)
+		(shake ?x_1 ?x_5 ?x_2 ?x_0 ?x_4 ?x_3)
 	)
 )
 
@@ -96,9 +96,9 @@
 		(next ?x_2 ?x_3)
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveContainsShotIngredient ?x_4 ?x_1))
-		(t_1 (AchieveHolding ?x_5 ?x_4))
-		(t_2 (pour-shot-to-clean-shaker ?x_4 ?x_1 ?x_0 ?x_5 ?x_2 ?x_3))
+		(AchieveContainsShotIngredient ?x_4 ?x_1)
+		(AchieveHolding ?x_5 ?x_4)
+		(pour-shot-to-clean-shaker ?x_4 ?x_1 ?x_0 ?x_5 ?x_2 ?x_3)
 	)
 )
 
@@ -111,9 +111,9 @@
 		(next ?x_2 ?x_3)
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveContainsShotIngredient ?x_4 ?x_1))
-		(t_1 (AchieveHolding ?x_5 ?x_4))
-		(t_2 (pour-shot-to-used-shaker ?x_4 ?x_1 ?x_0 ?x_5 ?x_2 ?x_3))
+		(AchieveContainsShotIngredient ?x_4 ?x_1)
+		(AchieveHolding ?x_5 ?x_4)
+		(pour-shot-to-used-shaker ?x_4 ?x_1 ?x_0 ?x_5 ?x_2 ?x_3)
 	)
 )
 
@@ -134,10 +134,10 @@
 		(not (= ?x_4 ?x_3)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveCleanShot ?x_0))
-		(t_1 (AchieveHolding ?x_4 ?x_0))
-		(t_2 (AchieveHandEmpty ?x_3))
-		(t_3 (fill-shot ?x_0 ?x_1 ?x_4 ?x_3 ?x_2))
+		(AchieveCleanShot ?x_0)
+		(AchieveHolding ?x_4 ?x_0)
+		(AchieveHandEmpty ?x_3)
+		(fill-shot ?x_0 ?x_1 ?x_4 ?x_3 ?x_2)
 	)
 )
 
@@ -157,10 +157,10 @@
 		(not (= ?x_3 ?x_1)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveHolding ?x_3 ?x_0))
-		(t_1 (empty-shot ?x_3 ?x_0 ?x_2 ))
-		(t_2 (AchieveHandEmpty ?x_1))
-		(t_3 (clean-shot ?x_0 ?x_2 ?x_3 ?x_1))
+		(AchieveHolding ?x_3 ?x_0)
+		(empty-shot ?x_3 ?x_0 ?x_2 )
+		(AchieveHandEmpty ?x_1)
+		(clean-shot ?x_0 ?x_2 ?x_3 ?x_1)
 	)
 )
 
@@ -173,9 +173,9 @@
 		(not (= ?x_3 ?x_1)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveHolding ?x_3 ?x_0))
-		(t_1 (AchieveHandEmpty ?x_1))
-		(t_2 (clean-shot ?x_0 ?x_2 ?x_3 ?x_1))
+		(AchieveHolding ?x_3 ?x_0)
+		(AchieveHandEmpty ?x_1)
+		(clean-shot ?x_0 ?x_2 ?x_3 ?x_1)
 	)
 )
 
@@ -196,9 +196,9 @@
 		(not (= ?x_2 ?x_1)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveHolding ?x_2 ?x_0))
-		(t_1 (AchieveHandEmpty ?x_1))
-		(t_2 (clean-shaker ?x_0 ?x_2 ?x_1))
+		(AchieveHolding ?x_2 ?x_0)
+		(AchieveHandEmpty ?x_1)
+		(clean-shaker ?x_0 ?x_2 ?x_1)
 	)
 )
 
@@ -213,10 +213,10 @@
 		(not (= ?x_4 ?x_3)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveHolding ?x_4 ?x_0))
-		(t_1 (empty-shaker ?x_4 ?x_0 ?x_2 ?x_5 ?x_1))
-		(t_2 (AchieveHandEmpty ?x_3))
-		(t_3 (clean-shaker ?x_0 ?x_4 ?x_3))
+		(AchieveHolding ?x_4 ?x_0)
+		(empty-shaker ?x_4 ?x_0 ?x_2 ?x_5 ?x_1)
+		(AchieveHandEmpty ?x_3)
+		(clean-shaker ?x_0 ?x_4 ?x_3)
 	)
 )
 
@@ -235,9 +235,9 @@
 		(not (holding ?x_0 ?x_1)) 
 	)
 	:ordered-subtasks (and 
-		(t_0 (AchieveHandEmpty ?x_0))
-		(t_1 (AchieveOnTable ?x_1))
-		(t_2 (grasp ?x_0 ?x_1))
+		(AchieveHandEmpty ?x_0)
+		(AchieveOnTable ?x_1)
+		(grasp ?x_0 ?x_1)
 	)
 )
 
@@ -257,7 +257,7 @@
 		(holding ?x_0 ?x_1)
 	)
 	:ordered-subtasks (and 
-		(t_0 (drop ?x_0 ?x_1))
+		(drop ?x_0 ?x_1)
 	)
 )
 
@@ -277,7 +277,7 @@
 		(holding ?x_1 ?x_0)
 	)
 	:ordered-subtasks (and 
-		(t_0 (drop ?x_1 ?x_0))
+		(drop ?x_1 ?x_0)
 	)
 )
 
@@ -303,7 +303,7 @@
 		(next ?x_5 ?x_3)
 	)
 	:ordered-subtasks (and 
-		(t_0 (pour-shaker-to-shot ?x_2 ?x_1 ?x_4 ?x_0 ?x_3 ?x_5))
+		(pour-shaker-to-shot ?x_2 ?x_1 ?x_4 ?x_0 ?x_3 ?x_5)
 	)
 )
 

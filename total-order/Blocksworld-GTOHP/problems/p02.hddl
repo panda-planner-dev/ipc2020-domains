@@ -1,5 +1,5 @@
 (define (problem BW-rand-7)
-(:domain blocksworld)
+(:domain BLOCKS)
 (:objects b1 b2 b3 b4 b5 b6 b7 - block)
 (:htn :parameters () :ordered-subtasks (and
 (task1 (do_put_on b3 b5))
