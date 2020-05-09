@@ -4,7 +4,6 @@
 
 (define (problem strips-sat-x-1)
 (:domain satellite)
-(:requirements :typing :hierarchy)
 
 ;---------------- Facts -----------------------
 (:objects

@@ -1,6 +1,5 @@
 (define (problem hiking01)
 (:domain hiking)
-(:requirements :typing :hierarchy)
 (:objects
 car0 car1 car2 car3 - car
 tent0 tent1 tent2 - tent

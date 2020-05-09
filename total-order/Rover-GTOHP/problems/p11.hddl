@@ -1,6 +1,5 @@
 (define (problem HTN_PB9)
 (:domain ROVER)
-(:requirements :typing :hierarchy)
 
 ;---------------- Facts -----------------------
 (:objects
