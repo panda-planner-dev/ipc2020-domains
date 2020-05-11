@@ -3,6 +3,8 @@
 
 	(:types A)
 	
+	(:constants a - A)
+
 	(:predicates
     	(foo ?a - A)
 	)
@@ -10,15 +12,15 @@
 	(:task task1 :parameters ())
 
 	(:method donothing
-		:parameters ()
+		:parameters (?a - A)
 		:task (task1)
 		:subtasks (and
-			(noop)
+			(noop ?a)
 		)
 	)
 	
 	(:action noop
-		:parameters ()
-		:precondition (forall (?a - A) (foo ?a))
+		:parameters (?a - A)
+		:precondition (foo ?a)
 	)
 )

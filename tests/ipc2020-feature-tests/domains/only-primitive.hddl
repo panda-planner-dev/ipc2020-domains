@@ -1,5 +1,5 @@
 (define (domain test-domain)
-	(:requirements :typing :hierachy)
+	(:requirements :typing :hierarchy)
 
 	(:action noop
 		:parameters ()
