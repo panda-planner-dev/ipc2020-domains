@@ -1,0 +1,351 @@
+
+(define
+    (problem generated)
+    (:domain factories)
+    (:objects
+        last_factory - factory
+        factory_0 - factory
+        location_0 - location
+        resource_0 - resource
+        factory_1 - factory
+location_1 - location
+resource_1 - resource
+resource_f_1_0 - resource
+factory_2 - factory
+location_2 - location
+resource_2 - resource
+resource_f_2_0 - resource
+resource_f_2_1 - resource
+factory_3 - factory
+location_3 - location
+resource_3 - resource
+resource_f_3_0 - resource
+resource_f_3_1 - resource
+resource_f_3_2 - resource
+factory_4 - factory
+location_4 - location
+resource_4 - resource
+resource_f_4_0 - resource
+resource_f_4_1 - resource
+resource_f_4_2 - resource
+resource_f_4_3 - resource
+factory_5 - factory
+location_5 - location
+resource_5 - resource
+resource_f_5_0 - resource
+resource_f_5_1 - resource
+resource_f_5_2 - resource
+resource_f_5_3 - resource
+resource_f_5_4 - resource
+factory_6 - factory
+location_6 - location
+resource_6 - resource
+resource_f_6_0 - resource
+resource_f_6_1 - resource
+resource_f_6_2 - resource
+resource_f_6_3 - resource
+resource_f_6_4 - resource
+factory_7 - factory
+location_7 - location
+resource_7 - resource
+resource_f_7_0 - resource
+resource_f_7_1 - resource
+resource_f_7_2 - resource
+resource_f_7_3 - resource
+resource_f_7_4 - resource
+factory_8 - factory
+location_8 - location
+resource_8 - resource
+resource_f_8_0 - resource
+resource_f_8_1 - resource
+resource_f_8_2 - resource
+resource_f_8_3 - resource
+resource_f_8_4 - resource
+factory_9 - factory
+location_9 - location
+resource_9 - resource
+resource_f_9_0 - resource
+resource_f_9_1 - resource
+resource_f_9_2 - resource
+resource_f_9_3 - resource
+resource_f_9_4 - resource
+factory_10 - factory
+location_10 - location
+resource_10 - resource
+resource_f_10_0 - resource
+resource_f_10_1 - resource
+resource_f_10_2 - resource
+resource_f_10_3 - resource
+resource_f_10_4 - resource
+factory_11 - factory
+location_11 - location
+resource_11 - resource
+resource_f_11_0 - resource
+resource_f_11_1 - resource
+resource_f_11_2 - resource
+resource_f_11_3 - resource
+resource_f_11_4 - resource
+factory_12 - factory
+location_12 - location
+resource_12 - resource
+resource_f_12_0 - resource
+resource_f_12_1 - resource
+resource_f_12_2 - resource
+resource_f_12_3 - resource
+resource_f_12_4 - resource
+factory_13 - factory
+location_13 - location
+resource_13 - resource
+resource_f_13_0 - resource
+resource_f_13_1 - resource
+resource_f_13_2 - resource
+resource_f_13_3 - resource
+resource_f_13_4 - resource
+factory_14 - factory
+location_14 - location
+resource_14 - resource
+resource_f_14_0 - resource
+resource_f_14_1 - resource
+resource_f_14_2 - resource
+resource_f_14_3 - resource
+resource_f_14_4 - resource
+factory_15 - factory
+location_15 - location
+resource_15 - resource
+resource_f_15_0 - resource
+resource_f_15_1 - resource
+resource_f_15_2 - resource
+resource_f_15_3 - resource
+resource_f_15_4 - resource
+factory_16 - factory
+location_16 - location
+resource_16 - resource
+resource_f_16_0 - resource
+resource_f_16_1 - resource
+resource_f_16_2 - resource
+resource_f_16_3 - resource
+resource_f_16_4 - resource
+factory_17 - factory
+location_17 - location
+resource_17 - resource
+resource_f_17_0 - resource
+resource_f_17_1 - resource
+resource_f_17_2 - resource
+resource_f_17_3 - resource
+resource_f_17_4 - resource
+factory_18 - factory
+location_18 - location
+resource_18 - resource
+resource_f_18_0 - resource
+resource_f_18_1 - resource
+resource_f_18_2 - resource
+resource_f_18_3 - resource
+resource_f_18_4 - resource
+factory_19 - factory
+location_19 - location
+resource_19 - resource
+resource_f_19_0 - resource
+resource_f_19_1 - resource
+resource_f_19_2 - resource
+resource_f_19_3 - resource
+resource_f_19_4 - resource
+last_location - location
+    )
+    (:htn
+        :tasks (construct_factory last_factory last_location)
+        :ordering ()
+        :constraints ()
+    )
+    (:init
+        (truck-at location_0)
+        (factory-at factory_0 location_0)
+        (factory-constructed factory_0)
+        (factory-without-demands factory_0)
+        (produces factory_0 resource_0)
+        (demands last_factory resource_19)
+        (location-free last_location)
+        (connected location_1 location_0)
+(connected location_0 location_1)
+(produces factory_1 resource_1)
+(location-free location_1)
+(demands factory_1 resource_0)
+(fuses resource_f_1_0 resource_0 resource_0)
+(connected location_2 location_1)
+(connected location_1 location_2)
+(produces factory_2 resource_2)
+(location-free location_2)
+(demands factory_2 resource_f_2_1)
+(fuses resource_f_2_0 resource_0 resource_0)
+(fuses resource_f_2_1 resource_f_2_0 resource_1)
+(connected location_3 location_2)
+(connected location_2 location_3)
+(produces factory_3 resource_3)
+(location-free location_3)
+(demands factory_3 resource_f_3_2)
+(fuses resource_f_3_0 resource_0 resource_0)
+(fuses resource_f_3_1 resource_f_3_0 resource_1)
+(fuses resource_f_3_2 resource_f_3_1 resource_2)
+(connected location_4 location_3)
+(connected location_3 location_4)
+(produces factory_4 resource_4)
+(location-free location_4)
+(demands factory_4 resource_f_4_3)
+(fuses resource_f_4_0 resource_0 resource_1)
+(fuses resource_f_4_1 resource_f_4_0 resource_2)
+(fuses resource_f_4_2 resource_f_4_1 resource_0)
+(fuses resource_f_4_3 resource_f_4_2 resource_3)
+(connected location_5 location_4)
+(connected location_4 location_5)
+(produces factory_5 resource_5)
+(location-free location_5)
+(demands factory_5 resource_f_5_4)
+(fuses resource_f_5_0 resource_0 resource_0)
+(fuses resource_f_5_1 resource_f_5_0 resource_3)
+(fuses resource_f_5_2 resource_f_5_1 resource_4)
+(fuses resource_f_5_3 resource_f_5_2 resource_1)
+(fuses resource_f_5_4 resource_f_5_3 resource_2)
+(connected location_6 location_5)
+(connected location_5 location_6)
+(produces factory_6 resource_6)
+(location-free location_6)
+(demands factory_6 resource_f_6_4)
+(fuses resource_f_6_0 resource_0 resource_4)
+(fuses resource_f_6_1 resource_f_6_0 resource_3)
+(fuses resource_f_6_2 resource_f_6_1 resource_0)
+(fuses resource_f_6_3 resource_f_6_2 resource_1)
+(fuses resource_f_6_4 resource_f_6_3 resource_2)
+(connected location_7 location_6)
+(connected location_6 location_7)
+(produces factory_7 resource_7)
+(location-free location_7)
+(demands factory_7 resource_f_7_4)
+(fuses resource_f_7_0 resource_0 resource_5)
+(fuses resource_f_7_1 resource_f_7_0 resource_0)
+(fuses resource_f_7_2 resource_f_7_1 resource_3)
+(fuses resource_f_7_3 resource_f_7_2 resource_1)
+(fuses resource_f_7_4 resource_f_7_3 resource_6)
+(connected location_8 location_7)
+(connected location_7 location_8)
+(produces factory_8 resource_8)
+(location-free location_8)
+(demands factory_8 resource_f_8_4)
+(fuses resource_f_8_0 resource_0 resource_7)
+(fuses resource_f_8_1 resource_f_8_0 resource_2)
+(fuses resource_f_8_2 resource_f_8_1 resource_3)
+(fuses resource_f_8_3 resource_f_8_2 resource_0)
+(fuses resource_f_8_4 resource_f_8_3 resource_4)
+(connected location_9 location_8)
+(connected location_8 location_9)
+(produces factory_9 resource_9)
+(location-free location_9)
+(demands factory_9 resource_f_9_4)
+(fuses resource_f_9_0 resource_0 resource_0)
+(fuses resource_f_9_1 resource_f_9_0 resource_1)
+(fuses resource_f_9_2 resource_f_9_1 resource_2)
+(fuses resource_f_9_3 resource_f_9_2 resource_5)
+(fuses resource_f_9_4 resource_f_9_3 resource_7)
+(connected location_10 location_9)
+(connected location_9 location_10)
+(produces factory_10 resource_10)
+(location-free location_10)
+(demands factory_10 resource_f_10_4)
+(fuses resource_f_10_0 resource_0 resource_8)
+(fuses resource_f_10_1 resource_f_10_0 resource_9)
+(fuses resource_f_10_2 resource_f_10_1 resource_2)
+(fuses resource_f_10_3 resource_f_10_2 resource_3)
+(fuses resource_f_10_4 resource_f_10_3 resource_0)
+(connected location_11 location_10)
+(connected location_10 location_11)
+(produces factory_11 resource_11)
+(location-free location_11)
+(demands factory_11 resource_f_11_4)
+(fuses resource_f_11_0 resource_0 resource_4)
+(fuses resource_f_11_1 resource_f_11_0 resource_3)
+(fuses resource_f_11_2 resource_f_11_1 resource_9)
+(fuses resource_f_11_3 resource_f_11_2 resource_8)
+(fuses resource_f_11_4 resource_f_11_3 resource_1)
+(connected location_12 location_11)
+(connected location_11 location_12)
+(produces factory_12 resource_12)
+(location-free location_12)
+(demands factory_12 resource_f_12_4)
+(fuses resource_f_12_0 resource_0 resource_7)
+(fuses resource_f_12_1 resource_f_12_0 resource_5)
+(fuses resource_f_12_2 resource_f_12_1 resource_11)
+(fuses resource_f_12_3 resource_f_12_2 resource_10)
+(fuses resource_f_12_4 resource_f_12_3 resource_2)
+(connected location_13 location_12)
+(connected location_12 location_13)
+(produces factory_13 resource_13)
+(location-free location_13)
+(demands factory_13 resource_f_13_4)
+(fuses resource_f_13_0 resource_0 resource_12)
+(fuses resource_f_13_1 resource_f_13_0 resource_11)
+(fuses resource_f_13_2 resource_f_13_1 resource_4)
+(fuses resource_f_13_3 resource_f_13_2 resource_8)
+(fuses resource_f_13_4 resource_f_13_3 resource_6)
+(connected location_14 location_13)
+(connected location_13 location_14)
+(produces factory_14 resource_14)
+(location-free location_14)
+(demands factory_14 resource_f_14_4)
+(fuses resource_f_14_0 resource_0 resource_9)
+(fuses resource_f_14_1 resource_f_14_0 resource_1)
+(fuses resource_f_14_2 resource_f_14_1 resource_5)
+(fuses resource_f_14_3 resource_f_14_2 resource_10)
+(fuses resource_f_14_4 resource_f_14_3 resource_6)
+(connected location_15 location_14)
+(connected location_14 location_15)
+(produces factory_15 resource_15)
+(location-free location_15)
+(demands factory_15 resource_f_15_4)
+(fuses resource_f_15_0 resource_0 resource_0)
+(fuses resource_f_15_1 resource_f_15_0 resource_11)
+(fuses resource_f_15_2 resource_f_15_1 resource_9)
+(fuses resource_f_15_3 resource_f_15_2 resource_3)
+(fuses resource_f_15_4 resource_f_15_3 resource_8)
+(connected location_16 location_15)
+(connected location_15 location_16)
+(produces factory_16 resource_16)
+(location-free location_16)
+(demands factory_16 resource_f_16_4)
+(fuses resource_f_16_0 resource_0 resource_14)
+(fuses resource_f_16_1 resource_f_16_0 resource_8)
+(fuses resource_f_16_2 resource_f_16_1 resource_10)
+(fuses resource_f_16_3 resource_f_16_2 resource_6)
+(fuses resource_f_16_4 resource_f_16_3 resource_3)
+(connected location_17 location_16)
+(connected location_16 location_17)
+(produces factory_17 resource_17)
+(location-free location_17)
+(demands factory_17 resource_f_17_4)
+(fuses resource_f_17_0 resource_0 resource_7)
+(fuses resource_f_17_1 resource_f_17_0 resource_14)
+(fuses resource_f_17_2 resource_f_17_1 resource_9)
+(fuses resource_f_17_3 resource_f_17_2 resource_11)
+(fuses resource_f_17_4 resource_f_17_3 resource_12)
+(connected location_18 location_17)
+(connected location_17 location_18)
+(produces factory_18 resource_18)
+(location-free location_18)
+(demands factory_18 resource_f_18_4)
+(fuses resource_f_18_0 resource_0 resource_17)
+(fuses resource_f_18_1 resource_f_18_0 resource_10)
+(fuses resource_f_18_2 resource_f_18_1 resource_13)
+(fuses resource_f_18_3 resource_f_18_2 resource_9)
+(fuses resource_f_18_4 resource_f_18_3 resource_4)
+(connected location_19 location_18)
+(connected location_18 location_19)
+(produces factory_19 resource_19)
+(location-free location_19)
+(demands factory_19 resource_f_19_4)
+(fuses resource_f_19_0 resource_0 resource_7)
+(fuses resource_f_19_1 resource_f_19_0 resource_3)
+(fuses resource_f_19_2 resource_f_19_1 resource_1)
+(fuses resource_f_19_3 resource_f_19_2 resource_16)
+(fuses resource_f_19_4 resource_f_19_3 resource_2)
+(connected location_19 last_location)
+(connected last_location location_19)
+    )
+)
+    

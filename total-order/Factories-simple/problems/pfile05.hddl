@@ -1,0 +1,79 @@
+
+(define
+    (problem generated)
+    (:domain factories)
+    (:objects
+        last_factory - factory
+        factory_0 - factory
+        location_0 - location
+        resource_0 - resource
+        factory_1 - factory
+location_1 - location
+resource_1 - resource
+resource_f_1_0 - resource
+factory_2 - factory
+location_2 - location
+resource_2 - resource
+resource_f_2_0 - resource
+resource_f_2_1 - resource
+factory_3 - factory
+location_3 - location
+resource_3 - resource
+resource_f_3_0 - resource
+resource_f_3_1 - resource
+resource_f_3_2 - resource
+factory_4 - factory
+location_4 - location
+resource_4 - resource
+resource_f_4_0 - resource
+resource_f_4_1 - resource
+resource_f_4_2 - resource
+last_location - location
+    )
+    (:htn
+        :tasks (construct_factory last_factory last_location)
+        :ordering ()
+        :constraints ()
+    )
+    (:init
+        (truck-at location_0)
+        (factory-at factory_0 location_0)
+        (factory-constructed factory_0)
+        (factory-without-demands factory_0)
+        (produces factory_0 resource_0)
+        (demands last_factory resource_4)
+        (location-free last_location)
+        (connected location_1 location_0)
+(connected location_0 location_1)
+(produces factory_1 resource_1)
+(location-free location_1)
+(demands factory_1 resource_0)
+(fuses resource_f_1_0 resource_0 resource_0)
+(connected location_2 location_1)
+(connected location_1 location_2)
+(produces factory_2 resource_2)
+(location-free location_2)
+(demands factory_2 resource_f_2_1)
+(fuses resource_f_2_0 resource_0 resource_0)
+(fuses resource_f_2_1 resource_f_2_0 resource_1)
+(connected location_3 location_2)
+(connected location_2 location_3)
+(produces factory_3 resource_3)
+(location-free location_3)
+(demands factory_3 resource_f_3_2)
+(fuses resource_f_3_0 resource_0 resource_2)
+(fuses resource_f_3_1 resource_f_3_0 resource_0)
+(fuses resource_f_3_2 resource_f_3_1 resource_1)
+(connected location_4 location_3)
+(connected location_3 location_4)
+(produces factory_4 resource_4)
+(location-free location_4)
+(demands factory_4 resource_f_4_2)
+(fuses resource_f_4_0 resource_0 resource_2)
+(fuses resource_f_4_1 resource_f_4_0 resource_3)
+(fuses resource_f_4_2 resource_f_4_1 resource_0)
+(connected location_4 last_location)
+(connected last_location location_4)
+    )
+)
+    
