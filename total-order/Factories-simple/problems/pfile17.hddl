@@ -136,9 +136,8 @@ resource_f_17_4 - resource
 last_location - location
     )
     (:htn
-        :tasks (construct_factory last_factory last_location)
-        :ordering ()
-        :constraints ()
+        :parameters ()
+	:subtasks (construct_factory last_factory last_location)
     )
     (:init
         (truck-at location_0)
