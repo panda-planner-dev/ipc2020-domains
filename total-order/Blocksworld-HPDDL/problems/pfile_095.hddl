@@ -103,8 +103,6 @@
   :ordered-tasks (and
     (task0 (achieve-goals))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (hand-empty)

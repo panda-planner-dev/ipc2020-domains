@@ -81,7 +81,9 @@
   (:method setdone
     :parameters ()
     :task (achieve-goals)
-    :precondition (forall (?b - BLOCK) (done ?b)))
+    :precondition (forall (?b - BLOCK) (done ?b))
+    :ordered-tasks (and )
+  )
 
  (:method newMethod9
   :parameters (?b - BLOCK)
