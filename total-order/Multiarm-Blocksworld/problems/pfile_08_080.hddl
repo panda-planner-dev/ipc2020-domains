@@ -96,8 +96,6 @@
     (task6 (achieve-goals arm7))
     (task7 (achieve-goals arm8))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (hand-empty arm1)

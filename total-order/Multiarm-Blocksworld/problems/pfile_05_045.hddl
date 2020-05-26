@@ -58,8 +58,6 @@
     (task3 (achieve-goals arm4))
     (task4 (achieve-goals arm5))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (hand-empty arm1)

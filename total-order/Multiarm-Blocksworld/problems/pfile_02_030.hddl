@@ -40,8 +40,6 @@
     (task0 (achieve-goals arm1))
     (task1 (achieve-goals arm2))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (hand-empty arm1)

@@ -113,8 +113,6 @@
     (task8 (achieve-goals arm9))
     (task9 (achieve-goals arm10))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (hand-empty arm1)

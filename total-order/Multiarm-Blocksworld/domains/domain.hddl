@@ -76,6 +76,7 @@
     :parameters (?a - ARM)
     :task (achieve-goals ?a)
     :precondition (forall (?b - BLOCK) (done ?b))
+    :ordered-tasks (and )
   )
 
  (:method newMethod13
