@@ -75,7 +75,9 @@
  :precondition (forall (?obj - PACKAGE) 
     (exists (?loc - ROOM) (and
         (goal_in ?obj ?loc)
-        (in ?obj ?loc)))))
+        (in ?obj ?loc))))
+:ordered-subtasks (and)
+)
 
  (:method newMethod22
   :parameters (?obj - PACKAGE ?loc - ROOM)

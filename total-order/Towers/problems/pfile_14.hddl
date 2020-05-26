@@ -9,8 +9,6 @@
   :ordered-tasks (and
     (task0 (shiftTower t1 t2 t3))
   )
-  :ordering ( )
-  :constraints ( )
  )
 (:init
   (smallerThan r1 t1)

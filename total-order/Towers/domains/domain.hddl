@@ -48,7 +48,9 @@
  (:method exchangeClear
   :parameters (?t1 - TOWER ?t2 - TOWER ?t3 - TOWER)
   :task (exchange ?t1 ?t2 ?t3)
-  :precondition (and (towerTop ?t1 ?t1) (towerTop ?t3 ?t3)))
+  :precondition (and (towerTop ?t1 ?t1) (towerTop ?t3 ?t3))
+  :ordered-subtasks (and)
+ )
 
 
  (:method exchangeLR
