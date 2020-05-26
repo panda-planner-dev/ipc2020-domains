@@ -50,8 +50,6 @@
     (and
            (ConnectDevices pc printer data)
     )
-    :ordering ( )
-    :constraints ( )
 )
 
 (:init
