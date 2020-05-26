@@ -1,4 +1,4 @@
-(define (domain barman_agent)
+(define (domain barman_htn)
 (:requirements :hierarchy :adl :typing :equality)
 
 (:types 
@@ -58,6 +58,8 @@
 	:precondition (and 
 		(contains ?x_0 ?x_1)
 	)
+	:ordered-subtasks (and 
+	)
 )
 
 (:method MakeCocktail
@@ -83,6 +85,8 @@
 	:task (AchieveContainsShakerCocktail ?x_0 ?x_1)
 	:precondition (and 
 		(contains ?x_0 ?x_1)
+	)
+	:ordered-subtasks (and 
 	)
 )
 
@@ -123,6 +127,8 @@
 	:precondition (and 
 		(contains ?x_0 ?x_1)
 	)
+	:ordered-subtasks (and 
+	)
 )
 
 (:method AddIngredientToShot
@@ -146,6 +152,8 @@
 	:task (AchieveContainsShotIngredient ?x_0 ?x_1)
 	:precondition (and 
 		(contains ?x_0 ?x_1)
+	)
+	:ordered-subtasks (and 
 	)
 )
 
@@ -184,6 +192,8 @@
 	:task (AchieveCleanShot ?x_0)
 	:precondition (and 
 		(clean ?x_0)
+	)
+	:ordered-subtasks (and 
 	)
 )
 
@@ -226,6 +236,8 @@
 	:precondition (and 
 		(clean ?x_0)
 	)
+	:ordered-subtasks (and 
+	)
 )
 
 (:method PickUp
@@ -247,6 +259,8 @@
 	:precondition (and 
 		(holding ?x_0 ?x_1)
 	)
+	:ordered-subtasks (and 
+	)
 )
 
 
@@ -266,6 +280,8 @@
 	:task (AchieveHandEmpty ?x_0)
 	:precondition (and 
 		(handEmpty ?x_1)
+	)
+	:ordered-subtasks (and 
 	)
 )
 
@@ -287,6 +303,8 @@
 	:precondition (and 
 		(ontable ?x_0)
 	)
+	:ordered-subtasks (and 
+	)
 )
 
 
@@ -306,8 +324,6 @@
 		(pour-shaker-to-shot ?x_2 ?x_1 ?x_4 ?x_0 ?x_3 ?x_5)
 	)
 )
-
-
 
 
 
