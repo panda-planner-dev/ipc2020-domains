@@ -43,7 +43,6 @@
 			(task1 < task2)
 		)
 		:constraints (and
-			(sortof ?mdoatt_ti_d - image_direction)
 			(not (= ?mdoatt_ti_d ?mdoatt_t_d_prev))
 		)
 	)
@@ -59,7 +58,6 @@
 			(task0 < task1)
 		)
 		:constraints (and
-			(sortof ?mdott_ti_d - image_direction)
 			(not (= ?mdott_ti_d ?mdott_t_d_prev))
 		)
 	)
@@ -124,7 +122,6 @@
 			(task0 < task1)
 		)
 		:constraints (and
-			(sortof ?mactc_c_d - calib_direction)
 			(not (= ?mactc_c_d ?mactc_tt_d_prev))
 		)
 	)

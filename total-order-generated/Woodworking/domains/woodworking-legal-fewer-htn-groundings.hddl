@@ -264,9 +264,6 @@
 			(task2 < task0)
 			(task0 < task1)
 		)
-		:constraints (and
-			(sortof ?do_grind_untreated_instance_2_argument_1 - grinder)
-		)
 	)
 
 	(:action cut_board_large

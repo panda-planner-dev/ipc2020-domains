@@ -43,7 +43,6 @@
 			(task1 < task2)
 		)
 		:constraints (and
-			(sortof ?take_image_instance_4_argument_6 - image_direction)
 			(not (= ?take_image_instance_4_argument_6 ?turn_to_instance_3_argument_4))
 		)
 	)
@@ -59,7 +58,6 @@
 			(task0 < task1)
 		)
 		:constraints (and
-			(sortof ?take_image_instance_3_argument_4 - image_direction)
 			(not (= ?take_image_instance_3_argument_4 ?turn_to_instance_2_argument_2))
 		)
 	)
@@ -124,7 +122,6 @@
 			(task0 < task1)
 		)
 		:constraints (and
-			(sortof ?calibrate_instance_3_argument_5 - calib_direction)
 			(not (= ?calibrate_instance_3_argument_5 ?turn_to_instance_2_argument_2))
 		)
 	)

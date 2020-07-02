@@ -266,9 +266,6 @@
 			(task2 < task0)
 			(task0 < task1)
 		)
-		:constraints (and
-			(sortof ?reusePartProcessThorough_variable11 - grinder)
-		)
 	)
 
 	(:action do_immersion_varnish
