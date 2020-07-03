@@ -2,12 +2,8 @@
 	(problem p01__p01_complete)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
-		natural - acolour
 		red - acolour
 		black - acolour
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		pine - awood
 		teak - awood
 		grinder0 - grinder
@@ -15,12 +11,6 @@
 		planer0 - planer
 		colourfragments - treatmentstatus
 		p0 - part
-		rough - surface
-		untreated - treatmentstatus
-		glazed - treatmentstatus
-		verysmooth - surface
-		varnished - treatmentstatus
-		smooth - surface
 		p2 - part
 	)
 	(:htn

@@ -3,25 +3,15 @@
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
 		blue - acolour
-		natural - acolour
 		red - acolour
 		black - acolour
 		mauve - acolour
 		walnut - awood
 		mahogany - awood
-		rough - surface
-		smooth - surface
-		verysmooth - surface
 		colourfragments - treatmentstatus
-		untreated - treatmentstatus
-		glazed - treatmentstatus
-		varnished - treatmentstatus
 		s5 - aboardsize
 		s6 - aboardsize
 		s4 - aboardsize
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		highspeed_saw0 - highspeed_saw
 		glazer0 - glazer
 		grinder0 - grinder

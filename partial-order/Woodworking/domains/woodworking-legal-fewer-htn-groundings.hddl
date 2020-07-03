@@ -19,6 +19,21 @@
 		part - woodobj
 		woodobj - object
 	)
+	(:constants 
+		large - apartsize
+		medium - apartsize
+		small - apartsize
+		
+		natural - acolour
+		
+		verysmooth - surface
+		smooth - surface
+		rough - surface
+		
+		untreated - treatmentstatus
+		glazed - treatmentstatus
+		varnished - treatmentstatus
+	)
 	(:predicates
 		(machine_present ?arg0 - machine)
 		(unused ?arg0 - part)
@@ -135,9 +150,6 @@
 			(task1 < task0)
 			(task0 < task2)
 		)
-		:causallinks (and
-			(task1 (in_highspeed_saw ?doTheCutWay_variable1 ?doTheCutWay_variable9) task0)
-		)
 	)
 
 	(:method method7
@@ -187,9 +199,6 @@
 		:ordering (and
 			(task0 < task1)
 		)
-		:causallinks (and
-			(task0 (available ?rawProcess_variable9) task1)
-		)
 	)
 
 	(:method method12
@@ -229,11 +238,6 @@
 		:ordering (and
 			(task0 < task1)
 			(task1 < task2)
-		)
-		:causallinks (and
-			(task0 (available ?process_partVar) task1)
-			(task0 (available ?process_partVar) task2)
-			(task0 (surface_condition ?process_partVar ?fullProcess_variable6) task1)
 		)
 	)
 

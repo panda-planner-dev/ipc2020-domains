@@ -4,7 +4,6 @@
 	(:objects
 		blue - acolour
 		white - acolour
-		natural - acolour
 		green - acolour
 		red - acolour
 		black - acolour
@@ -12,13 +11,7 @@
 		oak - awood
 		pine - awood
 		beech - awood
-		rough - surface
-		smooth - surface
-		verysmooth - surface
 		colourfragments - treatmentstatus
-		untreated - treatmentstatus
-		glazed - treatmentstatus
-		varnished - treatmentstatus
 		s5 - aboardsize
 		s0 - aboardsize
 		s3 - aboardsize
@@ -30,9 +23,6 @@
 		s6 - aboardsize
 		s7 - aboardsize
 		s4 - aboardsize
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		highspeed_saw0 - highspeed_saw
 		glazer0 - glazer
 		grinder0 - grinder

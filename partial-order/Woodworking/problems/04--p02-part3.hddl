@@ -2,22 +2,12 @@
 	(problem p04__p02_part3)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
-		natural - acolour
 		blue - acolour
 		walnut - awood
-		rough - surface
-		smooth - surface
-		verysmooth - surface
 		colourfragments - treatmentstatus
-		untreated - treatmentstatus
-		glazed - treatmentstatus
-		varnished - treatmentstatus
 		s4 - aboardsize
 		s5 - aboardsize
 		s6 - aboardsize
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		glazer0 - glazer
 		spray_varnisher0 - spray_varnisher
 		b0 - board

@@ -5,25 +5,15 @@
 		s4 - aboardsize
 		s5 - aboardsize
 		s6 - aboardsize
-		natural - acolour
 		blue - acolour
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		walnut - awood
 		b0 - board
 		glazer0 - glazer
 		spray_varnisher0 - spray_varnisher
 		colourfragments - treatmentstatus
 		p0 - part
-		rough - surface
-		untreated - treatmentstatus
 		p1 - part
-		glazed - treatmentstatus
-		verysmooth - surface
 		p5 - part
-		varnished - treatmentstatus
-		smooth - surface
 	)
 	(:htn
 		:parameters ()

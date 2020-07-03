@@ -19,6 +19,21 @@
 		treatmentstatus - object
 		woodobj - object
 	)
+	(:constants 
+		large - apartsize
+		medium - apartsize
+		small - apartsize
+		
+		natural - acolour
+		
+		verysmooth - surface
+		smooth - surface
+		rough - surface
+		
+		untreated - treatmentstatus
+		glazed - treatmentstatus
+		varnished - treatmentstatus
+	)
 	(:predicates
 		(available ?arg0 - woodobj)
 		(boardsize ?arg0 - board ?arg1 - aboardsize)

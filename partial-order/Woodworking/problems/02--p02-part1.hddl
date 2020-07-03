@@ -2,24 +2,14 @@
 	(problem p02__p02_part1)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
-		natural - acolour
 		red - acolour
 		pine - awood
 		teak - awood
-		rough - surface
-		smooth - surface
-		verysmooth - surface
 		colourfragments - treatmentstatus
-		untreated - treatmentstatus
-		glazed - treatmentstatus
-		varnished - treatmentstatus
 		s0 - aboardsize
 		s1 - aboardsize
 		s2 - aboardsize
 		s3 - aboardsize
-		large - apartsize
-		medium - apartsize
-		small - apartsize
 		highspeed_saw0 - highspeed_saw
 		glazer0 - glazer
 		b0 - board
