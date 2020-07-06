@@ -197,6 +197,12 @@
 		(Trough_Full ?arg0 - Livestock)
 		(Valve_Open ?arg0 - Tanker)
 		(Warning_Signs_Affixed ?arg0 - Vehicle)
+	
+		(ValuableOrHazardous ?p - Package)
+		(IsHazardous ?p - Package)
+		(IsAirplain ?v - Vehicle)
+		(IsTraincar ?v - Vehicle)
+		(IsHub ?h - TCenter)
 	)
 
 	(:task transport
@@ -303,12 +309,11 @@
 	(:method method_pickup_normal
 		:parameters (?mpn_cf_p - Package)
 		:task (pickup ?mpn_cf_p)
+		:precondition (and
+			(not (ValuableOrHazardous ?mpn_cf_p))
+		)
 		:subtasks (and
 		 (task0 (collect_fees ?mpn_cf_p))
-		)
-		:constraints (and
-			(not (sortof ?mpn_cf_p - Hazardous))
-			(not (sortof ?mpn_cf_p - Valuable))
 		)
 	)
 
@@ -339,12 +344,11 @@
 	(:method method_deliver_dp
 		:parameters (?mddp_dp_p - Package)
 		:task (deliver ?mddp_dp_p)
+		:precondition (and
+			(not (ValuableOrHazardous ?mddp_dp_p))
+		)
 		:subtasks (and
 		 (task0 (deliver_p ?mddp_dp_p))
-		)
-		:constraints (and
-			(not (sortof ?mddp_dp_p - Hazardous))
-			(not (sortof ?mddp_dp_p - Valuable))
 		)
 	)
 
@@ -378,12 +382,14 @@
 	(:method method_carry_cvh
 		:parameters (?mch_hctt_cd - City ?mch_hctt_co - City ?mch_hctt_d - TCenter ?mch_hctt_o - TCenter ?mch_hctt_p - Package)
 		:task (carry ?mch_hctt_p ?mch_hctt_o ?mch_hctt_d)
+		:precondition (and		
+			(not (IsHub ?mch_hctt_o))
+			(not (IsHub ?mch_hctt_d))
+		)
 		:subtasks (and
 		 (task0 (helper_carry_tt ?mch_hctt_p ?mch_hctt_o ?mch_hctt_co ?mch_hctt_d ?mch_hctt_cd))
 		)
 		:constraints (and
-			(not (sortof ?mch_hctt_o - Hub))
-			(not (sortof ?mch_hctt_d - Hub))
 			(not (= ?mch_hctt_o ?mch_hctt_d))
 		)
 	)
@@ -405,13 +411,12 @@
 	)
 
 	(:method method_carry_cd_cbtc
-		:parameters (?mccct_hcott_cd - City ?mccct_hcott_co - City ?mccct_hcott_d - TCenter ?mccct_hcott_o - City_Location ?mccct_hcott_p - Package ?mccct_hcott_t1 - TCenter)
+		:parameters (?mccct_hcott_cd - City ?mccct_hcott_co - City ?mccct_hcott_d - TCenter ?mccct_hcott_o - Not_TCenter ?mccct_hcott_p - Package ?mccct_hcott_t1 - TCenter)
 		:task (carry ?mccct_hcott_p ?mccct_hcott_o ?mccct_hcott_d)
 		:subtasks (and
 		 (task0 (helper_carry_ott ?mccct_hcott_p ?mccct_hcott_o ?mccct_hcott_co ?mccct_hcott_t1 ?mccct_hcott_d ?mccct_hcott_cd))
 		)
 		:constraints (and
-			(not (sortof ?mccct_hcott_o - TCenter))
 			(not (= ?mccct_hcott_co ?mccct_hcott_cd))
 			(not (= ?mccct_hcott_o ?mccct_hcott_d))
 		)
@@ -545,12 +550,14 @@
 	(:method method_carry_between_tcenters_cvh
 		:parameters (?mcbth_tch_p - Package ?mcbth_tch_tcd - TCenter ?mcbth_tch_tco - TCenter)
 		:task (carry_between_tcenters ?mcbth_tch_p ?mcbth_tch_tco ?mcbth_tch_tcd)
+		:precondition (and
+			(not (IsHub ?mcbth_tch_tco))
+			(not (IsHub ?mcbth_tch_tcd))
+		)
 		:subtasks (and
 		 (task0 (carry_via_hub ?mcbth_tch_p ?mcbth_tch_tco ?mcbth_tch_tcd))
 		)
 		:constraints (and
-			(not (sortof ?mcbth_tch_tco - Hub))
-			(not (sortof ?mcbth_tch_tcd - Hub))
 			(not (= ?mcbth_tch_tco ?mcbth_tch_tcd))
 		)
 	)
@@ -558,11 +565,13 @@
 	(:method method_carry_via_hub_not_hazardous
 		:parameters (?mcvhn_hcvhn_ctcd - City ?mcvhn_hcvhn_ctco - City ?mcvhn_hcvhn_h - Hub ?mcvhn_hcvhn_p - Package ?mcvhn_hcvhn_rctcd - Region ?mcvhn_hcvhn_rctco - Region ?mcvhn_hcvhn_tcd - TCenter ?mcvhn_hcvhn_tco - TCenter)
 		:task (carry_via_hub ?mcvhn_hcvhn_p ?mcvhn_hcvhn_tco ?mcvhn_hcvhn_tcd)
+		:precondition(and
+			(not (IsHazardous ?mcvhn_hcvhn_p))
+		)
 		:subtasks (and
 		 (task0 (helper_carry_via_hub_not_hazardous ?mcvhn_hcvhn_p ?mcvhn_hcvhn_tco ?mcvhn_hcvhn_ctco ?mcvhn_hcvhn_rctco ?mcvhn_hcvhn_h ?mcvhn_hcvhn_tcd ?mcvhn_hcvhn_ctcd ?mcvhn_hcvhn_rctcd))
 		)
 		:constraints (and
-			(not (sortof ?mcvhn_hcvhn_p - Hazardous))
 			(not (= ?mcvhn_hcvhn_tco ?mcvhn_hcvhn_tcd))
 			(not (= ?mcvhn_hcvhn_tco ?mcvhn_hcvhn_h))
 			(not (= ?mcvhn_hcvhn_tcd ?mcvhn_hcvhn_h))
@@ -591,13 +600,12 @@
 	)
 
 	(:method method_carry_via_hub_hazardous
-		:parameters (?mcvhh_hcvhh_ch - City ?mcvhh_hcvhh_ctcd - City ?mcvhh_hcvhh_ctco - City ?mcvhh_hcvhh_h - Hub ?mcvhh_hcvhh_p - Package ?mcvhh_hcvhh_rctcd - Region ?mcvhh_hcvhh_rctco - Region ?mcvhh_hcvhh_tcd - TCenter ?mcvhh_hcvhh_tco - TCenter)
+		:parameters (?mcvhh_hcvhh_ch - City ?mcvhh_hcvhh_ctcd - City ?mcvhh_hcvhh_ctco - City ?mcvhh_hcvhh_h - Hub ?mcvhh_hcvhh_p - Hazardous ?mcvhh_hcvhh_rctcd - Region ?mcvhh_hcvhh_rctco - Region ?mcvhh_hcvhh_tcd - TCenter ?mcvhh_hcvhh_tco - TCenter)
 		:task (carry_via_hub ?mcvhh_hcvhh_p ?mcvhh_hcvhh_tco ?mcvhh_hcvhh_tcd)
 		:subtasks (and
 		 (task0 (helper_carry_via_hub_hazardous ?mcvhh_hcvhh_p ?mcvhh_hcvhh_tco ?mcvhh_hcvhh_ctco ?mcvhh_hcvhh_rctco ?mcvhh_hcvhh_h ?mcvhh_hcvhh_ch ?mcvhh_hcvhh_tcd ?mcvhh_hcvhh_ctcd ?mcvhh_hcvhh_rctcd))
 		)
 		:constraints (and
-			(sortof ?mcvhh_hcvhh_p - Hazardous)
 			(not (= ?mcvhh_hcvhh_tco ?mcvhh_hcvhh_tcd))
 			(not (= ?mcvhh_hcvhh_tco ?mcvhh_hcvhh_h))
 			(not (= ?mcvhh_hcvhh_tcd ?mcvhh_hcvhh_h))
@@ -678,11 +686,13 @@
 	(:method method_move_no_traincar
 		:parameters (?mmnt_mvnt_d - Location ?mmnt_mvnt_o - Location ?mmnt_mvnt_r - Route ?mmnt_mvnt_v - Vehicle)
 		:task (move ?mmnt_mvnt_v ?mmnt_mvnt_o ?mmnt_mvnt_d)
+		:precondition(and
+			(not (IsTraincar ?mmnt_mvnt_v))
+		)
 		:subtasks (and
 		 (task0 (move_vehicle_no_traincar ?mmnt_mvnt_v ?mmnt_mvnt_o ?mmnt_mvnt_r ?mmnt_mvnt_d))
 		)
 		:constraints (and
-			(not (sortof ?mmnt_mvnt_v - Traincar))
 			(not (= ?mmnt_mvnt_o ?mmnt_mvnt_d))
 		)
 	)
@@ -736,8 +746,11 @@
 	)
 
 	(:method method_unload_regular
-		:parameters (?mur_cd_rv - Regular_Vehicle ?mur_up_l - Location ?mur_up_p - Package)
+		:parameters (?mur_cd_rv - Regular_Vehicle ?mur_up_l - Location ?mur_up_p - Regular)
 		:task (unload ?mur_up_p ?mur_cd_rv ?mur_up_l)
+		:precondition (and
+			(not (IsAirplain ?mur_cd_rv))
+		)
 		:subtasks (and
 		 (task0 (open_door ?mur_cd_rv))
 		 (task1 (unload_package ?mur_up_p ?mur_cd_rv ?mur_up_l))
@@ -747,14 +760,10 @@
 			(task0 < task1)
 			(task1 < task2)
 		)
-		:constraints (and
-			(sortof ?mur_up_p - Regular)
-			(not (sortof ?mur_cd_rv - Airplane))
-		)
 	)
 
 	(:method method_unload_flatbed
-		:parameters (?muf_pdpg_c - Crane ?muf_pdpg_l - Location ?muf_pdpg_p - Package ?muf_pupv_fv - Flatbed_Vehicle)
+		:parameters (?muf_pdpg_c - Crane ?muf_pdpg_l - Location ?muf_pdpg_p - Bulky ?muf_pupv_fv - Flatbed_Vehicle)
 		:task (unload ?muf_pdpg_p ?muf_pupv_fv ?muf_pdpg_l)
 		:subtasks (and
 		 (task0 (pick_up_package_vehicle ?muf_pdpg_p ?muf_pdpg_c ?muf_pupv_fv ?muf_pdpg_l))
@@ -762,9 +771,6 @@
 		)
 		:ordering (and
 			(task0 < task1)
-		)
-		:constraints (and
-			(sortof ?muf_pdpg_p - Bulky)
 		)
 	)
 
@@ -851,17 +857,16 @@
 	(:method method_load_top_normal
 		:parameters (?mlmn_l_l - Location ?mlmn_l_p - Package ?mlmn_l_v - Vehicle)
 		:task (load_top ?mlmn_l_p ?mlmn_l_v ?mlmn_l_l)
+		:precondition (and
+			(not (ValuableOrHazardous ?mlmn_l_p))
+		)
 		:subtasks (and
 		 (task0 (load ?mlmn_l_p ?mlmn_l_v ?mlmn_l_l))
-		)
-		:constraints (and
-			(not (sortof ?mlmn_l_p - Valuable))
-			(not (sortof ?mlmn_l_p - Hazardous))
 		)
 	)
 
 	(:method method_load_top_hazardous
-		:parameters (?mlmh_l_l - Location ?mlmh_l_p - Package ?mlmh_l_v - Vehicle)
+		:parameters (?mlmh_l_l - Location ?mlmh_l_p - Hazardous ?mlmh_l_v - Vehicle)
 		:task (load_top ?mlmh_l_p ?mlmh_l_v ?mlmh_l_l)
 		:subtasks (and
 		 (task0 (affix_warning_signs ?mlmh_l_v))
@@ -870,13 +875,10 @@
 		:ordering (and
 			(task0 < task1)
 		)
-		:constraints (and
-			(sortof ?mlmh_l_p - Hazardous)
-		)
 	)
 
 	(:method method_load_top_valuable
-		:parameters (?mlmv_l_l - Location ?mlmv_l_p - Package ?mlmv_pci_a - Armored)
+		:parameters (?mlmv_l_l - Location ?mlmv_l_p - Valuable ?mlmv_pci_a - Armored)
 		:task (load_top ?mlmv_l_p ?mlmv_pci_a ?mlmv_l_l)
 		:subtasks (and
 		 (task0 (post_guard_outside ?mlmv_pci_a))
@@ -887,25 +889,21 @@
 			(task0 < task1)
 			(task1 < task2)
 		)
-		:constraints (and
-			(sortof ?mlmv_l_p - Valuable)
-		)
 	)
 
 	(:method method_unload_top_normal
 		:parameters (?mumn_ul_l - Location ?mumn_ul_p - Package ?mumn_ul_v - Vehicle)
 		:task (unload_top ?mumn_ul_p ?mumn_ul_v ?mumn_ul_l)
+		:precondition (and
+			(not (ValuableOrHazardous ?mumn_ul_p))
+		)
 		:subtasks (and
 		 (task0 (unload ?mumn_ul_p ?mumn_ul_v ?mumn_ul_l))
-		)
-		:constraints (and
-			(not (sortof ?mumn_ul_p - Valuable))
-			(not (sortof ?mumn_ul_p - Hazardous))
 		)
 	)
 
 	(:method method_unload_top_hazardous
-		:parameters (?mumh_ul_l - Location ?mumh_ul_p - Package ?mumh_ul_v - Vehicle)
+		:parameters (?mumh_ul_l - Location ?mumh_ul_p - Hazardous ?mumh_ul_v - Vehicle)
 		:task (unload_top ?mumh_ul_p ?mumh_ul_v ?mumh_ul_l)
 		:subtasks (and
 		 (task0 (unload ?mumh_ul_p ?mumh_ul_v ?mumh_ul_l))
@@ -916,13 +914,10 @@
 			(task0 < task1)
 			(task1 < task2)
 		)
-		:constraints (and
-			(sortof ?mumh_ul_p - Hazardous)
-		)
 	)
 
 	(:method method_unload_top_valuable
-		:parameters (?mumv_ul_l - Location ?mumv_ul_p - Package ?mumv_ul_v - Vehicle)
+		:parameters (?mumv_ul_l - Location ?mumv_ul_p - Valuable ?mumv_ul_v - Vehicle)
 		:task (unload_top ?mumv_ul_p ?mumv_ul_v ?mumv_ul_l)
 		:subtasks (and
 		 (task0 (post_guard_outside ?mumv_ul_v))
@@ -933,14 +928,14 @@
 			(task0 < task1)
 			(task1 < task2)
 		)
-		:constraints (and
-			(sortof ?mumv_ul_p - Valuable)
-		)
 	)
 
 	(:method method_load_regular
-		:parameters (?mlr_cd_rv - Regular_Vehicle ?mlr_lp_l - Location ?mlr_lp_p - Package)
+		:parameters (?mlr_cd_rv - Regular_Vehicle ?mlr_lp_l - Location ?mlr_lp_p - Regular)
 		:task (load ?mlr_lp_p ?mlr_cd_rv ?mlr_lp_l)
+		:precondition (and
+			(not (IsAirplain ?mlr_cd_rv))
+		)
 		:subtasks (and
 		 (task0 (open_door ?mlr_cd_rv))
 		 (task1 (load_package ?mlr_lp_p ?mlr_cd_rv ?mlr_lp_l))
@@ -950,14 +945,10 @@
 			(task0 < task1)
 			(task1 < task2)
 		)
-		:constraints (and
-			(sortof ?mlr_lp_p - Regular)
-			(not (sortof ?mlr_cd_rv - Airplane))
-		)
 	)
 
 	(:method method_load_flatbed
-		:parameters (?mlf_pdpv_c - Crane ?mlf_pdpv_fv - Flatbed_Vehicle ?mlf_pdpv_l - Location ?mlf_pdpv_p - Package)
+		:parameters (?mlf_pdpv_c - Crane ?mlf_pdpv_fv - Flatbed_Vehicle ?mlf_pdpv_l - Location ?mlf_pdpv_p - Bulky)
 		:task (load ?mlf_pdpv_p ?mlf_pdpv_fv ?mlf_pdpv_l)
 		:subtasks (and
 		 (task0 (pick_up_package_ground ?mlf_pdpv_p ?mlf_pdpv_c ?mlf_pdpv_l))
@@ -965,9 +956,6 @@
 		)
 		:ordering (and
 			(task0 < task1)
-		)
-		:constraints (and
-			(sortof ?mlf_pdpv_p - Bulky)
 		)
 	)
 
@@ -1034,7 +1022,7 @@
 	)
 
 	(:method method_load_airplane
-		:parameters (?mla_dcr_ap - Airplane ?mla_dcr_l - Location ?mla_dcr_pr - Plane_Ramp ?mla_lp_p - Package)
+		:parameters (?mla_dcr_ap - Airplane ?mla_dcr_l - Location ?mla_dcr_pr - Plane_Ramp ?mla_lp_p - Regular)
 		:task (load ?mla_lp_p ?mla_dcr_ap ?mla_dcr_l)
 		:subtasks (and
 		 (task0 (attach_conveyor_ramp ?mla_dcr_ap ?mla_dcr_pr ?mla_dcr_l))
@@ -1048,9 +1036,6 @@
 			(task1 < task2)
 			(task2 < task3)
 			(task3 < task4)
-		)
-		:constraints (and
-			(sortof ?mla_lp_p - Regular)
 		)
 	)
 
