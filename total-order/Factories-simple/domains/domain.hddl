@@ -1,5 +1,9 @@
 (define (domain factories)
-    (:requirements :typing :hierarchy)
+    (:requirements 
+      :hierarchy
+	  :typing
+	  :method-precondition
+    )
     (:types
         factory - object
         resource - object

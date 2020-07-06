@@ -1,5 +1,5 @@
 (define (domain verkabelung)
-(:requirements :typing :action-costs :hierarchy )
+(:requirements :typing :hierarchy)
 (:types
     Port AbstractDevice - Object
     AbstractCable Device - AbstractDevice
@@ -39,18 +39,9 @@
 )
 
 
-
-
-
-
-
 (:task connect
     :parameters (?p1 ?p2 - Port)
 )
-
-
-
-
 
 (:method c1
     :parameters (?p1 ?p2 - Port ?t - PlugType)

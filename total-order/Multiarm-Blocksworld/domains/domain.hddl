@@ -1,6 +1,12 @@
 (define (domain blocks)
 
-  (:requirements :typing :strips)
+  (:requirements
+  	:hierarchy
+	:typing
+	:existential-precondition
+	:universal-precondition
+	:method-precondition
+  )
 
   (:types ARM BLOCK)
 

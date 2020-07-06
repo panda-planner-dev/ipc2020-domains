@@ -1,5 +1,10 @@
 (define (domain zenotravel)
-	(:requirements :typing :hierarchy)
+	(:requirements
+	:hierarchy
+	:typing
+	:universal-precondition
+	:method-precondition
+	)
 	(:types
 		Time - Object
 		City - Object

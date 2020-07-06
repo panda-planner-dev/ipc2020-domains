@@ -1,8 +1,10 @@
 (define (domain ROVER)
 
 (:requirements
-  :typing
-  :hierarchy)
+  	:hierarchy
+	:typing
+	:method-precondition
+)
 
 (:types rover waypoint store camera objective mode lander - object)
 

@@ -1,5 +1,8 @@
 (define (domain satellite2)
-	(:requirements :typing :hierarchy)
+	(:requirements
+	:hierarchy
+	:typing
+	)
 	(:types
 		calib_direction - direction
 		image_direction - direction

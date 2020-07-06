@@ -1,5 +1,10 @@
 (define (domain d)
-  (:requirements :typing :hierarchy :negative-preconditions)
+  (:requirements 
+  	:hierarchy
+	:typing
+	:equality
+	:method-precondition
+  )
 
   (:types
     connector - master_sort

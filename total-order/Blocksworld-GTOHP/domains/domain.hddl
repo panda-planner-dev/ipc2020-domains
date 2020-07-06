@@ -1,8 +1,10 @@
 (define (domain BLOCKS)
 
 (:requirements
-  :typing
-  :hierarchy)
+  	:hierarchy
+	:typing
+	:method-precondition
+)
 
 (:types block)
 

@@ -1,8 +1,10 @@
 (define (domain child-snack)
 
 (:requirements
-  :typing
-  :hierarchy)
+  	:hierarchy
+	:typing
+	:method-precondition
+)
 
 (:types child bread-portion content-portion sandwich tray place)
 

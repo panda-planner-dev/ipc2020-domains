@@ -1,8 +1,10 @@
 (define (domain Depot)
 
 (:requirements
-  :typing
-  :hierarchy)
+  	:hierarchy
+	:typing
+	:method-precondition
+)
 
 (:types place locatable - object depot distributor - place truck hoist surface - locatable pallet crate - surface)
 

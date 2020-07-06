@@ -1,6 +1,10 @@
 (define (domain towers)
 
- (:requirements :typing :strips :disjunctive-preconditions)
+ (:requirements
+  	:hierarchy
+	:typing
+	:method-precondition
+)
 
  (:types RING - OBJ TOWER - OBJ)
 

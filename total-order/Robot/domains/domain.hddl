@@ -1,6 +1,12 @@
 (define (domain robot)
 
-  (:requirements :strips :negative-preconditions :typing)
+  (:requirements
+  	:hierarchy
+	:typing
+	:existential-precondition
+	:universal-precondition
+	:method-precondition
+  )
 
   (:types PACKAGE ROOM ROOMDOOR)
 

@@ -1,8 +1,11 @@
 (define (domain hiking)
 
 (:requirements
-  :typing
-  :hierarchy)
+	:hierarchy
+	:typing
+	:equality
+	:method-precondition
+)
 
 (:types car tent person couple place)
 

@@ -1,0 +1,34 @@
+(define (domain test-domain)
+	(:requirements :typing :hierarchy)
+
+	(:types A)
+	
+	(:predicates
+  	  	(foo ?a - A)
+	)
+
+	(:task task1 :parameters ())
+
+	(:method iterate
+		:parameters (?a - A)
+		:task (task1)
+		:ordered-subtasks (and
+			(task1)
+			(noop ?a)
+		)
+	)
+	
+	(:method dosomething
+		:parameters (?a - A)
+		:task (task1)
+		:subtasks (and
+			(noop ?a)
+		)
+	)
+	
+	(:action noop
+		:parameters (?a - A)
+		:precondition (foo ?a)
+	)
+)
+

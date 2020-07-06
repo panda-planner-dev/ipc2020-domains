@@ -1,6 +1,12 @@
 (define (domain blocks)
 
-  (:requirements :typing :strips :negative-preconditions)
+  (:requirements 
+    :hierarchy
+	:typing
+	:existential-precondition
+	:universal-precondition
+	:method-precondition
+  )
 
   (:types BLOCK)
 

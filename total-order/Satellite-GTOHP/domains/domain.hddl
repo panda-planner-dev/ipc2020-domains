@@ -1,8 +1,11 @@
 (define (domain satellite)
 
 (:requirements
-  :typing
-  :hierarchy)
+  	:hierarchy
+	:typing
+	:equality
+	:method-precondition
+)
 
 (:types satellite direction instrument mode)
 

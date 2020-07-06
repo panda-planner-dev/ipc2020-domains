@@ -1,5 +1,10 @@
 (define (domain barman_htn)
-(:requirements :hierarchy :adl :typing :equality)
+(:requirements 
+	:hierarchy
+	:typing
+	:equality
+	:method-precondition
+)
 
 (:types 
 	container dispenser level beverage hand - anything

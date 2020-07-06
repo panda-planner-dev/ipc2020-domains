@@ -1,0 +1,64 @@
+(define (domain test-domain)
+	(:requirements :typing :hierarchy)
+
+	(:types A B)
+	
+	(:predicates
+    	(property ?a - A ?b - B)
+    	(avail ?b - B)
+		(done)
+		(foo ?a - A)
+	)
+	
+	(:constants bar - A)
+
+	(:task task1 :parameters ())
+
+	(:method donothing
+		:parameters (?a - A ?c - A)
+		:task (task1)
+		:precondition (and
+			(foo ?c)
+			(foo bar)
+			(forall (?b - B) (imply (property ?a ?b) (avail ?b)))
+
+		)
+		:subtasks (and
+			(noop ?a ?c)
+		)
+	)
+
+	(:method dosomething
+		:parameters (?a - A ?c - A)
+		:task (task1)
+		:precondition (and
+			(not (= ?a ?c))
+			(not (= ?a bar))
+		)
+		:subtasks (and
+			(noop ?a ?c)
+		)
+	)
+
+	(:method dosomethingExists
+		:parameters (?a - A ?c - A)
+		:task (task1)
+		:precondition (and
+			(exists (?b - A) (and 
+				(not (= ?b ?a))
+				(not (= ?b ?c))
+				(foo ?b)
+			))
+		)
+		:subtasks (and
+			(noop ?a ?c)
+		)
+	)
+	
+	(:action noop
+		:parameters (?a - A ?c - A)
+		:effect (and (done)
+			;(forall (?b - B) (not (avail ?b)))
+		)	
+	)
+)

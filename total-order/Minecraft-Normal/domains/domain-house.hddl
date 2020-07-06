@@ -1,6 +1,9 @@
 (define (domain minecraft)
-  (:requirements :hierarchy :typing)
-
+  (:requirements
+  	:hierarchy
+	:typing
+	:method-precondition
+  )
   (:types
       location blocktype direction numbers - object
 
