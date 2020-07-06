@@ -197,6 +197,12 @@
 		(Trough_Full ?arg0 - Livestock)
 		(Valve_Open ?arg0 - Tanker)
 		(Warning_Signs_Affixed ?arg0 - Vehicle)
+	
+		(ValuableOrHazardous ?p - Package)
+		(IsHazardous ?p - Package)
+		(IsAirplain ?v - Vehicle)
+		(IsTraincar ?v - Vehicle)
+		(IsHub ?h - TCenter)
 	)
 
 	(:task carry
@@ -303,12 +309,11 @@
 	(:method method1
 		:parameters (?collect_fees_instance_2_argument_0 - Package)
 		:task (pickup ?collect_fees_instance_2_argument_0)
+		:precondition (and
+			(not (ValuableOrHazardous ?collect_fees_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (collect_fees ?collect_fees_instance_2_argument_0))
-		)
-		:constraints (and
-			(not (sortof ?collect_fees_instance_2_argument_0 - Hazardous))
-			(not (sortof ?collect_fees_instance_2_argument_0 - Valuable))
 		)
 	)
 
@@ -339,12 +344,11 @@
 	(:method method4
 		:parameters (?deliver_p_instance_2_argument_0 - Package)
 		:task (deliver ?deliver_p_instance_2_argument_0)
+		:precondition (and
+			(not (ValuableOrHazardous ?deliver_p_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (deliver_p ?deliver_p_instance_2_argument_0))
-		)
-		:constraints (and
-			(not (sortof ?deliver_p_instance_2_argument_0 - Hazardous))
-			(not (sortof ?deliver_p_instance_2_argument_0 - Valuable))
 		)
 	)
 
@@ -378,12 +382,14 @@
 	(:method method8
 		:parameters (?helper_carry_tt_instance_2_argument_0 - Package ?helper_carry_tt_instance_2_argument_1 - TCenter ?helper_carry_tt_instance_2_argument_2 - City ?helper_carry_tt_instance_2_argument_3 - TCenter ?helper_carry_tt_instance_2_argument_4 - City)
 		:task (carry ?helper_carry_tt_instance_2_argument_0 ?helper_carry_tt_instance_2_argument_1 ?helper_carry_tt_instance_2_argument_3)
+		:precondition (and
+			(not (IsHub ?helper_carry_tt_instance_2_argument_1))
+			(not (IsHub ?helper_carry_tt_instance_2_argument_3))
+		)
 		:subtasks (and
 		 (task0 (helper_carry_tt ?helper_carry_tt_instance_2_argument_0 ?helper_carry_tt_instance_2_argument_1 ?helper_carry_tt_instance_2_argument_2 ?helper_carry_tt_instance_2_argument_3 ?helper_carry_tt_instance_2_argument_4))
 		)
 		:constraints (and
-			(not (sortof ?helper_carry_tt_instance_2_argument_1 - Hub))
-			(not (sortof ?helper_carry_tt_instance_2_argument_3 - Hub))
 			(not (= ?helper_carry_tt_instance_2_argument_1 ?helper_carry_tt_instance_2_argument_3))
 		)
 	)
@@ -405,13 +411,12 @@
 	)
 
 	(:method method10
-		:parameters (?helper_carry_ott_instance_2_argument_0 - Package ?helper_carry_ott_instance_2_argument_1 - City_Location ?helper_carry_ott_instance_2_argument_2 - City ?helper_carry_ott_instance_2_argument_3 - TCenter ?helper_carry_ott_instance_2_argument_4 - TCenter ?helper_carry_ott_instance_2_argument_5 - City)
+		:parameters (?helper_carry_ott_instance_2_argument_0 - Package ?helper_carry_ott_instance_2_argument_1 - Not_TCenter ?helper_carry_ott_instance_2_argument_2 - City ?helper_carry_ott_instance_2_argument_3 - TCenter ?helper_carry_ott_instance_2_argument_4 - TCenter ?helper_carry_ott_instance_2_argument_5 - City)
 		:task (carry ?helper_carry_ott_instance_2_argument_0 ?helper_carry_ott_instance_2_argument_1 ?helper_carry_ott_instance_2_argument_4)
 		:subtasks (and
 		 (task0 (helper_carry_ott ?helper_carry_ott_instance_2_argument_0 ?helper_carry_ott_instance_2_argument_1 ?helper_carry_ott_instance_2_argument_2 ?helper_carry_ott_instance_2_argument_3 ?helper_carry_ott_instance_2_argument_4 ?helper_carry_ott_instance_2_argument_5))
 		)
 		:constraints (and
-			(not (sortof ?helper_carry_ott_instance_2_argument_1 - TCenter))
 			(not (= ?helper_carry_ott_instance_2_argument_2 ?helper_carry_ott_instance_2_argument_5))
 			(not (= ?helper_carry_ott_instance_2_argument_1 ?helper_carry_ott_instance_2_argument_4))
 		)
@@ -548,12 +553,14 @@
 	(:method method19
 		:parameters (?carry_via_hub_instance_2_argument_0 - Package ?carry_via_hub_instance_2_argument_1 - TCenter ?carry_via_hub_instance_2_argument_2 - TCenter)
 		:task (carry_between_tcenters ?carry_via_hub_instance_2_argument_0 ?carry_via_hub_instance_2_argument_1 ?carry_via_hub_instance_2_argument_2)
+		:precondition (and
+			(not (IsHub ?carry_via_hub_instance_2_argument_1))
+			(not (IsHub ?carry_via_hub_instance_2_argument_2))
+		)
 		:subtasks (and
 		 (task0 (carry_via_hub ?carry_via_hub_instance_2_argument_0 ?carry_via_hub_instance_2_argument_1 ?carry_via_hub_instance_2_argument_2))
 		)
 		:constraints (and
-			(not (sortof ?carry_via_hub_instance_2_argument_1 - Hub))
-			(not (sortof ?carry_via_hub_instance_2_argument_2 - Hub))
 			(not (= ?carry_via_hub_instance_2_argument_1 ?carry_via_hub_instance_2_argument_2))
 		)
 	)
@@ -561,11 +568,13 @@
 	(:method method20
 		:parameters (?helper_carry_via_hub_not_hazardous_instance_2_argument_0 - Package ?helper_carry_via_hub_not_hazardous_instance_2_argument_1 - TCenter ?helper_carry_via_hub_not_hazardous_instance_2_argument_2 - City ?helper_carry_via_hub_not_hazardous_instance_2_argument_3 - Region ?helper_carry_via_hub_not_hazardous_instance_2_argument_4 - Hub ?helper_carry_via_hub_not_hazardous_instance_2_argument_5 - TCenter ?helper_carry_via_hub_not_hazardous_instance_2_argument_6 - City ?helper_carry_via_hub_not_hazardous_instance_2_argument_7 - Region)
 		:task (carry_via_hub ?helper_carry_via_hub_not_hazardous_instance_2_argument_0 ?helper_carry_via_hub_not_hazardous_instance_2_argument_1 ?helper_carry_via_hub_not_hazardous_instance_2_argument_5)
+		:precondition (and
+			(not (IsHazardous ?helper_carry_via_hub_not_hazardous_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (helper_carry_via_hub_not_hazardous ?helper_carry_via_hub_not_hazardous_instance_2_argument_0 ?helper_carry_via_hub_not_hazardous_instance_2_argument_1 ?helper_carry_via_hub_not_hazardous_instance_2_argument_2 ?helper_carry_via_hub_not_hazardous_instance_2_argument_3 ?helper_carry_via_hub_not_hazardous_instance_2_argument_4 ?helper_carry_via_hub_not_hazardous_instance_2_argument_5 ?helper_carry_via_hub_not_hazardous_instance_2_argument_6 ?helper_carry_via_hub_not_hazardous_instance_2_argument_7))
 		)
 		:constraints (and
-			(not (sortof ?helper_carry_via_hub_not_hazardous_instance_2_argument_0 - Hazardous))
 			(not (= ?helper_carry_via_hub_not_hazardous_instance_2_argument_1 ?helper_carry_via_hub_not_hazardous_instance_2_argument_5))
 			(not (= ?helper_carry_via_hub_not_hazardous_instance_2_argument_1 ?helper_carry_via_hub_not_hazardous_instance_2_argument_4))
 			(not (= ?helper_carry_via_hub_not_hazardous_instance_2_argument_5 ?helper_carry_via_hub_not_hazardous_instance_2_argument_4))
@@ -680,11 +689,13 @@
 	(:method method27
 		:parameters (?move_vehicle_no_traincar_instance_2_argument_0 - Vehicle ?move_vehicle_no_traincar_instance_2_argument_1 - Location ?move_vehicle_no_traincar_instance_2_argument_2 - Route ?move_vehicle_no_traincar_instance_2_argument_3 - Location)
 		:task (move ?move_vehicle_no_traincar_instance_2_argument_0 ?move_vehicle_no_traincar_instance_2_argument_1 ?move_vehicle_no_traincar_instance_2_argument_3)
+		:precondition (and
+			(not (IsTraincar ?move_vehicle_no_traincar_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (move_vehicle_no_traincar ?move_vehicle_no_traincar_instance_2_argument_0 ?move_vehicle_no_traincar_instance_2_argument_1 ?move_vehicle_no_traincar_instance_2_argument_2 ?move_vehicle_no_traincar_instance_2_argument_3))
 		)
 		:constraints (and
-			(not (sortof ?move_vehicle_no_traincar_instance_2_argument_0 - Traincar))
 			(not (= ?move_vehicle_no_traincar_instance_2_argument_1 ?move_vehicle_no_traincar_instance_2_argument_3))
 		)
 	)
@@ -740,6 +751,9 @@
 	(:method method31
 		:parameters (?close_door_instance_4_argument_4 - Regular_Vehicle ?unload_package_instance_3_argument_1 - Regular ?unload_package_instance_3_argument_3 - Location)
 		:task (unload ?unload_package_instance_3_argument_1 ?close_door_instance_4_argument_4 ?unload_package_instance_3_argument_3)
+		:precondition (and
+			(not (IsAirplain ?close_door_instance_4_argument_4))
+		)
 		:subtasks (and
 		 (task0 (open_door ?close_door_instance_4_argument_4))
 		 (task1 (unload_package ?unload_package_instance_3_argument_1 ?close_door_instance_4_argument_4 ?unload_package_instance_3_argument_3))
@@ -748,9 +762,6 @@
 		:ordering (and
 			(task0 < task1)
 			(task1 < task2)
-		)
-		:constraints (and
-			(not (sortof ?close_door_instance_4_argument_4 - Airplane))
 		)
 	)
 
@@ -849,12 +860,11 @@
 	(:method method38
 		:parameters (?load_instance_2_argument_0 - Package ?load_instance_2_argument_1 - Vehicle ?load_instance_2_argument_2 - Location)
 		:task (load_top ?load_instance_2_argument_0 ?load_instance_2_argument_1 ?load_instance_2_argument_2)
+		:precondition (and
+			(not (ValuableOrHazardous ?load_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (load ?load_instance_2_argument_0 ?load_instance_2_argument_1 ?load_instance_2_argument_2))
-		)
-		:constraints (and
-			(not (sortof ?load_instance_2_argument_0 - Valuable))
-			(not (sortof ?load_instance_2_argument_0 - Hazardous))
 		)
 	)
 
@@ -887,12 +897,11 @@
 	(:method method41
 		:parameters (?unload_instance_2_argument_0 - Package ?unload_instance_2_argument_1 - Vehicle ?unload_instance_2_argument_2 - Location)
 		:task (unload_top ?unload_instance_2_argument_0 ?unload_instance_2_argument_1 ?unload_instance_2_argument_2)
+		:precondition (and
+			(not (ValuableOrHazardous ?unload_instance_2_argument_0))
+		)
 		:subtasks (and
 		 (task0 (unload ?unload_instance_2_argument_0 ?unload_instance_2_argument_1 ?unload_instance_2_argument_2))
-		)
-		:constraints (and
-			(not (sortof ?unload_instance_2_argument_0 - Valuable))
-			(not (sortof ?unload_instance_2_argument_0 - Hazardous))
 		)
 	)
 
@@ -927,6 +936,9 @@
 	(:method method44
 		:parameters (?close_door_instance_4_argument_4 - Regular_Vehicle ?load_package_instance_3_argument_1 - Regular ?load_package_instance_3_argument_3 - Location)
 		:task (load ?load_package_instance_3_argument_1 ?close_door_instance_4_argument_4 ?load_package_instance_3_argument_3)
+		:precondition (and
+			(not (IsAirplain ?close_door_instance_4_argument_4))
+		)
 		:subtasks (and
 		 (task0 (open_door ?close_door_instance_4_argument_4))
 		 (task1 (load_package ?load_package_instance_3_argument_1 ?close_door_instance_4_argument_4 ?load_package_instance_3_argument_3))
@@ -935,9 +947,6 @@
 		:ordering (and
 			(task0 < task1)
 			(task1 < task2)
-		)
-		:constraints (and
-			(not (sortof ?close_door_instance_4_argument_4 - Airplane))
 		)
 	)
 

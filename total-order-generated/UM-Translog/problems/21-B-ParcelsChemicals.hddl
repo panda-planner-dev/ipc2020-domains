@@ -24,6 +24,9 @@
 		)
 	)
 	(:init
+		(ValuableOrHazardous Tabletten)
+		(IsHazardous Tabletten)
+
 		(In_City Firma Ulm)
 		(In_City Universitaet Ulm)
 		(At_Vehicle LKW Firma)
