@@ -39,8 +39,8 @@
 		 (task2 (take_image ?mdoatt_t_s ?mdoatt_ti_d ?mdoatt_ti_i ?mdoatt_ti_m))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mdoatt_ti_d ?mdoatt_t_d_prev))
@@ -55,7 +55,7 @@
 		 (task1 (take_image ?mdott_t_s ?mdott_ti_d ?mdott_ti_i ?mdott_ti_m))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?mdott_ti_d ?mdott_t_d_prev))
@@ -70,7 +70,7 @@
 		 (task1 (take_image ?mdoat_ti_s ?mdoat_ti_d ?mdoat_ti_i ?mdoat_ti_m))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -91,8 +91,8 @@
 		 (task2 (auto_calibrate ?maissa_ac_s ?maissa_ac_i))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?maissa_sof_i ?maissa_ac_i))
@@ -107,7 +107,7 @@
 		 (task1 (auto_calibrate ?maisa_ac_s ?maisa_ac_i))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -119,7 +119,7 @@
 		 (task1 (calibrate ?mactc_c_s ?mactc_c_i ?mactc_c_d))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?mactc_c_d ?mactc_tt_d_prev))

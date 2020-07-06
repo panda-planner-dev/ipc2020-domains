@@ -27,8 +27,8 @@
 		 (task2 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -45,12 +45,12 @@
 		 (task6 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
-			(task4 < task5)
-			(task5 < task6)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
+			(< task4 task5)
+			(< task5 task6)
 		)
 	)
 
@@ -64,9 +64,9 @@
 		 (task3 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -78,7 +78,7 @@
 		 (task1 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -94,11 +94,11 @@
 		 (task5 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
-			(task4 < task5)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
+			(< task4 task5)
 		)
 	)
 
@@ -111,8 +111,8 @@
 		 (task2 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -127,10 +127,10 @@
 		 (task4 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -144,9 +144,9 @@
 		 (task3 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -159,8 +159,8 @@
 		 (task2 (bG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -174,9 +174,9 @@
 		 (task3 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -189,8 +189,8 @@
 		 (task2 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -202,7 +202,7 @@
 		 (task1 (bG2))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 

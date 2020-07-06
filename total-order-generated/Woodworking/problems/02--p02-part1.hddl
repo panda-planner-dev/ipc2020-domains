@@ -28,11 +28,11 @@
 		 (task5 (do_colour p2 ?planstep_7_argument_1_f_colour_do_colour_variable1 glazer0 untreated))
 		)
 		:ordering (and
-			(task4 < task1)
-			(task3 < task2)
-			(task0 < task3)
-			(task2 < task4)
-			(task1 < task5)
+			(< task4 task1)
+			(< task3 task2)
+			(< task0 task3)
+			(< task2 task4)
+			(< task1 task5)
 		)
 	)
 	(:init

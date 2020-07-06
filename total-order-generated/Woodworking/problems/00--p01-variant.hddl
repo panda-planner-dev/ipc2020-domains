@@ -29,8 +29,8 @@
 		 (task2 (process p0 red ?planstep_4_argument_2_process_p0_process_oldSurfaceVar ?planstep_4_argument_3_process_p0_process_newSurfaceVar))
 		)
 		:ordering (and
-			(task2 < task1)
-			(task0 < task2)
+			(< task2 task1)
+			(< task0 task2)
 		)
 	)
 	(:init

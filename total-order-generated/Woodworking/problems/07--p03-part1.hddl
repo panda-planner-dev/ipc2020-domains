@@ -50,10 +50,10 @@
 		 (task4 (process p1 black ?planstep_6_argument_2_p1_process_process_oldSurfaceVar verysmooth))
 		)
 		:ordering (and
-			(task3 < task0)
-			(task2 < task1)
-			(task4 < task2)
-			(task0 < task4)
+			(< task3 task0)
+			(< task2 task1)
+			(< task4 task2)
+			(< task0 task4)
 		)
 	)
 	(:init

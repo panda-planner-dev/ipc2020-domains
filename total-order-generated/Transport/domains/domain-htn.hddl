@@ -42,9 +42,9 @@
 		 (task3 (unload ?v ?l2 ?p))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -80,7 +80,7 @@
 		 (task1 (drive ?v ?l2 ?l3))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 

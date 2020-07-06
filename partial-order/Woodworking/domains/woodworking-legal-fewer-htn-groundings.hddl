@@ -143,8 +143,8 @@
 		 (task2 (unload_highspeed_saw ?doTheCutWay_variable1 ?doTheCutWay_variable9))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task0 < task2)
+			(< task1 task0)
+			(< task0 task2)
 		)
 	)
 
@@ -193,7 +193,7 @@
 		 (task1 (do_colour ?rawProcess_variable9 ?rawProcess_variable10 ?rawProcess_variable11))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -205,7 +205,7 @@
 		 (task1 (do_colour ?reusePartProcess_variable8 ?reusePartProcess_variable16 ?reusePartProcess_variable17))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -232,8 +232,8 @@
 		 (task2 (do_colour ?process_partVar ?process_colourVar ?fullProcess_variable14))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -263,8 +263,8 @@
 		 (task2 (grindNplane ?reusePartProcessThorough_variable10 ?process_oldSurfaceVar ?reusePartProcessThorough_variable19 ?reusePartProcessThorough_variable20 ?reusePartProcessThorough_variable21 ?reusePartProcessThorough_variable22 untreated))
 		)
 		:ordering (and
-			(task2 < task0)
-			(task0 < task1)
+			(< task2 task0)
+			(< task0 task1)
 		)
 	)
 

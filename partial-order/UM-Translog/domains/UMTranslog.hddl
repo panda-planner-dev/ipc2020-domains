@@ -298,8 +298,8 @@
 		 (task2 (deliver ?mtpcd_de_p))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mtpcd_ca_lo ?mtpcd_ca_ld))
@@ -325,7 +325,7 @@
 		 (task1 (obtain_permit ?mph_op_h))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -337,7 +337,7 @@
 		 (task1 (collect_insurance ?mpv_ci_v))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -402,7 +402,7 @@
 		 (task1 (go_through_two_tcenters_tt ?mhch_gtttctt_to ?mhch_gtttctt_td ?mhch_gtttctt_co ?mhch_gtttctt_cd))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?mhch_gtttctt_to ?mhch_gtttctt_td))
@@ -431,8 +431,8 @@
 		 (task2 (carry_between_tcenters ?mhccct_cbt_p ?mhccct_gtttccott_to ?mhccct_gtttccott_td))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhccct_gtttccott_co ?mhccct_gtttccott_cd))
@@ -461,8 +461,8 @@
 		 (task2 (carry_direct ?mhcctc_cd_p ?mhcctc_gtttccotd_t1 ?mhcctc_gtttccotd_cl))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhcctc_gtttccotd_co ?mhcctc_gtttccotd_cd))
@@ -495,9 +495,9 @@
 		 (task3 (carry_direct ?mhcccc_cdd_p ?mhcccc_gtttc_t2 ?mhcccc_gtttc_ld))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?mhcccc_gtttc_lo ?mhcccc_gtttc_ld))
@@ -526,8 +526,8 @@
 		 (task2 (carry_direct ?mhccc_cdd_p ?mhccc_gttc_tc ?mhccc_gttc_ld))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhccc_gttc_lo ?mhccc_gttc_ld))
@@ -587,8 +587,8 @@
 		 (task2 (carry_direct ?mhcvhn_cd2_p ?mhcvhn_gtttcvhnh_h ?mhcvhn_gtttcvhnh_td))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhcvhn_gtttcvhnh_to ?mhcvhn_gtttcvhnh_td))
@@ -621,8 +621,8 @@
 		 (task2 (carry_direct ?mhcvhh_cd2_p ?mhcvhh_gtttcvhh_h ?mhcvhh_gtttcvhh_td))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhcvhh_gtttcvhh_to ?mhcvhh_gtttcvhh_td))
@@ -656,9 +656,9 @@
 		 (task3 (unload_top ?mhcd_ult_p ?mhcd_ult_v ?mhcd_ult_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?mhcd_mvo_lo ?mhcd_mvd_lo))
@@ -675,8 +675,8 @@
 		 (task2 (unload_top ?mhcdo_ult_p ?mhcdo_ult_v ?mhcdo_ult_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhcdo_m_lo ?mhcdo_ult_l))
@@ -718,9 +718,9 @@
 		 (task3 (detach_train_car ?mhmt_dtc_t ?mhmt_dtc_tc ?mhmt_dtc_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?mhmt_md_lo ?mhmt_dtc_l))
@@ -737,8 +737,8 @@
 		 (task2 (detach_train_car ?mhmtn_dtc_t ?mhmtn_dtc_tc ?mhmtn_dtc_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?mhmtn_md_lo ?mhmtn_dtc_l))
@@ -757,8 +757,8 @@
 		 (task2 (close_door ?mur_cd_rv))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -770,7 +770,7 @@
 		 (task1 (put_down_package_ground ?muf_pdpg_p ?muf_pdpg_c ?muf_pdpg_l))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -783,8 +783,8 @@
 		 (task2 (disconnect_chute ?muh_dc_h))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -799,10 +799,10 @@
 		 (task4 (disconnect_hose ?mut_dch_tv ?mut_dch_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -816,9 +816,9 @@
 		 (task3 (raise_ramp ?mul_rr_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -831,8 +831,8 @@
 		 (task2 (raise_ramp ?muc_rr_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -847,10 +847,10 @@
 		 (task4 (detach_conveyor_ramp ?mua_dcr_ap ?mua_dcr_pr ?mua_dcr_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -873,7 +873,7 @@
 		 (task1 (load ?mlmh_l_p ?mlmh_l_v ?mlmh_l_l))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -886,8 +886,8 @@
 		 (task2 (post_guard_inside ?mlmv_pci_a))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -911,8 +911,8 @@
 		 (task2 (remove_warning_signs ?mumh_ul_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -925,8 +925,8 @@
 		 (task2 (remove_guard ?mumv_ul_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -942,8 +942,8 @@
 		 (task2 (close_door ?mlr_cd_rv))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -955,7 +955,7 @@
 		 (task1 (put_down_package_vehicle ?mlf_pdpv_p ?mlf_pdpv_c ?mlf_pdpv_fv ?mlf_pdpv_l))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -968,8 +968,8 @@
 		 (task2 (disconnect_chute ?mlh_dc_h))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -984,10 +984,10 @@
 		 (task4 (disconnect_hose ?mlt_dch_tv ?mlt_dch_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -1001,9 +1001,9 @@
 		 (task3 (raise_ramp ?mll_rr_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -1016,8 +1016,8 @@
 		 (task2 (raise_ramp ?mlc_rr_v))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -1032,10 +1032,10 @@
 		 (task4 (detach_conveyor_ramp ?mla_dcr_ap ?mla_dcr_pr ?mla_dcr_l))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 

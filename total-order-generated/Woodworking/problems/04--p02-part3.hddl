@@ -23,8 +23,8 @@
 		 (task2 (process p5 blue rough smooth))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task0 < task2)
+			(< task1 task0)
+			(< task0 task2)
 		)
 	)
 	(:init

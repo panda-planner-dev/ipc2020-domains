@@ -42,8 +42,8 @@
 		 (task2 (take_image ?turn_to_instance_3_argument_2 ?take_image_instance_4_argument_6 ?take_image_instance_4_argument_7 ?take_image_instance_4_argument_8))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?take_image_instance_4_argument_6 ?turn_to_instance_3_argument_4))
@@ -58,7 +58,7 @@
 		 (task1 (take_image ?turn_to_instance_2_argument_0 ?take_image_instance_3_argument_4 ?take_image_instance_3_argument_5 ?take_image_instance_3_argument_6))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?take_image_instance_3_argument_4 ?turn_to_instance_2_argument_2))
@@ -73,7 +73,7 @@
 		 (task1 (take_image ?take_image_instance_3_argument_2 ?take_image_instance_3_argument_3 ?take_image_instance_3_argument_4 ?take_image_instance_3_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -94,8 +94,8 @@
 		 (task2 (auto_calibrate ?auto_calibrate_instance_4_argument_4 ?auto_calibrate_instance_4_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?switch_off_instance_2_argument_0 ?auto_calibrate_instance_4_argument_5))
@@ -110,7 +110,7 @@
 		 (task1 (auto_calibrate ?auto_calibrate_instance_3_argument_2 ?auto_calibrate_instance_3_argument_3))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -122,7 +122,7 @@
 		 (task1 (calibrate ?calibrate_instance_3_argument_3 ?calibrate_instance_3_argument_4 ?calibrate_instance_3_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?calibrate_instance_3_argument_5 ?turn_to_instance_2_argument_2))

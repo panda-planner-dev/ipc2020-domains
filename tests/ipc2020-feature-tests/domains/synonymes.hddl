@@ -20,7 +20,7 @@
 			(t2 (noop2))
 		)
 		:ordering (and
-			(t1 < t2)
+			(< t1 t2)
 		)
 	)
 
@@ -32,7 +32,7 @@
 			(t2 (noop2))
 		)
 		:ordering (and
-			(t1 < t2)
+			(< t1 t2)
 		)
 	)
 

@@ -27,9 +27,9 @@
 		 (task3 (p1G1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -42,8 +42,8 @@
 		 (task2 (p1G1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -56,8 +56,8 @@
 		 (task2 (p1G1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -69,7 +69,7 @@
 		 (task1 (p1G1))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -82,8 +82,8 @@
 		 (task2 (p1G2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -97,9 +97,9 @@
 		 (task3 (p0G2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -111,7 +111,7 @@
 		 (task1 (p1G2))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -124,8 +124,8 @@
 		 (task2 (p0G2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 

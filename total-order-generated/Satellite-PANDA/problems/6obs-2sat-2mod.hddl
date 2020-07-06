@@ -28,11 +28,11 @@
 		 (task5 (do_observation star7 spectrograph0))
 		)
 		:ordering (and
-			(task5 < task0)
-			(task4 < task1)
-			(task3 < task2)
-			(task1 < task3)
-			(task2 < task5)
+			(< task5 task0)
+			(< task4 task1)
+			(< task3 task2)
+			(< task1 task3)
+			(< task2 task5)
 		)
 	)
 	(:init

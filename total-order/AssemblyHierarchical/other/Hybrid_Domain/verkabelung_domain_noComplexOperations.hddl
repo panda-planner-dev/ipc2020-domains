@@ -131,7 +131,7 @@
             (t2 (ConnectDevices ?d1 ?d2 ?t))
     )
     :ordering (and
-        (t1 < t2)
+        (< t1 t2)
     )
 )
 
@@ -144,7 +144,7 @@
             (t2 (ConnectDevices ?d1 ?d2 ?t))
     )
     :ordering (and
-        (t1 < t2)
+        (< t1 t2)
     )
 )
 
@@ -156,7 +156,7 @@
             (t2 (ValidateDeviceConnection ?d1 ?d2 ?t))
     )
     :ordering (and
-        (t1 < t2)
+        (< t1 t2)
     )
 )
 

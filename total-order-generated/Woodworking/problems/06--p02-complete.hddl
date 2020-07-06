@@ -38,11 +38,11 @@
 		 (task5 (process p2 blue ?planstep_7_argument_2_c_process_process_oldSurfaceVar verysmooth))
 		)
 		:ordering (and
-			(task3 < task0)
-			(task1 < task2)
-			(task4 < task3)
-			(task5 < task4)
-			(task2 < task5)
+			(< task3 task0)
+			(< task1 task2)
+			(< task4 task3)
+			(< task5 task4)
+			(< task2 task5)
 		)
 	)
 	(:init

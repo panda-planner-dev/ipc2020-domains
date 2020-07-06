@@ -298,8 +298,8 @@
 		 (task2 (deliver ?deliver_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?carry_instance_3_argument_2 ?carry_instance_3_argument_3))
@@ -325,7 +325,7 @@
 		 (task1 (obtain_permit ?obtain_permit_instance_3_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -337,7 +337,7 @@
 		 (task1 (collect_insurance ?collect_insurance_instance_3_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -402,7 +402,7 @@
 		 (task1 (go_through_two_tcenters_tt ?go_through_two_tcenters_tt_instance_3_argument_3 ?go_through_two_tcenters_tt_instance_3_argument_4 ?go_through_two_tcenters_tt_instance_3_argument_5 ?go_through_two_tcenters_tt_instance_3_argument_6))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_tt_instance_3_argument_3 ?go_through_two_tcenters_tt_instance_3_argument_4))
@@ -431,8 +431,8 @@
 		 (task2 (carry_between_tcenters ?carry_between_tcenters_instance_4_argument_8 ?go_through_two_tcenters_cities_ott_instance_3_argument_6 ?go_through_two_tcenters_cities_ott_instance_3_argument_7))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_cities_ott_instance_3_argument_4 ?go_through_two_tcenters_cities_ott_instance_3_argument_5))
@@ -461,8 +461,8 @@
 		 (task2 (carry_direct ?carry_direct_instance_4_argument_8 ?go_through_two_tcenters_cities_otd_instance_3_argument_7 ?go_through_two_tcenters_cities_otd_instance_3_argument_3))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_cities_otd_instance_3_argument_4 ?go_through_two_tcenters_cities_otd_instance_3_argument_5))
@@ -495,9 +495,9 @@
 		 (task3 (carry_direct ?carry_direct_instance_5_argument_12 ?go_through_two_tcenters_cities_ottd_instance_3_argument_8 ?go_through_two_tcenters_cities_ottd_instance_3_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_cities_ottd_instance_3_argument_3 ?go_through_two_tcenters_cities_ottd_instance_3_argument_4))
@@ -526,8 +526,8 @@
 		 (task2 (carry_direct ?carry_direct_instance_4_argument_8 ?go_through_tcenter_cc_instance_3_argument_7 ?go_through_tcenter_cc_instance_3_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?go_through_tcenter_cc_instance_3_argument_3 ?go_through_tcenter_cc_instance_3_argument_4))
@@ -543,7 +543,7 @@
 		 (task1 (carry_direct ?carry_direct_instance_3_argument_2 ?go_through_two_tcenters_instance_2_argument_0 ?go_through_two_tcenters_instance_2_argument_1))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_instance_2_argument_0 ?go_through_two_tcenters_instance_2_argument_1))
@@ -590,8 +590,8 @@
 		 (task2 (carry_direct ?carry_direct_instance_4_argument_10 ?go_through_two_tcenters_via_hub_not_hazardous_instance_3_argument_9 ?go_through_two_tcenters_via_hub_not_hazardous_instance_3_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_via_hub_not_hazardous_instance_3_argument_3 ?go_through_two_tcenters_via_hub_not_hazardous_instance_3_argument_4))
@@ -624,8 +624,8 @@
 		 (task2 (carry_direct ?carry_direct_instance_4_argument_11 ?go_through_two_tcenters_via_hub_hazardous_instance_3_argument_5 ?go_through_two_tcenters_via_hub_hazardous_instance_3_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?go_through_two_tcenters_via_hub_hazardous_instance_3_argument_3 ?go_through_two_tcenters_via_hub_hazardous_instance_3_argument_4))
@@ -659,9 +659,9 @@
 		 (task3 (unload_top ?unload_top_instance_5_argument_9 ?unload_top_instance_5_argument_10 ?unload_top_instance_5_argument_11))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?move_instance_2_argument_1 ?move_instance_4_argument_7))
@@ -678,8 +678,8 @@
 		 (task2 (unload_top ?unload_top_instance_4_argument_6 ?unload_top_instance_4_argument_7 ?unload_top_instance_4_argument_8))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?move_instance_3_argument_4 ?unload_top_instance_4_argument_8))
@@ -721,9 +721,9 @@
 		 (task3 (detach_train_car ?detach_train_car_instance_5_argument_9 ?detach_train_car_instance_5_argument_10 ?detach_train_car_instance_5_argument_11))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 		:constraints (and
 			(not (= ?move_instance_4_argument_7 ?detach_train_car_instance_5_argument_11))
@@ -740,8 +740,8 @@
 		 (task2 (detach_train_car ?detach_train_car_instance_4_argument_6 ?detach_train_car_instance_4_argument_7 ?detach_train_car_instance_4_argument_8))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 		:constraints (and
 			(not (= ?move_instance_3_argument_4 ?detach_train_car_instance_4_argument_8))
@@ -760,8 +760,8 @@
 		 (task2 (close_door ?close_door_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -773,7 +773,7 @@
 		 (task1 (put_down_package_ground ?put_down_package_ground_instance_3_argument_4 ?put_down_package_ground_instance_3_argument_5 ?put_down_package_ground_instance_3_argument_6))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -786,8 +786,8 @@
 		 (task2 (disconnect_chute ?disconnect_chute_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -802,10 +802,10 @@
 		 (task4 (disconnect_hose ?disconnect_hose_instance_6_argument_7 ?disconnect_hose_instance_6_argument_8))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -819,9 +819,9 @@
 		 (task3 (raise_ramp ?raise_ramp_instance_5_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -834,8 +834,8 @@
 		 (task2 (raise_ramp ?raise_ramp_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -850,10 +850,10 @@
 		 (task4 (detach_conveyor_ramp ?detach_conveyor_ramp_instance_6_argument_8 ?detach_conveyor_ramp_instance_6_argument_9 ?detach_conveyor_ramp_instance_6_argument_10))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -876,7 +876,7 @@
 		 (task1 (load ?load_instance_3_argument_1 ?load_instance_3_argument_2 ?load_instance_3_argument_3))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -889,8 +889,8 @@
 		 (task2 (post_guard_inside ?post_guard_inside_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -914,8 +914,8 @@
 		 (task2 (remove_warning_signs ?unload_instance_2_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -928,8 +928,8 @@
 		 (task2 (remove_guard ?unload_instance_3_argument_2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -945,8 +945,8 @@
 		 (task2 (close_door ?close_door_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -958,7 +958,7 @@
 		 (task1 (put_down_package_vehicle ?put_down_package_vehicle_instance_3_argument_3 ?put_down_package_vehicle_instance_3_argument_4 ?put_down_package_vehicle_instance_3_argument_5 ?put_down_package_vehicle_instance_3_argument_6))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -971,8 +971,8 @@
 		 (task2 (disconnect_chute ?disconnect_chute_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -987,10 +987,10 @@
 		 (task4 (disconnect_hose ?disconnect_hose_instance_6_argument_7 ?disconnect_hose_instance_6_argument_8))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -1004,9 +1004,9 @@
 		 (task3 (raise_ramp ?raise_ramp_instance_5_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -1019,8 +1019,8 @@
 		 (task2 (raise_ramp ?raise_ramp_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -1035,10 +1035,10 @@
 		 (task4 (detach_conveyor_ramp ?detach_conveyor_ramp_instance_6_argument_8 ?detach_conveyor_ramp_instance_6_argument_9 ?detach_conveyor_ramp_instance_6_argument_10))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 

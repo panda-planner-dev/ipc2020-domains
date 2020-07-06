@@ -336,8 +336,8 @@
 		 (task2 (press_Clock_Alarm))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -351,9 +351,9 @@
 		 (task3 (set_Alarm_Description ?set_Alarm_Description_instance_5_argument_5))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task2 < task1)
-			(task3 < task2)
+			(< task1 task0)
+			(< task2 task1)
+			(< task3 task2)
 		)
 	)
 
@@ -365,7 +365,7 @@
 		 (task1 (configure_Alarm ?configure_Alarm_instance_3_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -377,7 +377,7 @@
 		 (task1 (press_Home_Calendar))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -391,9 +391,9 @@
 		 (task3 (set_Appointment_Time ?set_Appointment_Time_instance_5_argument_4 ?set_Appointment_Time_instance_5_argument_5))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task2 < task1)
-			(task3 < task2)
+			(< task1 task0)
+			(< task2 task1)
+			(< task3 task2)
 		)
 	)
 
@@ -407,9 +407,9 @@
 		 (task3 (press_Calendar_NewAppointment_OK ?press_Calendar_NewAppointment_OK_instance_5_argument_4 ?press_Calendar_NewAppointment_OK_instance_5_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -421,7 +421,7 @@
 		 (task1 (create_NewAppointment ?create_NewAppointment_instance_3_argument_0 ?create_NewAppointment_instance_3_argument_1 ?create_NewAppointment_instance_3_argument_2))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -434,8 +434,8 @@
 		 (task2 (press_Programs_Tasks))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -448,8 +448,8 @@
 		 (task2 (set_Task_Reminder ?set_Task_Reminder_instance_4_argument_3))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task2 < task1)
+			(< task1 task0)
+			(< task2 task1)
 		)
 	)
 
@@ -463,9 +463,9 @@
 		 (task3 (press_Tasks_NewTask_OK ?press_Tasks_Menu_NewTask_instance_3_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -485,7 +485,7 @@
 		 (task1 (create_NewTask ?create_NewTask_instance_3_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -497,7 +497,7 @@
 		 (task1 (enterMode_Home))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 
@@ -509,7 +509,7 @@
 		 (task1 (press_Telephone_Contacts))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -521,7 +521,7 @@
 		 (task1 (press_People_More))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -541,7 +541,7 @@
 		 (task1 (press_Home_People))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -553,7 +553,7 @@
 		 (task1 (set_Contact_Connection ?set_Contact_Name_instance_2_argument_0 ?set_Contact_Connection_instance_3_argument_2))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 
@@ -566,8 +566,8 @@
 		 (task2 (set_Contact_Name ?set_Contact_Name_instance_4_argument_4))
 		)
 		:ordering (and
-			(task2 < task1)
-			(task0 < task2)
+			(< task2 task1)
+			(< task0 task2)
 		)
 	)
 
@@ -603,7 +603,7 @@
 		 (task1 (select_PictureSelection_PictureForNewContact ?select_PictureSelection_PictureForNewContact_instance_3_argument_1 ?press_Contacts_NewContact_SelectPicture_instance_2_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -616,8 +616,8 @@
 		 (task2 (press_Contacts_NewContact_OK ?press_Contacts_NewContact_OK_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -629,7 +629,7 @@
 		 (task1 (create_NewContact ?create_NewContact_instance_3_argument_0 ?create_NewContact_instance_3_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -641,7 +641,7 @@
 		 (task1 (press_People_LargePlus))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -655,9 +655,9 @@
 		 (task3 (select_People_AddFavourite_Picture ?select_People_AddFavourite_Picture_instance_5_argument_2 ?select_People_AddFavourite_Picture_instance_5_argument_3))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -669,7 +669,7 @@
 		 (task1 (press_People_Menu_AddFavourite))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -681,7 +681,7 @@
 		 (task1 (add_NewFavourite ?add_NewFavourite_instance_3_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -734,8 +734,8 @@
 		 (task2 (select_People_AddFavourite_FavouriteNumber_WithPicture ?select_People_AddFavourite_FavouriteNumber_WithPicture_instance_4_argument_1 ?select_People_AddFavourite_FavouriteNumber_WithPicture_instance_4_argument_2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -780,8 +780,8 @@
 		 (task2 (press_Telephone_Call ?press_Telephone_Call_instance_4_argument_0 ?press_Telephone_Call_instance_4_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -810,8 +810,8 @@
 		 (task2 (select_Contacts_Details_Number ?select_Contacts_Details_Number_instance_4_argument_2 ?select_Contacts_Details_Number_instance_4_argument_3 ?select_Contacts_Details_Number_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -824,8 +824,8 @@
 		 (task2 (select_People_FavouriteSelected_Number ?select_People_Favourite_instance_3_argument_0 ?select_People_FavouriteSelected_Number_instance_4_argument_3 ?select_People_Favourite_instance_3_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -869,7 +869,7 @@
 		 (task1 (press_Home_Messages))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -915,9 +915,9 @@
 		 (task3 (press_NewMessage_Send ?press_NewMessage_Send_instance_5_argument_0 ?press_NewMessage_Send_instance_5_argument_1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -931,9 +931,9 @@
 		 (task3 (press_NewMessage_Send_Mobile ?select_People_Favourite_instance_3_argument_1 ?press_NewMessage_Send_Mobile_instance_5_argument_5))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -945,7 +945,7 @@
 		 (task1 (press_Home))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 
@@ -960,10 +960,10 @@
 		 (task4 (press_EMail_NewEMail ?select_EMail_EMailAccount_instance_3_argument_0))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task4 < task2)
-			(task2 < task3)
-			(task1 < task4)
+			(< task0 task1)
+			(< task4 task2)
+			(< task2 task3)
+			(< task1 task4)
 		)
 	)
 
@@ -1005,10 +1005,10 @@
 		 (task4 (press_EMail_NewEMail_Send ?select_People_Favourite_instance_3_argument_1 ?press_EMail_NewEMail_Send_instance_6_argument_6))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -1135,7 +1135,7 @@
 		 (task1 (attachInformation ?attachMultipleInformation_instance_2_argument_0 ?attachInformation_instance_3_argument_2))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 
@@ -1155,7 +1155,7 @@
 		 (task1 (extractsInformation ?extractsMultipleInformation_instance_2_argument_0 ?extractsMultipleInformation_instance_2_argument_1 ?extractsInformation_instance_3_argument_4))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 
@@ -1192,8 +1192,8 @@
 		 (task2 (extractsMultipleInformation ?extractsMultipleInformation_instance_4_argument_3 ?extractsMultipleInformation_instance_4_argument_4))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -1237,7 +1237,7 @@
 		 (task1 (press_Home_Programs))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 

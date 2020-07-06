@@ -53,10 +53,10 @@
 		 (task4 (process ?planstep_6_argument_0_p4_process_process_partVar ?planstep_6_argument_1_p4_process_process_colourVar ?planstep_6_argument_2_p4_process_process_oldSurfaceVar ?planstep_6_argument_3_p4_process_process_newSurfaceVar))
 		)
 		:ordering (and
-			(task3 < task0)
-			(task0 < task1)
-			(task4 < task3)
-			(task2 < task4)
+			(< task3 task0)
+			(< task0 task1)
+			(< task4 task3)
+			(< task2 task4)
 		)
 	)
 	(:init

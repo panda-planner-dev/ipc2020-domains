@@ -28,9 +28,9 @@
 		 (task3 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -45,10 +45,10 @@
 		 (task4 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -62,9 +62,9 @@
 		 (task3 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -77,8 +77,8 @@
 		 (task2 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -92,9 +92,9 @@
 		 (task3 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -107,8 +107,8 @@
 		 (task2 (aG1))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -121,8 +121,8 @@
 		 (task2 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -136,9 +136,9 @@
 		 (task3 (bG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 
@@ -153,10 +153,10 @@
 		 (task4 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
-			(task3 < task4)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
+			(< task3 task4)
 		)
 	)
 
@@ -168,7 +168,7 @@
 		 (task1 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
+			(< task0 task1)
 		)
 	)
 
@@ -181,8 +181,8 @@
 		 (task2 (bG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
+			(< task0 task1)
+			(< task1 task2)
 		)
 	)
 
@@ -196,9 +196,9 @@
 		 (task3 (aG2))
 		)
 		:ordering (and
-			(task0 < task1)
-			(task1 < task2)
-			(task2 < task3)
+			(< task0 task1)
+			(< task1 task2)
+			(< task2 task3)
 		)
 	)
 

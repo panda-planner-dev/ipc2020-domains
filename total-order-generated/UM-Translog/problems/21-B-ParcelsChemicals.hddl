@@ -20,7 +20,7 @@
 		 (task1 (transport Tabletten Ulm Heidenheim))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 	(:init

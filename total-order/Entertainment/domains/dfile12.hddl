@@ -141,27 +141,27 @@
       (xid_main_add (US_main_adds_plugBAR_ce_base_action ?e1 ?c1 ?e2 ?c2))
     )
     :ordering (and
-      (xid_main < xid_ce_prec_0)
-      (xid_main < xid_ce_prec_1)
-      (xid_ce_prec_0 < xid_ce_prec_1)
-      (xid_main < xid_main_del)
-      (xid_ce_prec_0 < xid_main_del)
-      (xid_ce_prec_1 < xid_main_del)
-      (xid_main < xid_ce_eff_0)
-      (xid_ce_prec_0 < xid_ce_eff_0)
-      (xid_ce_prec_1 < xid_ce_eff_0)
-      (xid_main_del < xid_ce_eff_0)
-      (xid_main < xid_ce_eff_1)
-      (xid_ce_prec_0 < xid_ce_eff_1)
-      (xid_ce_prec_1 < xid_ce_eff_1)
-      (xid_main_del < xid_ce_eff_1)
-      (xid_ce_eff_0 < xid_ce_eff_1)
-      (xid_main < xid_main_add)
-      (xid_ce_prec_0 < xid_main_add)
-      (xid_ce_prec_1 < xid_main_add)
-      (xid_main_del < xid_main_add)
-      (xid_ce_eff_0 < xid_main_add)
-      (xid_ce_eff_1 < xid_main_add)
+      (< xid_main xid_ce_prec_0)
+      (< xid_main xid_ce_prec_1)
+      (< xid_ce_prec_0 xid_ce_prec_1)
+      (< xid_main xid_main_del)
+      (< xid_ce_prec_0 xid_main_del)
+      (< xid_ce_prec_1 xid_main_del)
+      (< xid_main xid_ce_eff_0)
+      (< xid_ce_prec_0 xid_ce_eff_0)
+      (< xid_ce_prec_1 xid_ce_eff_0)
+      (< xid_main_del xid_ce_eff_0)
+      (< xid_main xid_ce_eff_1)
+      (< xid_ce_prec_0 xid_ce_eff_1)
+      (< xid_ce_prec_1 xid_ce_eff_1)
+      (< xid_main_del xid_ce_eff_1)
+      (< xid_ce_eff_0 xid_ce_eff_1)
+      (< xid_main xid_main_add)
+      (< xid_ce_prec_0 xid_main_add)
+      (< xid_ce_prec_1 xid_main_add)
+      (< xid_main_del xid_main_add)
+      (< xid_ce_eff_0 xid_main_add)
+      (< xid_ce_eff_1 xid_main_add)
     )
   )
 
@@ -177,11 +177,11 @@
       (xUS__t_id_22 (v_connect ?var_for_satMINUS_receiverMINUS_1_11 ?var_for_tvMINUS_1_12))
     )
     :ordering (and
-      (xUS__t_id_17 < xUS__t_id_18)
-      (xUS__t_id_18 < xUS__t_id_19)
-      (xUS__t_id_19 < xUS__t_id_20)
-      (xUS__t_id_20 < xUS__t_id_21)
-      (xUS__t_id_21 < xUS__t_id_22)
+      (< xUS__t_id_17 xUS__t_id_18)
+      (< xUS__t_id_18 xUS__t_id_19)
+      (< xUS__t_id_19 xUS__t_id_20)
+      (< xUS__t_id_20 xUS__t_id_21)
+      (< xUS__t_id_21 xUS__t_id_22)
     )
   )
 
@@ -205,7 +205,7 @@
       (xUS__t_id_10 (direct_a_connect ?e2 ?e3))
     )
     :ordering (and
-      (xUS__t_id_9 < xUS__t_id_10)
+      (< xUS__t_id_9 xUS__t_id_10)
     )
   )
 
@@ -229,7 +229,7 @@
       (xUS__t_id_2 (av_connect ?e2 ?e3))
     )
     :ordering (and
-      (xUS__t_id_1 < xUS__t_id_2)
+      (< xUS__t_id_1 xUS__t_id_2)
     )
   )
 
@@ -241,7 +241,7 @@
       (xUS__t_id_4 (a_connect ?e1 ?e2))
     )
     :ordering (and
-      (xUS__t_id_3 < xUS__t_id_4)
+      (< xUS__t_id_3 xUS__t_id_4)
     )
   )
 
@@ -258,8 +258,8 @@
       (xUS__t_id_7 (av_connect ?e2 ?e3))
     )
     :ordering (and
-      (xUS__t_id_5 < xUS__t_id_6)
-      (xUS__t_id_6 < xUS__t_id_7)
+      (< xUS__t_id_5 xUS__t_id_6)
+      (< xUS__t_id_6 xUS__t_id_7)
     )
   )
 
@@ -271,7 +271,7 @@
       (xmprec (US__method_precondition_mMINUS_dconnectMINUS_a ?e1 ?e2 ?c1 ?c2))
     )
     :ordering (and
-      (xmprec < xUS__t_id_15)
+      (< xmprec xUS__t_id_15)
     )
   )
 
@@ -291,7 +291,7 @@
       (xmprec (US__method_precondition_mMINUS_dconnectMINUS_av ?e1 ?e2 ?c1 ?c2))
     )
     :ordering (and
-      (xmprec < xUS__t_id_14)
+      (< xmprec xUS__t_id_14)
     )
   )
 
@@ -311,7 +311,7 @@
       (xmprec (US__method_precondition_mMINUS_dconnectMINUS_v ?e1 ?e2 ?c1 ?c2))
     )
     :ordering (and
-      (xmprec < xUS__t_id_16)
+      (< xmprec xUS__t_id_16)
     )
   )
 
@@ -343,7 +343,7 @@
       (xUS__t_id_13 (direct_v_connect ?e2 ?e3))
     )
     :ordering (and
-      (xUS__t_id_12 < xUS__t_id_13)
+      (< xUS__t_id_12 xUS__t_id_13)
     )
   )
 

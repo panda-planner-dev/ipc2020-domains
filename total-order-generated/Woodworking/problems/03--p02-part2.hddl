@@ -20,7 +20,7 @@
 		 (task1 (process p1 natural ?planstep_3_argument_2_b_process_oldsurface smooth))
 		)
 		:ordering (and
-			(task1 < task0)
+			(< task1 task0)
 		)
 	)
 	(:init

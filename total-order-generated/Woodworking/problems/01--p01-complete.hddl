@@ -21,8 +21,8 @@
 		 (task2 (do_colour ?planstep_4_argument_0_f_colour_part ?planstep_4_argument_1_f_colour_do_colour_variable1 ?planstep_4_argument_2_f_colour_do_colour_variable2 untreated))
 		)
 		:ordering (and
-			(task1 < task0)
-			(task0 < task2)
+			(< task1 task0)
+			(< task0 task2)
 		)
 	)
 	(:init
