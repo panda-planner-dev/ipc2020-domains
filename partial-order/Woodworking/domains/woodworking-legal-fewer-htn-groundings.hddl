@@ -83,35 +83,26 @@
 	)
 
 	(:method method0
-		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - machine ?immersionVarnish_variable2 - immersion_varnisher ?immersionVarnish_variable4 - surface ?newObj_variable1 - part)
+		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - immersion_varnisher ?immersionVarnish_variable2 - immersion_varnisher ?immersionVarnish_variable4 - surface ?newObj_variable1 - part)
 		:task (do_colour ?newObj_variable1 ?do_colour_variable1 ?do_colour_variable2)
 		:subtasks (and
 		 (task0 (do_immersion_varnish ?newObj_variable1 ?immersionVarnish_variable2 ?do_colour_variable1 ?immersionVarnish_variable4))
 		)
-		:constraints (and
-			(sortof ?do_colour_variable2 - immersion_varnisher)
-		)
 	)
 
 	(:method method1
-		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - machine ?newObj_variable1 - part ?sprayVarnish_variable2 - spray_varnisher ?sprayVarnish_variable4 - surface)
+		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - spray_varnisher ?newObj_variable1 - part ?sprayVarnish_variable2 - spray_varnisher ?sprayVarnish_variable4 - surface)
 		:task (do_colour ?newObj_variable1 ?do_colour_variable1 ?do_colour_variable2)
 		:subtasks (and
 		 (task0 (do_spray_varnish ?newObj_variable1 ?sprayVarnish_variable2 ?do_colour_variable1 ?sprayVarnish_variable4))
 		)
-		:constraints (and
-			(sortof ?do_colour_variable2 - spray_varnisher)
-		)
 	)
 
 	(:method method2
-		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - machine ?glaze_variable2 - glazer ?newObj_variable1 - part)
+		:parameters (?do_colour_variable1 - acolour ?do_colour_variable2 - glazer ?glaze_variable2 - glazer ?newObj_variable1 - part)
 		:task (do_colour ?newObj_variable1 ?do_colour_variable1 ?do_colour_variable2)
 		:subtasks (and
 		 (task0 (do_glaze ?newObj_variable1 ?glaze_variable2 ?do_colour_variable1))
-		)
-		:constraints (and
-			(sortof ?do_colour_variable2 - glazer)
 		)
 	)
 
