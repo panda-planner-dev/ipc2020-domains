@@ -1,5 +1,5 @@
 (define (domain UMTranslog)
-	(:requirements :typing :hierarchy)
+	(:requirements :typing :hierarchy :method-precondition)
 	(:types
 		Air_Route - Route
 		Airplane - Regular_Vehicle
