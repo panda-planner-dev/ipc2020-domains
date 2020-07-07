@@ -95,12 +95,12 @@
 		Chemicals - Perishable
 		Chemicals - Liquid
 		Money_Art - Valuable
-		Money_Art - Package
-		Money_Art - Regular
+		Money_Art - Regular_Package
+		Regular_Package - Regular
+		Regular_Package - Package
 		Cars - Package
 		Cars - Auto
-		Food - Package
-		Food - Regular
+		Food - Regular_Package
 		Food - Perishable
 		Water - Package
 		Water - Liquid
@@ -109,16 +109,13 @@
 		Ore - Granular
 		Ore - Package
 		Lumber - Bulky
-		Lumber - Package
 		Steel - Bulky
-		Steel - Package
-		Parcels - Package
-		Parcels - Regular
+		Bulky - Package
+		Parcels - Regular_Package
 		Livestock_Package - Package
 		Livestock_Package - Livestock
 		Mail_Package - Mail
-		Mail_Package - Package
-		Mail_Package - Regular
+		Mail_Package - Regular_Package
 		Plane_Ramp - Equipment
 		Crane - Package_Storage_Position
 		Crane - Equipment
@@ -746,7 +743,7 @@
 	)
 
 	(:method method_unload_regular
-		:parameters (?mur_cd_rv - Regular_Vehicle ?mur_up_l - Location ?mur_up_p - Regular)
+		:parameters (?mur_cd_rv - Regular_Vehicle ?mur_up_l - Location ?mur_up_p - Regular_Package)
 		:task (unload ?mur_up_p ?mur_cd_rv ?mur_up_l)
 		:precondition (and
 			(not (IsAirplain ?mur_cd_rv))
@@ -807,7 +804,7 @@
 	)
 
 	(:method method_unload_livestock
-		:parameters (?mul_rr_v - Vehicle ?mul_ull_l - Location ?mul_ull_p - Livestock_Package)
+		:parameters (?mul_rr_v - Livestock_Vehicle ?mul_ull_l - Location ?mul_ull_p - Livestock_Package)
 		:task (unload ?mul_ull_p ?mul_rr_v ?mul_ull_l)
 		:subtasks (and
 		 (task0 (lower_ramp ?mul_rr_v))
@@ -823,7 +820,7 @@
 	)
 
 	(:method method_unload_cars
-		:parameters (?muc_rr_v - Vehicle ?muc_uc_c - Cars ?muc_uc_l - Location)
+		:parameters (?muc_rr_v - Auto_Vehicle ?muc_uc_c - Cars ?muc_uc_l - Location)
 		:task (unload ?muc_uc_c ?muc_rr_v ?muc_uc_l)
 		:subtasks (and
 		 (task0 (lower_ramp ?muc_rr_v))
@@ -837,7 +834,7 @@
 	)
 
 	(:method method_unload_airplane
-		:parameters (?mua_dcr_ap - Airplane ?mua_dcr_l - Location ?mua_dcr_pr - Plane_Ramp ?mua_up_p - Package)
+		:parameters (?mua_dcr_ap - Airplane ?mua_dcr_l - Location ?mua_dcr_pr - Plane_Ramp ?mua_up_p - Regular_Package)
 		:task (unload ?mua_up_p ?mua_dcr_ap ?mua_dcr_l)
 		:subtasks (and
 		 (task0 (attach_conveyor_ramp ?mua_dcr_ap ?mua_dcr_pr ?mua_dcr_l))
@@ -878,7 +875,7 @@
 	)
 
 	(:method method_load_top_valuable
-		:parameters (?mlmv_l_l - Location ?mlmv_l_p - Valuable ?mlmv_pci_a - Armored)
+		:parameters (?mlmv_l_l - Location ?mlmv_l_p - Valuable ?mlmv_pci_a - Armored_Vehicle)
 		:task (load_top ?mlmv_l_p ?mlmv_pci_a ?mlmv_l_l)
 		:subtasks (and
 		 (task0 (post_guard_outside ?mlmv_pci_a))
@@ -917,7 +914,7 @@
 	)
 
 	(:method method_unload_top_valuable
-		:parameters (?mumv_ul_l - Location ?mumv_ul_p - Valuable ?mumv_ul_v - Vehicle)
+		:parameters (?mumv_ul_l - Location ?mumv_ul_p - Valuable ?mumv_ul_v - Armored_Vehicle)
 		:task (unload_top ?mumv_ul_p ?mumv_ul_v ?mumv_ul_l)
 		:subtasks (and
 		 (task0 (post_guard_outside ?mumv_ul_v))
@@ -931,7 +928,7 @@
 	)
 
 	(:method method_load_regular
-		:parameters (?mlr_cd_rv - Regular_Vehicle ?mlr_lp_l - Location ?mlr_lp_p - Regular)
+		:parameters (?mlr_cd_rv - Regular_Vehicle ?mlr_lp_l - Location ?mlr_lp_p - Regular_Package)
 		:task (load ?mlr_lp_p ?mlr_cd_rv ?mlr_lp_l)
 		:precondition (and
 			(not (IsAirplain ?mlr_cd_rv))
@@ -992,7 +989,7 @@
 	)
 
 	(:method method_load_livestock
-		:parameters (?mll_ll_l - Location ?mll_ll_p - Livestock_Package ?mll_rr_v - Vehicle)
+		:parameters (?mll_ll_l - Location ?mll_ll_p - Livestock_Package ?mll_rr_v - Livestock_Vehicle)
 		:task (load ?mll_ll_p ?mll_rr_v ?mll_ll_l)
 		:subtasks (and
 		 (task0 (lower_ramp ?mll_rr_v))
@@ -1008,7 +1005,7 @@
 	)
 
 	(:method method_load_cars
-		:parameters (?mlc_lc_c - Cars ?mlc_lc_l - Location ?mlc_rr_v - Vehicle)
+		:parameters (?mlc_lc_c - Cars ?mlc_lc_l - Location ?mlc_rr_v - Auto_Vehicle)
 		:task (load ?mlc_lc_c ?mlc_rr_v ?mlc_lc_l)
 		:subtasks (and
 		 (task0 (lower_ramp ?mlc_rr_v))
@@ -1022,7 +1019,7 @@
 	)
 
 	(:method method_load_airplane
-		:parameters (?mla_dcr_ap - Airplane ?mla_dcr_l - Location ?mla_dcr_pr - Plane_Ramp ?mla_lp_p - Regular)
+		:parameters (?mla_dcr_ap - Airplane ?mla_dcr_l - Location ?mla_dcr_pr - Plane_Ramp ?mla_lp_p - Regular_Package)
 		:task (load ?mla_lp_p ?mla_dcr_ap ?mla_dcr_l)
 		:subtasks (and
 		 (task0 (attach_conveyor_ramp ?mla_dcr_ap ?mla_dcr_pr ?mla_dcr_l))

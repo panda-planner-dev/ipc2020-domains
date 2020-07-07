@@ -59,7 +59,7 @@
   :ordered-subtasks(and (t1 (nop))) ) 
 
 (:method m5_do_clear
-  :parameters ( ?s1 - surface  ?p1 - place ?c - surface ?t - truck ?h1 - hoist )
+  :parameters ( ?s1 - surface  ?p1 - place ?c - crate ?t - truck ?h1 - hoist )
   :task (do_clear ?s1 ?p1)
   :precondition(and (not (clear ?s1)) (on ?c ?s1) (at ?s1 ?p1) (at ?h1 ?p1))
   :ordered-subtasks(and (t1 (do_clear ?c ?p1)) (t2 (Lift ?h1 ?c ?s1 ?p1)) (t3 (do_get_truck ?t ?p1)) (t4 (Load ?h1 ?c ?t ?p1))) ) 

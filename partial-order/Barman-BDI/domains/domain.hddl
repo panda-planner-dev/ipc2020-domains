@@ -208,7 +208,7 @@
 )
 
 (:method CleanFullShaker
-	:parameters (?x_0 - shaker ?x_1 - level ?x_2 - beverage ?x_3 - hand ?x_4 - hand ?x_5 - level )
+	:parameters (?x_0 - shaker ?x_1 - level ?x_2 - cocktail ?x_3 - hand ?x_4 - hand ?x_5 - level )
 	:task (AchieveCleanShaker ?x_0)
 	:precondition (and 
 		(contains ?x_0 ?x_2)
