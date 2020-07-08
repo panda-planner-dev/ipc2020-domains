@@ -3,7 +3,7 @@
   	:hierarchy
 	:typing
 	:equality
-	:method-precondition
+	:method-preconditions
   )
 
   (:types

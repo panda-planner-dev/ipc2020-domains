@@ -3,7 +3,7 @@
 (:requirements
   	:hierarchy
 	:typing
-	:method-precondition
+	:method-preconditions
 )
 
 (:types child bread-portion content-portion sandwich tray place)

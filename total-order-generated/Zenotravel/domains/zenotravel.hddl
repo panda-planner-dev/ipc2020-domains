@@ -3,7 +3,7 @@
 	:hierarchy
 	:typing
 	:universal-preconditions
-	:method-precondition
+	:method-preconditions
 	)
 	(:types
 		Time - Object

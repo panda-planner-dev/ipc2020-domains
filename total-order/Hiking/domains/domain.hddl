@@ -4,7 +4,7 @@
 	:hierarchy
 	:typing
 	:equality
-	:method-precondition
+	:method-preconditions
 )
 
 (:types car tent person couple place)

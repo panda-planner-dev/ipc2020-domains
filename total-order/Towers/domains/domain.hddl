@@ -3,7 +3,7 @@
  (:requirements
   	:hierarchy
 	:typing
-	:method-precondition
+	:method-preconditions
 )
 
  (:types RING - OBJ TOWER - OBJ)
