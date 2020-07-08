@@ -1,6 +1,6 @@
 (define (domain hiking)
 
-(:requirements
+(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	:equality

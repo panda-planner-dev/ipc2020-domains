@@ -1,6 +1,6 @@
 (define (domain Depot)
 
-(:requirements
+(:requirements :negative-preconditions
   	:hierarchy
 	:typing
 	:method-preconditions

@@ -1,5 +1,5 @@
 (define (domain woodworking_legal_fewer_htn_groundings)
-	(:requirements
+	(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	:equality

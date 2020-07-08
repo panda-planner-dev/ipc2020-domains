@@ -1,6 +1,6 @@
 (define (domain towers)
 
- (:requirements
+ (:requirements :negative-preconditions
   	:hierarchy
 	:typing
 	:method-preconditions

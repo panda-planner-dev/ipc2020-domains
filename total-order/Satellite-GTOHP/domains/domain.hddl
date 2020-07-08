@@ -1,6 +1,6 @@
 (define (domain satellite)
 
-(:requirements
+(:requirements :negative-preconditions
   	:hierarchy
 	:typing
 	:equality

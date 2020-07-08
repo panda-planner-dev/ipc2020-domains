@@ -1,5 +1,5 @@
 (define (domain satellite2)
-	(:requirements
+	(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	)

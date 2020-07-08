@@ -1,6 +1,6 @@
 (define (domain child-snack)
 
-(:requirements
+(:requirements :negative-preconditions
   	:hierarchy
 	:typing
 	:method-preconditions

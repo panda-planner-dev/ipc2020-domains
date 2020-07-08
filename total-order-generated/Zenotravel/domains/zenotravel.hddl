@@ -1,5 +1,5 @@
 (define (domain zenotravel)
-	(:requirements
+	(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	:universal-preconditions

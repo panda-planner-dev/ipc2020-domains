@@ -1,5 +1,5 @@
 (define (domain SmartPhone_HierarchicalNoAxioms)
-	(:requirements
+	(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	)

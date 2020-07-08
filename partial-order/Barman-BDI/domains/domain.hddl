@@ -1,5 +1,5 @@
 (define (domain barman_agent)
-(:requirements
+(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	:equality

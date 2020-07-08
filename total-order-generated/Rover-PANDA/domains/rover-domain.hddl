@@ -1,5 +1,5 @@
 (define (domain rover_domain)
-	(:requirements
+	(:requirements :negative-preconditions
 	:hierarchy
 	:typing
 	:method-preconditions

@@ -1,6 +1,6 @@
 (define (domain BLOCKS)
 
-(:requirements
+(:requirements :negative-preconditions
   	:hierarchy
 	:typing
 	:method-preconditions
