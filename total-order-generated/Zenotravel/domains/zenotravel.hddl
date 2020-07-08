@@ -2,7 +2,7 @@
 	(:requirements
 	:hierarchy
 	:typing
-	:universal-precondition
+	:universal-preconditions
 	:method-precondition
 	)
 	(:types
