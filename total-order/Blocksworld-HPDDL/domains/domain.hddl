@@ -3,7 +3,7 @@
   (:requirements 
     :hierarchy
 	:typing
-	:existential-precondition
+	:existential-preconditions
 	:universal-preconditions
 	:method-precondition
   )
