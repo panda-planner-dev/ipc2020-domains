@@ -1,6 +1,6 @@
 (define (domain blocks)
 
-  (:requirements 
+  (:requirements :negative-preconditions 
     :hierarchy
 	:typing
 	:existential-preconditions

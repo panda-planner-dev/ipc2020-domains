@@ -1,5 +1,5 @@
 (define (domain verkabelung)
-(:requirements :typing :hierarchy)
+(:requirements :negative-preconditions :typing :hierarchy)
 (:types
     Port AbstractDevice - Object
     AbstractCable Device - AbstractDevice

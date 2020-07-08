@@ -1,5 +1,5 @@
 (define (domain robot)
-  (:requirements :strips :negative-preconditions :typing)
+  (:requirements :negative-preconditions :strips :negative-preconditions :typing)
   (:types PACKAGE ROOM ROOMDOOR)
   (:predicates 
     (armempty)

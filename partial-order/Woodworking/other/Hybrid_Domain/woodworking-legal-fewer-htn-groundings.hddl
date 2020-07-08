@@ -1,5 +1,5 @@
 (define (domain woodworking_legal_fewer_htn_groundings)
-	(:requirements :typing :hierarchy)
+	(:requirements :negative-preconditions :typing :hierarchy)
 	(:types
 		acolour - object
 		awood - object

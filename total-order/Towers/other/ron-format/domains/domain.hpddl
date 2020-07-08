@@ -1,5 +1,5 @@
 (define (domain towers)
- (:requirements :strips :disjunctive-preconditions)
+ (:requirements :negative-preconditions :strips :disjunctive-preconditions)
  (:types RING - OBJ TOWER - OBJ)
  (:predicates
   (on ?r - RING ?o - OBJ)

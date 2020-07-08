@@ -1,5 +1,5 @@
 (define (domain blocks)
-  (:requirements :strips :negative-preconditions)
+  (:requirements :negative-preconditions :strips :negative-preconditions)
   (:types BLOCK)
   (:predicates
     (hand-empty)

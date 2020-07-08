@@ -1,5 +1,5 @@
 (define (domain transport)
-  (:requirements :hierarchy :typing)
+  (:requirements :negative-preconditions :hierarchy :typing)
   (:types
         location target locatable - object
         vehicle package - locatable
