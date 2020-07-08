@@ -51,7 +51,7 @@
 		Crane - Package_Storage_Position
 		Crane - Equipment
 		Customer_Location - Not_TCenter
-		Equipment - Object
+		Equipment - PhysicalObject
 		Flatbed - Physical
 		Flatbed_Traincar - Traincar
 		Flatbed_Traincar - Flatbed_Vehicle
@@ -103,13 +103,13 @@
 		Money_Art - Valuable
 		Money_Art - Regular_Package
 		Not_TCenter - City_Location
-		Object - Thing
+		PhysicalObject - Thing
 		Ore - Granular
 		Ore - Package
-		Package - Object
+		Package - PhysicalObject
 		Parcels - Regular_Package
 		Perishable - Package
-		Physical - Object
+		Physical - PhysicalObject
 		Plane_Ramp - Equipment
 		Post_Office - Not_TCenter
 		Rail_Route - Route
@@ -140,7 +140,7 @@
 		Route - Thing
 		Sand - Granular
 		Sand - Package
-		Speciality - Object
+		Speciality - PhysicalObject
 		Steel - Bulky
 		Steel - Package
 		TCenter - City_Location
@@ -161,7 +161,7 @@
 		Valuable - Package
 		Vehicle - Equipment_Position
 		Vehicle - Package_Storage_Position
-		Vehicle - Object
+		Vehicle - PhysicalObject
 		Water - Package
 		Water - Liquid
 	)

@@ -90,7 +90,7 @@
 		Armored_Vehicle - Vehicle
 		Vehicle - Equipment_Position
 		Vehicle - Package_Storage_Position
-		Vehicle - Object
+		Vehicle - PhysicalObject
 		Chemicals - Hazardous
 		Chemicals - Perishable
 		Chemicals - Liquid
@@ -119,11 +119,11 @@
 		Plane_Ramp - Equipment
 		Crane - Package_Storage_Position
 		Crane - Equipment
-		Equipment - Object
+		Equipment - PhysicalObject
 		Armored - Speciality
 		Refrigerated - Speciality
 		Perishable - Package
-		Speciality - Object
+		Speciality - PhysicalObject
 		Regular - Physical
 		Flatbed - Physical
 		Tanker - Physical
@@ -135,10 +135,10 @@
 		Liquid - Package
 		Liquid - Physical
 		Granular - Physical
-		Physical - Object
+		Physical - PhysicalObject
 		Hazardous - Package
 		Valuable - Package
-		Package - Object
+		Package - PhysicalObject
 		Local_Road_Route - Road_Route
 		Road_Route - Route
 		Air_Route - Route
@@ -162,7 +162,7 @@
 		Location - Equipment_Position
 		Location - Package_Storage_Position
 		Location - Thing
-		Object - Thing
+		PhysicalObject - Thing
 	)
 	(:predicates
 		(Connects ?arg0 - Route ?arg1 - Location ?arg2 - Location)
