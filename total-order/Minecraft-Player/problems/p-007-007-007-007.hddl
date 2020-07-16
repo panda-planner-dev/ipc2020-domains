@@ -74,8 +74,8 @@
  l-8-6-0 l-8-6-1 l-8-6-2 l-8-6-3 l-8-6-4 l-8-6-5 l-8-6-6 l-8-6-7
  l-8-7-0 l-8-7-1 l-8-7-2 l-8-7-3 l-8-7-4 l-8-7-5 l-8-7-6 l-8-7-7 
  - location 
- e w s n 
- - direction 
+  
+  
 wood stone earth 
  - blocktype 
  n0 n1 n2 n3 n4 n5 n6 n7 
