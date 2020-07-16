@@ -1,5 +1,5 @@
 (define (domain verkabelung)
-(:requirements :negative-preconditions :typing :hierarchy)
+(:requirements :negative-preconditions :typing :hierarchy :method-preconditions)
 (:types
     Port AbstractDevice - Object
     AbstractCable Device - AbstractDevice
@@ -120,7 +120,6 @@
 (:method m2
     :parameters (?d1 ?d2 - AbstractDevice ?t - SignalType ?p1 ?p2 - Port)
     :task (ConnectDevices ?d1 ?d2 ?t)
-    :precondition ( )
     :subtasks (and
             (t1 (disconnect ?p1 ?p2))
             (t2 (ConnectDevices ?d1 ?d2 ?t))
