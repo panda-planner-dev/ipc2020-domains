@@ -92,8 +92,8 @@
  l-9-7-0 l-9-7-1 l-9-7-2 l-9-7-3 l-9-7-4 l-9-7-5 l-9-7-6 l-9-7-7 l-9-7-8
  l-9-8-0 l-9-8-1 l-9-8-2 l-9-8-3 l-9-8-4 l-9-8-5 l-9-8-6 l-9-8-7 l-9-8-8 
  - location 
- e w s n 
- - direction 
+
+ 
 wood stone earth 
  - blocktype 
  n0 n1 n2 n3 n4 n5 n6 n7 n8 

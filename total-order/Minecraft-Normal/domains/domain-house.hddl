@@ -8,6 +8,8 @@
       location blocktype direction numbers - object
 
   )
+  
+  (:constants e w s n - direction)
 
   (:predicates
      (empty ?location - location)

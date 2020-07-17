@@ -44,8 +44,8 @@
  l-6-4-0 l-6-4-1 l-6-4-2 l-6-4-3 l-6-4-4 l-6-4-5
  l-6-5-0 l-6-5-1 l-6-5-2 l-6-5-3 l-6-5-4 l-6-5-5 
  - location 
- e w s n 
- - direction 
+
+ 
 wood stone earth 
  - blocktype 
  n0 n1 n2 n3 n4 n5 
