@@ -3,7 +3,6 @@
   (:requirements :negative-preconditions
   	:hierarchy
 	:typing
-	:existential-preconditions
 	:universal-preconditions
 	:method-preconditions
   )
@@ -29,13 +28,12 @@
 
 
 (:method release-putdown_abstract 
-     :parameters ()
+     :parameters (?loc - ROOM ?obj - PACKAGE)
 :task (release)
- :precondition (exists (?loc - ROOM) (exists (?obj - PACKAGE)
-    (and 
+ :precondition (and 
         (rloc ?loc) 
         (holding ?obj)
-        (goal_in ?obj ?loc))))
+        (goal_in ?obj ?loc))
  :ordered-tasks (and (putdown_abstract) (achieve-goals)))
 
 
@@ -53,12 +51,12 @@
 
 
 (:method achieve-goals-pickup
- :parameters (?obj - PACKAGE)
+ :parameters (?loc - ROOM ?obj - PACKAGE)
  :task (achieve-goals)
- :precondition (exists (?loc - ROOM) (and 
+ :precondition (and 
         (rloc ?loc) 
         (in ?obj ?loc) 
-        (not (goal_in ?obj ?loc))))
+        (not (goal_in ?obj ?loc)))
  :ordered-tasks (and (pickup_abstract ?obj) (release)))
 
 
@@ -78,10 +76,6 @@
 (:method finished
      :parameters ()
 :task (achieve-goals)
- :precondition (forall (?obj - PACKAGE) 
-    (exists (?loc - ROOM) (and
-        (goal_in ?obj ?loc)
-        (in ?obj ?loc))))
 :ordered-subtasks (and)
 )
 

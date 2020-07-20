@@ -3,7 +3,6 @@
   (:requirements :negative-preconditions
   	:hierarchy
 	:typing
-	:existential-preconditions
 	:universal-preconditions
 	:method-preconditions
   )
@@ -50,10 +49,9 @@
 
 
   (:method unstack-block
-    :parameters (?b - BLOCK ?a - ARM)
+    :parameters (?b ?d - BLOCK ?a - ARM)
     :task (achieve-goals ?a)
-    :precondition (and (clear ?b) 
-        (exists (?d - BLOCK) (on ?b ?d)))
+    :precondition (and (clear ?b) (on ?b ?d))
     :ordered-tasks (and (acquire_abstract ?b ?a) (release ?a)))
 
 

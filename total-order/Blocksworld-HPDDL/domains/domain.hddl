@@ -3,7 +3,6 @@
   (:requirements :negative-preconditions 
     :hierarchy
 	:typing
-	:existential-preconditions
 	:universal-preconditions
 	:method-preconditions
   )
@@ -36,20 +35,21 @@
 
 
   (:method mark-done-on
-    :parameters (?b - BLOCK)
+    :parameters (?b ?d - BLOCK)
     :task (achieve-goals)
-    :precondition (exists (?d - BLOCK) (and (goal_on ?b ?d) (on ?b ?d) (done ?d)))
+    :precondition (and (goal_on ?b ?d) (on ?b ?d) (done ?d))
     :ordered-tasks (and (mark_done ?b) (achieve-goals)))
 
 
   (:method pickup-ready-block
-    :parameters (?b - BLOCK)
+    :parameters (?b ?d - BLOCK)
     :task (achieve-goals)
-    :precondition (and (clear ?b) (not (done ?b)) 
-        (exists (?d - BLOCK) (and 
+    :precondition (and 
+			(clear ?b)
+			(not (done ?b)) 
             (goal_on ?b ?d) 
             (done ?d) 
-            (clear ?d))))
+            (clear ?d)))
     :ordered-tasks (and (acquire_abstract ?b) (release)))
 
 
