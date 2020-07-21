@@ -4,7 +4,7 @@
 	(:types A)
 	
 	(:predicates
-    	(foo ?a - A)
+    	(foo ?a ?b - A)
 	)
 
 	(:task task1 :parameters ())
