@@ -11,7 +11,7 @@
 )
 (:htn
 	:parameters ()
-	:subtasks (and
+	:ordered-subtasks (and
 		(AchieveContainsShotCocktail shot16 cocktail1)
 		(AchieveContainsShotCocktail shot28 cocktail2)
 		(AchieveContainsShotCocktail shot35 cocktail3)
