@@ -49,7 +49,7 @@
 			(not (done ?b)) 
             (goal_on ?b ?d) 
             (done ?d) 
-            (clear ?d)))
+            (clear ?d))
     :ordered-tasks (and (acquire_abstract ?b) (release)))
 
 
