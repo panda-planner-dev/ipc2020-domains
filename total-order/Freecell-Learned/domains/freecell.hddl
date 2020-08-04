@@ -1,5 +1,10 @@
 (define (domain freecell )
-(:requirements :typing)
+(:requirements 
+	:hierarchy
+	:typing
+	:method-precondition
+	:negative-preconditions
+)
 (:types
 	CARD NUM SUIT - OBJECT
 )

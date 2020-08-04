@@ -1,5 +1,10 @@
 (define (domain elevator )
-(:requirements :typing)
+(:requirements 
+	:hierarchy
+	:typing
+	:method-precondition
+	:negative-preconditions
+)
 (:types
 	PASSENGER FLOOR - OBJECT
 )
