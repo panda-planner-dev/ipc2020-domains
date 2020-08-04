@@ -1,0 +1,82 @@
+(define (problem pb20)
+  (:domain snake)
+
+  (:objects
+    viper - snake
+    px0y0 px1y0 px2y0 px3y0 px4y0 px5y0 px6y0 px7y0 px8y0
+    px0y1 px1y1 px2y1 px3y1 px4y1 px5y1 px6y1 px7y1 px8y1
+    px0y2 px1y2 px2y2 px3y2 px4y2 px5y2 px6y2 px7y2 px8y2
+    px0y3 px1y3 px2y3 px3y3 px4y3 px5y3 px6y3 px7y3 px8y3
+    px0y4 px1y4 px2y4 px3y4 px4y4 px5y4 px6y4 px7y4 px8y4 - location
+  )
+
+  (:init
+    (head viper px5y0)
+    (connected viper px5y0 px4y0)
+    (connected viper px4y0 px3y0)
+    (connected viper px3y0 px2y0)
+    (connected viper px2y0 px2y1)
+    (connected viper px2y1 px2y2)
+    (connected viper px2y2 px2y3)
+    (connected viper px2y3 px2y4)
+    (connected viper px2y4 px3y4)
+    (connected viper px3y4 px4y4)
+    (connected viper px4y4 px5y4)
+    (connected viper px5y4 px6y4)
+    (connected viper px6y4 px7y4)
+    (connected viper px7y4 px8y4)
+    (connected viper px8y4 px8y3)
+    (connected viper px8y3 px8y2)
+    (connected viper px8y2 px8y1)
+    (tail viper px8y1)
+
+    (mouse-at px1y2)
+    (mouse-at px5y2)
+
+    (occupied px2y0)
+    (occupied px3y0)
+    (occupied px4y0)
+    (occupied px5y0)
+    (occupied px0y1)
+    (occupied px1y1)
+    (occupied px2y1)
+    (occupied px3y1)
+    (occupied px4y1)
+    (occupied px5y1)
+    (occupied px6y1)
+    (occupied px8y1)
+    (occupied px0y2)
+    (occupied px1y2)
+    (occupied px2y2)
+    (occupied px5y2)
+    (occupied px8y2)
+    (occupied px0y3)
+    (occupied px1y3)
+    (occupied px2y3)
+    (occupied px3y3)
+    (occupied px4y3)
+    (occupied px5y3)
+    (occupied px6y3)
+    (occupied px8y3)
+    (occupied px2y4)
+    (occupied px3y4)
+    (occupied px4y4)
+    (occupied px5y4)
+    (occupied px6y4)
+    (occupied px7y4)
+    (occupied px8y4)
+
+    (adjacent px0y0 px1y0) (adjacent px1y0 px0y0) (adjacent px1y0 px2y0) (adjacent px2y0 px1y0) (adjacent px2y0 px3y0) (adjacent px3y0 px2y0) (adjacent px3y0 px4y0) (adjacent px4y0 px3y0) (adjacent px4y0 px5y0) (adjacent px5y0 px4y0) (adjacent px5y0 px6y0) (adjacent px6y0 px5y0) (adjacent px6y0 px7y0) (adjacent px7y0 px6y0) (adjacent px7y0 px8y0) (adjacent px8y0 px7y0)
+    (adjacent px0y1 px1y1) (adjacent px1y1 px0y1) (adjacent px1y1 px2y1) (adjacent px2y1 px1y1) (adjacent px2y1 px3y1) (adjacent px3y1 px2y1) (adjacent px3y1 px4y1) (adjacent px4y1 px3y1) (adjacent px4y1 px5y1) (adjacent px5y1 px4y1) (adjacent px5y1 px6y1) (adjacent px6y1 px5y1) (adjacent px6y1 px7y1) (adjacent px7y1 px6y1) (adjacent px7y1 px8y1) (adjacent px8y1 px7y1)
+    (adjacent px0y2 px1y2) (adjacent px1y2 px0y2) (adjacent px1y2 px2y2) (adjacent px2y2 px1y2) (adjacent px2y2 px3y2) (adjacent px3y2 px2y2) (adjacent px3y2 px4y2) (adjacent px4y2 px3y2) (adjacent px4y2 px5y2) (adjacent px5y2 px4y2) (adjacent px5y2 px6y2) (adjacent px6y2 px5y2) (adjacent px6y2 px7y2) (adjacent px7y2 px6y2) (adjacent px7y2 px8y2) (adjacent px8y2 px7y2)
+    (adjacent px0y3 px1y3) (adjacent px1y3 px0y3) (adjacent px1y3 px2y3) (adjacent px2y3 px1y3) (adjacent px2y3 px3y3) (adjacent px3y3 px2y3) (adjacent px3y3 px4y3) (adjacent px4y3 px3y3) (adjacent px4y3 px5y3) (adjacent px5y3 px4y3) (adjacent px5y3 px6y3) (adjacent px6y3 px5y3) (adjacent px6y3 px7y3) (adjacent px7y3 px6y3) (adjacent px7y3 px8y3) (adjacent px8y3 px7y3)
+    (adjacent px0y4 px1y4) (adjacent px1y4 px0y4) (adjacent px1y4 px2y4) (adjacent px2y4 px1y4) (adjacent px2y4 px3y4) (adjacent px3y4 px2y4) (adjacent px3y4 px4y4) (adjacent px4y4 px3y4) (adjacent px4y4 px5y4) (adjacent px5y4 px4y4) (adjacent px5y4 px6y4) (adjacent px6y4 px5y4) (adjacent px6y4 px7y4) (adjacent px7y4 px6y4) (adjacent px7y4 px8y4) (adjacent px8y4 px7y4)
+
+    (adjacent px0y0 px0y1) (adjacent px0y1 px0y0) (adjacent px1y0 px1y1) (adjacent px1y1 px1y0) (adjacent px2y0 px2y1) (adjacent px2y1 px2y0) (adjacent px3y0 px3y1) (adjacent px3y1 px3y0) (adjacent px4y0 px4y1) (adjacent px4y1 px4y0) (adjacent px5y0 px5y1) (adjacent px5y1 px5y0) (adjacent px6y0 px6y1) (adjacent px6y1 px6y0) (adjacent px7y0 px7y1) (adjacent px7y1 px7y0) (adjacent px8y0 px8y1) (adjacent px8y1 px8y0)
+    (adjacent px0y1 px0y2) (adjacent px0y2 px0y1) (adjacent px1y1 px1y2) (adjacent px1y2 px1y1) (adjacent px2y1 px2y2) (adjacent px2y2 px2y1) (adjacent px3y1 px3y2) (adjacent px3y2 px3y1) (adjacent px4y1 px4y2) (adjacent px4y2 px4y1) (adjacent px5y1 px5y2) (adjacent px5y2 px5y1) (adjacent px6y1 px6y2) (adjacent px6y2 px6y1) (adjacent px7y1 px7y2) (adjacent px7y2 px7y1) (adjacent px8y1 px8y2) (adjacent px8y2 px8y1)
+    (adjacent px0y2 px0y3) (adjacent px0y3 px0y2) (adjacent px1y2 px1y3) (adjacent px1y3 px1y2) (adjacent px2y2 px2y3) (adjacent px2y3 px2y2) (adjacent px3y2 px3y3) (adjacent px3y3 px3y2) (adjacent px4y2 px4y3) (adjacent px4y3 px4y2) (adjacent px5y2 px5y3) (adjacent px5y3 px5y2) (adjacent px6y2 px6y3) (adjacent px6y3 px6y2) (adjacent px7y2 px7y3) (adjacent px7y3 px7y2) (adjacent px8y2 px8y3) (adjacent px8y3 px8y2)
+    (adjacent px0y3 px0y4) (adjacent px0y4 px0y3) (adjacent px1y3 px1y4) (adjacent px1y4 px1y3) (adjacent px2y3 px2y4) (adjacent px2y4 px2y3) (adjacent px3y3 px3y4) (adjacent px3y4 px3y3) (adjacent px4y3 px4y4) (adjacent px4y4 px4y3) (adjacent px5y3 px5y4) (adjacent px5y4 px5y3) (adjacent px6y3 px6y4) (adjacent px6y4 px6y3) (adjacent px7y3 px7y4) (adjacent px7y4 px7y3) (adjacent px8y3 px8y4) (adjacent px8y4 px8y3)
+  )
+
+  (:htn :subtasks (hunt))
+)

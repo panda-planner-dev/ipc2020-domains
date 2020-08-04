@@ -1,0 +1,214 @@
+(defdomain snake (
+
+  ;------------------------------
+  ; Operators
+  ;------------------------------
+
+  (:operator (!strike ?snake ?headpos ?foodpos)
+    (
+      (snake ?snake)
+      (location ?headpos)
+      (location ?foodpos)
+      (head ?snake ?headpos)
+      (mouse-at ?foodpos)
+      (adjacent ?foodpos ?headpos)
+      (not (= ?headpos ?foodpos))
+    )
+    (
+      (mouse-at ?foodpos)
+      (head ?snake ?headpos)
+    )
+    (
+      (connected ?snake ?foodpos ?headpos)
+      (head ?snake ?foodpos)
+    )
+  )
+
+  (:operator (!move-short ?snake ?nextpos ?snakepos)
+    (
+      (snake ?snake)
+      (location ?nextpos)
+      (location ?snakepos)
+      (head ?snake ?snakepos)
+      (tail ?snake ?snakepos)
+      (adjacent ?nextpos ?snakepos)
+      (not (occupied ?nextpos))
+    )
+    (
+      (head ?snake ?snakepos)
+      (tail ?snake ?snakepos)
+      (occupied ?snakepos)
+    )
+    (
+      (occupied ?nextpos)
+      (head ?snake ?nextpos)
+      (tail ?snake ?nextpos)
+    )
+  )
+
+  (:operator (!move-long ?snake ?nextpos ?headpos ?bodypos ?tailpos)
+    (
+      (snake ?snake)
+      (location ?nextpos)
+      (location ?headpos)
+      (location ?bodypos)
+      (location ?tailpos)
+      (head ?snake ?headpos)
+      (connected ?snake ?bodypos ?tailpos)
+      (tail ?snake ?tailpos)
+      (adjacent ?nextpos ?headpos)
+      (adjacent ?bodypos ?tailpos)
+      (not (occupied ?nextpos))
+      (not (= ?bodypos ?nextpos))
+      (not (= ?tailpos ?nextpos))
+      (not (= ?headpos ?tailpos))
+    )
+    (
+      (head ?snake ?headpos)
+      (tail ?snake ?tailpos)
+      (connected ?snake ?bodypos ?tailpos)
+      (occupied ?tailpos)
+    )
+    (
+      (head ?snake ?nextpos)
+      (tail ?snake ?bodypos)
+      (connected ?snake ?nextpos ?headpos)
+      (occupied ?nextpos)
+    )
+  )
+
+  (:operator (!!visit_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+    nil
+    nil
+    (
+      (visited_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+    )
+  )
+
+  (:operator (!!unvisit_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+    nil
+    (
+      (visited_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+    )
+    nil
+  )
+
+  (:operator (!!visit_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+    nil
+    nil
+    (
+      (visited_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+    )
+  )
+
+  (:operator (!!unvisit_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+    nil
+    (
+      (visited_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+    )
+    nil
+  )
+
+  (:operator (!!visit_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+    nil
+    nil
+    (
+      (visited_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+    )
+  )
+
+  (:operator (!!unvisit_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+    nil
+    (
+      (visited_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+    )
+    nil
+  )
+
+  ;------------------------------
+  ; Methods
+  ;------------------------------
+
+  (:method (hunt)
+    hunt_all
+    (
+      (snake ?snake)
+      (location ?foodpos)
+      (location ?snakepos)
+      (location ?pos1)
+      (mouse-at ?foodpos)
+      (head ?snake ?snakepos)
+      (adjacent ?foodpos ?pos1)
+      (not (visited_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1))
+    )
+    (
+      (move ?snake ?snakepos ?pos1)
+      (!strike ?snake ?pos1 ?foodpos)
+      (!!visit_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+      (hunt)
+      (!!unvisit_hunt_hunt_all ?snake ?foodpos ?snakepos ?pos1)
+    )
+  )
+
+  (:method (hunt)
+    hunt_done
+    (
+      (forall (?pos) (location ?pos) (not (mouse-at ?pos)))
+    )
+    nil
+  )
+
+  (:method (move ?snake ?snakepos ?goalpos)
+    move-base
+    (
+      (snake ?snake)
+      (location ?snakepos)
+      (location ?goalpos)
+      (= ?snakepos ?goalpos)
+    )
+    nil
+  )
+
+  (:method (move ?snake ?snakepos ?goalpos)
+    move-long-snake
+    (
+      (snake ?snake)
+      (location ?snakepos)
+      (location ?goalpos)
+      (location ?pos2)
+      (location ?bodypos)
+      (location ?tailpos)
+      (adjacent ?pos2 ?snakepos)
+      (connected ?snake ?bodypos ?tailpos)
+      (tail ?snake ?tailpos)
+      (not (occupied ?pos2))
+      (not (visited_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos))
+    )
+    (
+      (!move-long ?snake ?pos2 ?snakepos ?bodypos ?tailpos)
+      (!!visit_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+      (move ?snake ?pos2 ?goalpos)
+      (!!unvisit_move_move-long-snake ?snake ?snakepos ?goalpos ?pos2 ?bodypos ?tailpos)
+    )
+  )
+
+  (:method (move ?snake ?snakepos ?goalpos)
+    move-short-snake
+    (
+      (snake ?snake)
+      (location ?snakepos)
+      (location ?goalpos)
+      (location ?pos2)
+      (adjacent ?pos2 ?snakepos)
+      (tail ?snake ?snakepos)
+      (not (occupied ?pos2))
+      (not (visited_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2))
+    )
+    (
+      (!move-short ?snake ?pos2 ?snakepos)
+      (!!visit_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+      (move ?snake ?pos2 ?goalpos)
+      (!!unvisit_move_move-short-snake ?snake ?snakepos ?goalpos ?pos2)
+    )
+  )
+))

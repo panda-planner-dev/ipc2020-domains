@@ -1,0 +1,47 @@
+(define (problem pb11)
+  (:domain snake)
+
+  (:objects
+    viper - snake
+    px0y0 px1y0 px2y0 px3y0 px4y0
+    px0y1 px1y1 px2y1 px3y1 px4y1
+    px0y2 px1y2 px2y2 px3y2 px4y2 - location
+  )
+
+  (:init
+    (head viper px2y1)
+    (connected viper px2y1 px2y2)
+    (connected viper px2y2 px3y2)
+    (connected viper px3y2 px4y2)
+    (connected viper px4y2 px4y1)
+    (connected viper px4y1 px4y0)
+    (connected viper px4y0 px3y0)
+    (tail viper px3y0)
+
+    (mouse-at px0y0)
+    (mouse-at px0y1)
+    (mouse-at px3y1)
+    (mouse-at px0y2)
+
+    (occupied px0y0)
+    (occupied px3y0)
+    (occupied px4y0)
+    (occupied px0y1)
+    (occupied px2y1)
+    (occupied px3y1)
+    (occupied px4y1)
+    (occupied px0y2)
+    (occupied px2y2)
+    (occupied px3y2)
+    (occupied px4y2)
+
+    (adjacent px0y0 px1y0) (adjacent px1y0 px0y0) (adjacent px1y0 px2y0) (adjacent px2y0 px1y0) (adjacent px2y0 px3y0) (adjacent px3y0 px2y0) (adjacent px3y0 px4y0) (adjacent px4y0 px3y0)
+    (adjacent px0y1 px1y1) (adjacent px1y1 px0y1) (adjacent px1y1 px2y1) (adjacent px2y1 px1y1) (adjacent px2y1 px3y1) (adjacent px3y1 px2y1) (adjacent px3y1 px4y1) (adjacent px4y1 px3y1)
+    (adjacent px0y2 px1y2) (adjacent px1y2 px0y2) (adjacent px1y2 px2y2) (adjacent px2y2 px1y2) (adjacent px2y2 px3y2) (adjacent px3y2 px2y2) (adjacent px3y2 px4y2) (adjacent px4y2 px3y2)
+
+    (adjacent px0y0 px0y1) (adjacent px0y1 px0y0) (adjacent px1y0 px1y1) (adjacent px1y1 px1y0) (adjacent px2y0 px2y1) (adjacent px2y1 px2y0) (adjacent px3y0 px3y1) (adjacent px3y1 px3y0) (adjacent px4y0 px4y1) (adjacent px4y1 px4y0)
+    (adjacent px0y1 px0y2) (adjacent px0y2 px0y1) (adjacent px1y1 px1y2) (adjacent px1y2 px1y1) (adjacent px2y1 px2y2) (adjacent px2y2 px2y1) (adjacent px3y1 px3y2) (adjacent px3y2 px3y1) (adjacent px4y1 px4y2) (adjacent px4y2 px4y1)
+  )
+
+  (:htn :subtasks (hunt))
+)
