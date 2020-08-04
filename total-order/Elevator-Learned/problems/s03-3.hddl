@@ -1,0 +1,60 @@
+(define (problem p)
+(:domain elevator)
+(:objects
+	P0 - PASSENGER
+	P1 - PASSENGER
+	P2 - PASSENGER
+	P0 - OBJECT
+	P1 - OBJECT
+	P2 - OBJECT
+	F0 - OBJECT
+	F1 - OBJECT
+	F2 - OBJECT
+	F3 - OBJECT
+	F4 - OBJECT
+	F5 - OBJECT
+	F0 - FLOOR
+	F1 - FLOOR
+	F2 - FLOOR
+	F3 - FLOOR
+	F4 - FLOOR
+	F5 - FLOOR
+)
+(:htn
+	:tasks (and
+	(task0 (ACHIEVE-SERVED P0))
+	(task1 (ACHIEVE-SERVED P1))
+	(task2 (ACHIEVE-SERVED P2))
+	)
+:ordering (and
+	(task2 < task1)
+	(task1 < task0)
+)
+:constraints ( )
+)
+(:init
+        (ABOVE F0 F1)
+        (ABOVE F0 F2)
+        (ABOVE F0 F3)
+        (ABOVE F0 F4)
+        (ABOVE F0 F5)
+        (ABOVE F1 F2)
+        (ABOVE F1 F3)
+        (ABOVE F1 F4)
+        (ABOVE F1 F5)
+        (ABOVE F2 F3)
+        (ABOVE F2 F4)
+        (ABOVE F2 F5)
+        (ABOVE F3 F4)
+        (ABOVE F3 F5)
+        (ABOVE F4 F5)
+        (ORIGIN P0 F5)
+        (DESTIN P0 F0)
+        (ORIGIN P1 F1)
+        (DESTIN P1 F3)
+        (ORIGIN P2 F0)
+        (DESTIN P2 F5)
+        (LIFT-AT F0)
+)
+)
+
