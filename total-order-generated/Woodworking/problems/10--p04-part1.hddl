@@ -115,7 +115,6 @@
 		(goalsize p3 small)
 		(unused p4)
 		(goalsize p4 large)
-		(grind_treatment_change varnished colourfragments)
 	)
 	(:goal
 		(and
