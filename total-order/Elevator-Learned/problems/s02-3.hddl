@@ -20,7 +20,7 @@
 	(task1 (ACHIEVE-SERVED P1))
 	)
 :ordering (and
-	(task1 < task0)
+	(< task1 task0)
 )
 :constraints ( )
 )

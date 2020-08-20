@@ -158,9 +158,9 @@
 	(task3 (ACHIEVE-HOME SK))
 	)
 :ordering (and
-	(task3 < task2)
-	(task2 < task1)
-	(task1 < task0)
+	(< task3 task2)
+	(< task2 task1)
+	(< task1 task0)
 )
 :constraints ( )
 )

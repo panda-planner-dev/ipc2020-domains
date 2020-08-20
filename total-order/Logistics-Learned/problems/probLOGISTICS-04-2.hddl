@@ -56,9 +56,9 @@
 	(task3 (ACHIEVE-AT OBJ12 POS1))
 	)
 :ordering (and
-	(task3 < task2)
-	(task2 < task1)
-	(task1 < task0)
+	(< task3 task2)
+	(< task2 task1)
+	(< task1 task0)
 )
 :constraints ( )
 )
