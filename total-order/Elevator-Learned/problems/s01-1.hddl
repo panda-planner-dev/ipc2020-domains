@@ -2,9 +2,6 @@
 (:domain elevator)
 (:objects
 	P0 - PASSENGER
-	P0 - OBJECT
-	F0 - OBJECT
-	F1 - OBJECT
 	F0 - FLOOR
 	F1 - FLOOR
 )
