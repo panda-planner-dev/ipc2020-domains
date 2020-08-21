@@ -130,7 +130,7 @@
 )
 
 (:method m3
-    :parameters (?d1 ?d2 - AbstractDevice ?t - SignalType ?p1 ?p2 - Port)
+    :parameters (?d1 ?d2 - AbstractDevice ?t - SignalType)
     :task (ConnectDevices ?d1 ?d2 ?t)
     :subtasks (and
             (t1 (guard))
