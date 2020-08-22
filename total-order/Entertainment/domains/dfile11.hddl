@@ -8,11 +8,11 @@
   (:types
     connector - master_sort
     equipment - master_sort
-    sort_for_amplifierMINUS_1 - equipment
-    sort_for_bluMINUS_rayMINUS_1 - equipment
-    sort_for_boxMINUS_1 - equipment
-    sort_for_boxMINUS_2 - equipment
-    sort_for_tvMINUS_1 - equipment
+    artificial_sort_for_amplifierMINUS_1 - equipment
+    artificial_sort_for_bluMINUS_rayMINUS_1 - equipment
+    artificial_sort_for_boxMINUS_1 - equipment
+    artificial_sort_for_boxMINUS_2 - equipment
+    artificial_sort_for_tvMINUS_1 - equipment
   )
 
   (:predicates
@@ -165,7 +165,7 @@
   )
 
   (:method US__top_method
-    :parameters (?var_for_amplifierMINUS_1_1 - sort_for_amplifierMINUS_1 ?var_for_bluMINUS_rayMINUS_1_2 - sort_for_bluMINUS_rayMINUS_1 ?var_for_amplifierMINUS_1_3 - sort_for_amplifierMINUS_1 ?var_for_boxMINUS_1_4 - sort_for_boxMINUS_1 ?var_for_amplifierMINUS_1_5 - sort_for_amplifierMINUS_1 ?var_for_boxMINUS_2_6 - sort_for_boxMINUS_2 ?var_for_bluMINUS_rayMINUS_1_7 - sort_for_bluMINUS_rayMINUS_1 ?var_for_tvMINUS_1_8 - sort_for_tvMINUS_1)
+    :parameters (?var_for_amplifierMINUS_1_1 - artificial_sort_for_amplifierMINUS_1 ?var_for_bluMINUS_rayMINUS_1_2 - artificial_sort_for_bluMINUS_rayMINUS_1 ?var_for_amplifierMINUS_1_3 - artificial_sort_for_amplifierMINUS_1 ?var_for_boxMINUS_1_4 - artificial_sort_for_boxMINUS_1 ?var_for_amplifierMINUS_1_5 - artificial_sort_for_amplifierMINUS_1 ?var_for_boxMINUS_2_6 - artificial_sort_for_boxMINUS_2 ?var_for_bluMINUS_rayMINUS_1_7 - artificial_sort_for_bluMINUS_rayMINUS_1 ?var_for_tvMINUS_1_8 - artificial_sort_for_tvMINUS_1)
     :task (US__top)
     :subtasks (and
       (xUS__t_id_17 (a_connect ?var_for_bluMINUS_rayMINUS_1_2 ?var_for_amplifierMINUS_1_1))

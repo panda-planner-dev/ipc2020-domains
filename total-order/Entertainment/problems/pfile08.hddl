@@ -2,7 +2,7 @@
   (problem p)
   (:domain d)
   (:objects
-    amplifierMINUS_1 - sort_for_amplifierMINUS_1
+    amplifierMINUS_1 - artificial_sort_for_amplifierMINUS_1
     amplifierMINUS_1MINUS_cinchMINUS_1 - connector
     amplifierMINUS_1MINUS_cinchMINUS_2 - connector
     amplifierMINUS_1MINUS_cinchMINUS_3 - connector
@@ -11,18 +11,18 @@
     amplifierMINUS_1MINUS_speakerWireMINUS_6 - connector
     amplifierMINUS_1MINUS_speakerWireMINUS_7 - connector
     amplifierMINUS_1MINUS_speakerWireMINUS_8 - connector
-    bluMINUS_rayMINUS_1 - sort_for_bluMINUS_rayMINUS_1
+    bluMINUS_rayMINUS_1 - artificial_sort_for_bluMINUS_rayMINUS_1
     bluMINUS_rayMINUS_1MINUS_scartMINUS_1 - connector
-    boxMINUS_1 - sort_for_boxMINUS_1
+    boxMINUS_1 - artificial_sort_for_boxMINUS_1
     boxMINUS_1MINUS_speakerWireMINUS_1 - connector
-    boxMINUS_2 - sort_for_boxMINUS_2
+    boxMINUS_2 - artificial_sort_for_boxMINUS_2
     boxMINUS_2MINUS_speakerWireMINUS_1 - connector
     cinchMINUS_cableMINUS_1 - equipment
     cinchMINUS_cableMINUS_1MINUS_cinchMINUS_1 - connector
     cinchMINUS_cableMINUS_1MINUS_cinchMINUS_2 - connector
-    dvdMINUS_1 - sort_for_dvdMINUS_1
+    dvdMINUS_1 - artificial_sort_for_dvdMINUS_1
     dvdMINUS_1MINUS_scartMINUS_1 - connector
-    gameMINUS_consoleMINUS_1 - sort_for_gameMINUS_consoleMINUS_1
+    gameMINUS_consoleMINUS_1 - artificial_sort_for_gameMINUS_consoleMINUS_1
     gameMINUS_consoleMINUS_1MINUS_scartMINUS_1 - connector
     multiMINUS_scartMINUS_1 - equipment
     multiMINUS_scartMINUS_1MINUS_scartMINUS_1 - connector
@@ -47,7 +47,7 @@
     speakerMINUS_wireMINUS_2 - equipment
     speakerMINUS_wireMINUS_2MINUS_speakerWireMINUS_1 - connector
     speakerMINUS_wireMINUS_2MINUS_speakerWireMINUS_2 - connector
-    tv1MINUS_1 - sort_for_tv1MINUS_1
+    tv1MINUS_1 - artificial_sort_for_tv1MINUS_1
     tv1MINUS_1MINUS_cinchMINUS_2 - connector
     tv1MINUS_1MINUS_scartMINUS_1 - connector
   )

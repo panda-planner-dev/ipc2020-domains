@@ -2,7 +2,7 @@
   (problem p)
   (:domain d)
   (:objects
-    amplifierMINUS_1 - sort_for_amplifierMINUS_1
+    amplifierMINUS_1 - artificial_sort_for_amplifierMINUS_1
     amplifierMINUS_1MINUS_cinchMINUS_1 - connector
     amplifierMINUS_1MINUS_cinchMINUS_2 - connector
     amplifierMINUS_1MINUS_cinchMINUS_3 - connector
@@ -23,7 +23,7 @@
     amplifierMINUS_1MINUS_speakerWireMINUS_12 - connector
     amplifierMINUS_1MINUS_speakerWireMINUS_8 - connector
     amplifierMINUS_1MINUS_speakerWireMINUS_9 - connector
-    bluMINUS_rayMINUS_1 - sort_for_bluMINUS_rayMINUS_1
+    bluMINUS_rayMINUS_1 - artificial_sort_for_bluMINUS_rayMINUS_1
     bluMINUS_rayMINUS_1MINUS_cinchMINUS_2 - connector
     bluMINUS_rayMINUS_1MINUS_cinchMINUS_3 - connector
     bluMINUS_rayMINUS_1MINUS_hdmiMINUS_1 - connector
@@ -60,7 +60,7 @@
     headphoneMINUS_cinchMINUS_cableMINUS_1 - equipment
     headphoneMINUS_cinchMINUS_cableMINUS_1MINUS_cinchMINUS_1 - connector
     headphoneMINUS_cinchMINUS_cableMINUS_1MINUS_headphoneMINUS_2 - connector
-    satMINUS_receiverMINUS_1 - sort_for_satMINUS_receiverMINUS_1
+    satMINUS_receiverMINUS_1 - artificial_sort_for_satMINUS_receiverMINUS_1
     satMINUS_receiverMINUS_1MINUS_cinchMINUS_4 - connector
     satMINUS_receiverMINUS_1MINUS_cinchMINUS_5 - connector
     satMINUS_receiverMINUS_1MINUS_cinchMINUS_6 - connector
@@ -74,7 +74,7 @@
     spdifMINUS_cableMINUS_1 - equipment
     spdifMINUS_cableMINUS_1MINUS_spdifMINUS_1 - connector
     spdifMINUS_cableMINUS_1MINUS_spdifMINUS_2 - connector
-    tvMINUS_1 - sort_for_tvMINUS_1
+    tvMINUS_1 - artificial_sort_for_tvMINUS_1
     tvMINUS_1MINUS_cinchMINUS_5 - connector
     tvMINUS_1MINUS_cinchMINUS_6 - connector
     tvMINUS_1MINUS_hdmiMINUS_1 - connector

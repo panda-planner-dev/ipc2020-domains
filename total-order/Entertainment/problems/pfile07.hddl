@@ -2,10 +2,10 @@
   (problem p)
   (:domain d)
   (:objects
-    activeMINUS_speakerMINUS_1 - sort_for_activeMINUS_speakerMINUS_1
+    activeMINUS_speakerMINUS_1 - artificial_sort_for_activeMINUS_speakerMINUS_1
     activeMINUS_speakerMINUS_1MINUS_cinchMINUS_1 - connector
     activeMINUS_speakerMINUS_1MINUS_cinchMINUS_2 - connector
-    bluMINUS_rayMINUS_1 - sort_for_bluMINUS_rayMINUS_1
+    bluMINUS_rayMINUS_1 - artificial_sort_for_bluMINUS_rayMINUS_1
     bluMINUS_rayMINUS_1MINUS_scartMINUS_1 - connector
     cinchMINUS_cableMINUS_1 - equipment
     cinchMINUS_cableMINUS_1MINUS_cinchMINUS_1 - connector
@@ -13,9 +13,9 @@
     cinchMINUS_cableMINUS_2 - equipment
     cinchMINUS_cableMINUS_2MINUS_cinchMINUS_1 - connector
     cinchMINUS_cableMINUS_2MINUS_cinchMINUS_2 - connector
-    dvdMINUS_1 - sort_for_dvdMINUS_1
+    dvdMINUS_1 - artificial_sort_for_dvdMINUS_1
     dvdMINUS_1MINUS_scartMINUS_1 - connector
-    gameMINUS_consoleMINUS_1 - sort_for_gameMINUS_consoleMINUS_1
+    gameMINUS_consoleMINUS_1 - artificial_sort_for_gameMINUS_consoleMINUS_1
     gameMINUS_consoleMINUS_1MINUS_scartMINUS_1 - connector
     multiMINUS_scartMINUS_1 - equipment
     multiMINUS_scartMINUS_1MINUS_scartMINUS_1 - connector
@@ -37,7 +37,7 @@
     scartMINUS_cableMINUS_5 - equipment
     scartMINUS_cableMINUS_5MINUS_scartMINUS_1 - connector
     scartMINUS_cableMINUS_5MINUS_scartMINUS_2 - connector
-    tv1MINUS_1 - sort_for_tv1MINUS_1
+    tv1MINUS_1 - artificial_sort_for_tv1MINUS_1
     tv1MINUS_1MINUS_cinchMINUS_2 - connector
     tv1MINUS_1MINUS_scartMINUS_1 - connector
   )

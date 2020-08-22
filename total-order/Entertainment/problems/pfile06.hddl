@@ -2,11 +2,11 @@
   (problem p)
   (:domain d)
   (:objects
-    bluMINUS_rayMINUS_1 - sort_for_bluMINUS_rayMINUS_1
+    bluMINUS_rayMINUS_1 - artificial_sort_for_bluMINUS_rayMINUS_1
     bluMINUS_rayMINUS_1MINUS_scartMINUS_1 - connector
-    dvdMINUS_1 - sort_for_dvdMINUS_1
+    dvdMINUS_1 - artificial_sort_for_dvdMINUS_1
     dvdMINUS_1MINUS_scartMINUS_1 - connector
-    gameMINUS_consoleMINUS_1 - sort_for_gameMINUS_consoleMINUS_1
+    gameMINUS_consoleMINUS_1 - artificial_sort_for_gameMINUS_consoleMINUS_1
     gameMINUS_consoleMINUS_1MINUS_scartMINUS_1 - connector
     multiMINUS_scartMINUS_1 - equipment
     multiMINUS_scartMINUS_1MINUS_scartMINUS_1 - connector
@@ -25,7 +25,7 @@
     scartMINUS_cableMINUS_4 - equipment
     scartMINUS_cableMINUS_4MINUS_scartMINUS_1 - connector
     scartMINUS_cableMINUS_4MINUS_scartMINUS_2 - connector
-    tv1MINUS_1 - sort_for_tv1MINUS_1
+    tv1MINUS_1 - artificial_sort_for_tv1MINUS_1
     tv1MINUS_1MINUS_cinchMINUS_2 - connector
     tv1MINUS_1MINUS_scartMINUS_1 - connector
   )

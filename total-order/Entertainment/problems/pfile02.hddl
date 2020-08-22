@@ -2,13 +2,13 @@
   (problem p)
   (:domain d)
   (:objects
-    dvdMINUS_1 - sort_for_dvdMINUS_1
+    dvdMINUS_1 - artificial_sort_for_dvdMINUS_1
     dvdMINUS_1MINUS_scartMINUS_1 - connector
     scartMINUS_toMINUS_cinchMINUS_cableMINUS_1 - equipment
     scartMINUS_toMINUS_cinchMINUS_cableMINUS_1MINUS_cinchMINUS_2 - connector
     scartMINUS_toMINUS_cinchMINUS_cableMINUS_1MINUS_cinchMINUS_3 - connector
     scartMINUS_toMINUS_cinchMINUS_cableMINUS_1MINUS_scartMINUS_1 - connector
-    simpleMINUS_tvMINUS_1 - sort_for_simpleMINUS_tvMINUS_1
+    simpleMINUS_tvMINUS_1 - artificial_sort_for_simpleMINUS_tvMINUS_1
     simpleMINUS_tvMINUS_1MINUS_cinchMINUS_1 - connector
     simpleMINUS_tvMINUS_1MINUS_cinchMINUS_2 - connector
   )

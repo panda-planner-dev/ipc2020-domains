@@ -8,9 +8,9 @@
   (:types
     connector - master_sort
     equipment - master_sort
-    sort_for_amplifierMINUS_1 - equipment
-    sort_for_bluMINUS_rayMINUS_1 - equipment
-    sort_for_tvMINUS_1 - equipment
+    artificial_sort_for_amplifierMINUS_1 - equipment
+    artificial_sort_for_bluMINUS_rayMINUS_1 - equipment
+    artificial_sort_for_tvMINUS_1 - equipment
   )
 
   (:predicates
@@ -163,7 +163,7 @@
   )
 
   (:method US__top_method
-    :parameters (?var_for_amplifierMINUS_1_1 - sort_for_amplifierMINUS_1 ?var_for_bluMINUS_rayMINUS_1_2 - sort_for_bluMINUS_rayMINUS_1 ?var_for_bluMINUS_rayMINUS_1_3 - sort_for_bluMINUS_rayMINUS_1 ?var_for_tvMINUS_1_4 - sort_for_tvMINUS_1)
+    :parameters (?var_for_amplifierMINUS_1_1 - artificial_sort_for_amplifierMINUS_1 ?var_for_bluMINUS_rayMINUS_1_2 - artificial_sort_for_bluMINUS_rayMINUS_1 ?var_for_bluMINUS_rayMINUS_1_3 - artificial_sort_for_bluMINUS_rayMINUS_1 ?var_for_tvMINUS_1_4 - artificial_sort_for_tvMINUS_1)
     :task (US__top)
     :subtasks (and
       (xUS__t_id_17 (a_connect ?var_for_bluMINUS_rayMINUS_1_2 ?var_for_amplifierMINUS_1_1))
