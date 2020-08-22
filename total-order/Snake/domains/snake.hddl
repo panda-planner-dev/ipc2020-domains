@@ -1,6 +1,6 @@
 ; Snake by Mau Magnaguagno
 (define (domain snake)
-  (:requirements :hierarchy :typing :equality :negative-preconditions :method-precondition :universal-preconditions)
+  (:requirements :hierarchy :typing :equality :negative-preconditions :method-preconditions :universal-preconditions)
 
   (:types snake location)
 
