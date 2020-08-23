@@ -8,6 +8,8 @@
     px0y2 px1y2 px2y2 - location
   )
 
+  (:htn :subtasks (hunt))
+
   (:init
     (head viper px2y2)
     (connected viper px2y2 px2y1)
@@ -27,5 +29,4 @@
     (adjacent px0y1 px0y2) (adjacent px0y2 px0y1) (adjacent px1y1 px1y2) (adjacent px1y2 px1y1) (adjacent px2y1 px2y2) (adjacent px2y2 px2y1)
   )
 
-  (:htn :subtasks (hunt))
 )

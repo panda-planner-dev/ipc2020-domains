@@ -15,6 +15,8 @@
     px0y9 px1y9 px2y9 px3y9 px4y9 px5y9 px6y9 px7y9 px8y9 - location
   )
 
+  (:htn :subtasks (hunt))
+
   (:init
     (head viper px5y2)
     (connected viper px5y2 px4y2)
@@ -140,5 +142,4 @@
     (adjacent px0y8 px0y9) (adjacent px0y9 px0y8) (adjacent px1y8 px1y9) (adjacent px1y9 px1y8) (adjacent px2y8 px2y9) (adjacent px2y9 px2y8) (adjacent px3y8 px3y9) (adjacent px3y9 px3y8) (adjacent px4y8 px4y9) (adjacent px4y9 px4y8) (adjacent px5y8 px5y9) (adjacent px5y9 px5y8) (adjacent px6y8 px6y9) (adjacent px6y9 px6y8) (adjacent px7y8 px7y9) (adjacent px7y9 px7y8) (adjacent px8y8 px8y9) (adjacent px8y9 px8y8)
   )
 
-  (:htn :subtasks (hunt))
 )
