@@ -3,7 +3,7 @@ Bernd Schattenberg <no known mail>
   
 Bastian Seegebarth <no known mail>
   
-Susanne Biundo <no known mail>
+Susanne Biundo <susanne.biundo@uni-ulm.de>
   
 edited by Gregor Behnke <behnkeg@informatik.uni-freiburg.de>
 
