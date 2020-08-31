@@ -1,5 +1,5 @@
 ## Author
-Bernd Schattenberg <no known mail>
+Bernd Schattenberg <mail@berndschattenberg.de>
 
 Bastian Seegebarth <no known mail>
 
