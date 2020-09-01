@@ -1,9 +1,14 @@
 ## Author
 Bernd Schattenberg <mail@berndschattenberg.de>
 
-Bastian Seegebarth <no known mail>
-
-Susanne Biundo <susanne.biundo@uni-ulm.de>
+edited (removed "hybrid" features) by Gregor Behnke <behnkeg@informatik.uni-freiburg.de>
 
 ## Paper
-Original Source is unknown.
+
+@PhdThesis{Schattenberg09HybridPlanningAndScheduling,
+  author    = {Bernd Schattenberg},
+  title     = {Hybrid Planning \& Scheduling},
+  school    = {Ulm University, Germany},
+  year      = {2009},
+  doi       = {10.18725/OPARU-1045},
+}
