@@ -6,7 +6,6 @@
 		sleader3 - shelter_leader
 		sleader1 - shelter_leader
 		ccrew1 - construction_crew
-		brighton_high - school
 		van1 - power_van
 		airport - transport_hub
 		normal_hazardous - hazardousness
@@ -52,7 +51,8 @@
 		bruises - condition
 		backhoe1 - backhoe
 		emt1 - emt_crew
-		tdriver1 - truck_driver
+		ttdriver1 - tow_truck_driver
+		brighton_dump - garbage_dump
 		pdriver2 - plowdriver
 		pdriver1 - plowdriver
 		gen2 - generator

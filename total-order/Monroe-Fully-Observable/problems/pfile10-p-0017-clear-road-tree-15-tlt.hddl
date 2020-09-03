@@ -3,11 +3,11 @@
 	(:domain  someDomain)
 	(:objects
 		bus1 - bus
+		brighton_dump - garbage_dump
 		sleader2 - shelter_leader
 		sleader3 - shelter_leader
 		sleader1 - shelter_leader
 		ccrew1 - construction_crew
-		brighton_high - school
 		van1 - power_van
 		normal_hazardous - hazardousness
 		medium_hazardous - hazardousness

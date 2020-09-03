@@ -59,7 +59,7 @@
                 police_chief - callable
                 very_hazardous - hazardousness
 		bdriver1 - bus_driver
-		brighton_dump - garbage_dump
+		brighton_high - school
  		bus1 - bus
 		dtruck1 - dump_truck
 		gen1 - generator
@@ -73,7 +73,7 @@
 		pvan2 - police_van
 		rochester_general - hospital
 		tcrew1 - tree_crew
-		ttdriver1 - tow_truck_driver
+		tdriver1 - truck_driver
 		texaco1 - service_station
 		twelve_corners - point
        )
