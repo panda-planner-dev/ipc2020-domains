@@ -1,5 +1,5 @@
 (define (domain someDomain)
-	(:requirements :typing :hierachie)
+	(:requirements :typing :hierarchy :universal-precondition)
 	(:types
 		bus - vehicle
 		shelter_leader - adult
@@ -765,7 +765,7 @@
 	)
 
 	(:method m_add_fuel
-		:parameters (?obj - object ?ss - service_station)
+		:parameters (?obj - generator ?ss - service_station)
 		:task (add_fuel ?ss ?obj)
 		:subtasks (and
 		 (task0 (pay ?ss))
