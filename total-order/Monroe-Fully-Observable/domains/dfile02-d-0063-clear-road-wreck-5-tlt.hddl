@@ -66,6 +66,7 @@
 		ttruck1 - tow_truck
 		park_ridge - hospital
 		vehicle_333479 - vehicle
+		brighton_dump - garbage_dump
  	)
 
 
@@ -252,19 +253,6 @@
 
 	(:task cnavegate_vehicle
 		:parameters (?person - adult ?veh - vehicle ?loc - point ?vehloc - point)
-		:precondition 
-			(and
-				(atloc ?veh ?vehloc)
-				(atloc ?person ?vehloc)
-				(can_drive ?person ?veh)
-			)
-		:effect
-			(and
-				(atloc ?veh ?loc)
-				(atloc ?person ?loc)
-				(not (atloc ?veh ?vehloc))
-				(not (atloc ?person ?vehloc))
-			)
 	)
 
 	(:task cplace_cones
