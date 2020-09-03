@@ -11,7 +11,6 @@
 		van1 - power_van
 		airport - transport_hub
 		texaco1 - service_station
-		very_hazardous - hazardousness
 		normal_hazardous - hazardousness
 		medium_hazardous - hazardousness
 		ttruck1 - tow_truck
@@ -79,9 +78,6 @@
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
-		fema - callable
-		ebs - callable
-		police_chief - callable
 		mendon_pond - park
 		pu2 - police_unit
 		pu1 - police_unit
