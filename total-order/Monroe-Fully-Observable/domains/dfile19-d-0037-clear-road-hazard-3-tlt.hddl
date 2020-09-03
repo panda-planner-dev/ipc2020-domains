@@ -58,6 +58,14 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		park_ridge - hospital
+		pcrew1 - power_crew
+		pu1 - police_unit
+		pvan1 - police_van
+		strong - hospital
+		tcrew1 - tree_crew
+		texaco1 - service_station
+		van1 - power_van
         )
 
 

@@ -58,6 +58,14 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		amb1 - ambulance
+		brighton_dump - garbage_dump
+		emt1 - emt_crew
+		mendon_pond - park
+		pdriver1 - plowdriver
+		plow2 - snowplow
+		rochester_general - hospital
+		twelve_corners - point
         )
 
 

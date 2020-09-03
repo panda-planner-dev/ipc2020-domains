@@ -58,6 +58,20 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		airport - transport_hub
+		backhoe1 - backhoe
+		ccrew1 - construction_crew
+		dtruck1 - dump_truck
+		mendon_pond - park
+		pu2 - police_unit
+		pvan2 - police_van
+		strong - hospital
+		tcrew1 - tree_crew
+		tdriver1 - truck_driver
+		texaco1 - service_station
+		tree_133716 - tree
+		wcrew1 - water_crew
+		wtruck1 - water_truck
         )
 
 

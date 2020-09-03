@@ -43,7 +43,6 @@
 		perinton - town
 		scottsville - town
 		pvan2 - police_van
-		pvan1 - police_van
 		marketplace - mall
 		plow2 - snowplow
 		plow1 - snowplow
@@ -71,7 +70,6 @@
 		rge - powerco
 		mendon_ge - powerco
 		monroe_ge - powerco
-		park_ridge - hospital
 		strong - hospital
 		rochester_general - hospital
 		roch_water - waterco
@@ -79,14 +77,12 @@
 		mendon_water - waterco
 		mendon_pond - park
 		pu2 - police_unit
-		pu1 - police_unit
 		food1 - food
 		food2 - food
 		food3 - food
 		brighton_dump - garbage_dump
 		henrietta_dump - garbage_dump
 		pittsford_plaza - point
-		twelve_corners - point
 		wcrew1 - water_crew
 	)
 	(:htn

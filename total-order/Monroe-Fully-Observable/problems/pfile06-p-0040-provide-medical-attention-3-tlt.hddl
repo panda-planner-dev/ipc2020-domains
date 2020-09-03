@@ -44,9 +44,7 @@
 		scottsville - town
 		pvan2 - police_van
 		pvan1 - police_van
-		marketplace - mall
 		plow2 - snowplow
-		plow1 - snowplow
 		pcrew1 - power_crew
 		amb1 - ambulance
 		tcrew1 - tree_crew
@@ -62,7 +60,6 @@
 		ht2 - hazard_team
 		ht1 - hazard_team
 		tdriver1 - truck_driver
-		pdriver2 - plowdriver
 		pdriver1 - plowdriver
 		gen2 - generator
 		gen1 - generator
@@ -71,8 +68,6 @@
 		rge - powerco
 		mendon_ge - powerco
 		monroe_ge - powerco
-		park_ridge - hospital
-		strong - hospital
 		rochester_general - hospital
 		roch_water - waterco
 		monroe_water - waterco
@@ -88,7 +83,6 @@
 		pittsford_plaza - point
 		twelve_corners - point
 		wcrew1 - water_crew
-		person_208195 - person
 	)
 	(:htn
 ;;		:subtasks (and

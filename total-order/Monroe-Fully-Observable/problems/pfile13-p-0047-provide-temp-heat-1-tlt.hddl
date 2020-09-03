@@ -48,7 +48,6 @@
 		plow2 - snowplow
 		plow1 - snowplow
 		pcrew1 - power_crew
-		amb1 - ambulance
 		tcrew1 - tree_crew
 		head_injury - condition
 		broken_leg - condition
@@ -58,7 +57,6 @@
 		bdriver1 - bus_driver
 		dtruck1 - dump_truck
 		backhoe1 - backhoe
-		emt1 - emt_crew
 		ht2 - hazard_team
 		ht1 - hazard_team
 		tdriver1 - truck_driver
@@ -84,9 +82,7 @@
 		food2 - food
 		food3 - food
 		brighton_dump - garbage_dump
-		henrietta_dump - garbage_dump
 		pittsford_plaza - point
-		twelve_corners - point
 		wcrew1 - water_crew
 		person_239795 - person
 	)

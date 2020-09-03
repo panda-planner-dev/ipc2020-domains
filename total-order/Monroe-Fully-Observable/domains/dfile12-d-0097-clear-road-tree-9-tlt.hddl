@@ -58,6 +58,19 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		airport - transport_hub
+		backhoe1 - backhoe
+		ccrew1 - construction_crew
+		dtruck1 - dump_truck
+		henrietta_dump - garbage_dump
+		park_ridge - hospital
+		pu1 - police_unit
+		pvan1 - police_van
+		rochester_general - hospital
+		strong - hospital
+		tcrew1 - tree_crew
+		tdriver1 - truck_driver
+		tree_546679 - tree
         )
 
 

@@ -58,7 +58,15 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
-        )
+		airport - transport_hub
+		ht2 - hazard_team
+		marketplace - mall
+		roch_water - waterco
+		tdriver1 - truck_driver
+ 		ttruck1 - tow_truck
+		wcrew1 - water_crew
+		wtruck1 - water_truck
+       )
 
 
 	(:predicates

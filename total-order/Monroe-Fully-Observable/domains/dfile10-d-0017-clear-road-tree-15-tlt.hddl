@@ -58,6 +58,25 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		airport - transport_hub
+		amb1 - ambulance
+		brighton_dump - garbage_dump
+		dtruck1 - dump_truck
+		emt1 - emt_crew
+		henrietta_dump - garbage_dump
+		ht2 - hazard_team
+		mendon_pond - park
+		pu2 - police_unit
+		pvan2 - police_van
+		tcrew1 - tree_crew
+		tdriver1 - truck_driver
+		texaco1 - service_station
+		tree_93545 - tree
+		ttdriver1 - tow_truck_driver
+		ttruck1 - tow_truck
+		twelve_corners - point
+		wcrew1 - water_crew
+		wtruck1 - water_truck
         )
 
 

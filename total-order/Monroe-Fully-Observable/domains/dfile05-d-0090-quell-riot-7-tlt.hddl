@@ -58,7 +58,13 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
-        )
+		pu2 - police_unit
+		pu1 - police_unit
+		park_ridge - hospital
+ 		pvan1 - police_van
+		strong - hospital
+		rochester_general - hospital
+       )
 
 
 	(:predicates

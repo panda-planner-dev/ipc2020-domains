@@ -58,6 +58,10 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		backhoe1 - backhoe
+		ccrew1 - construction_crew
+		mendon_pond - park
+		pittsford_plaza - point
         )
 
 

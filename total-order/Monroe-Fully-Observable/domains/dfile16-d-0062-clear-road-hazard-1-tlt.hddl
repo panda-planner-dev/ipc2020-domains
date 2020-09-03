@@ -58,6 +58,10 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		park_ridge - hospital
+		pu1 - police_unit
+		pvan1 - police_van
+		twelve_corners - point
         )
 
 

@@ -58,6 +58,12 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		marketplace - mall
+		park_ridge - hospital
+		strong - hospital
+		pdriver2 - plowdriver
+		plow1 - snowplow
+		person_208195 - person
         )
 
 

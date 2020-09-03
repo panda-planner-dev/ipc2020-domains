@@ -6,7 +6,6 @@
 		sleader2 - shelter_leader
 		sleader3 - shelter_leader
 		sleader1 - shelter_leader
-		ccrew1 - construction_crew
 		brighton_high - school
 		van1 - power_van
 		airport - transport_hub
@@ -58,7 +57,6 @@
 		bruises - condition
 		bdriver1 - bus_driver
 		dtruck1 - dump_truck
-		backhoe1 - backhoe
 		emt1 - emt_crew
 		ht2 - hazard_team
 		ht1 - hazard_team
@@ -78,7 +76,6 @@
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
-		mendon_pond - park
 		pu2 - police_unit
 		pu1 - police_unit
 		food1 - food
@@ -86,7 +83,6 @@
 		food3 - food
 		brighton_dump - garbage_dump
 		henrietta_dump - garbage_dump
-		pittsford_plaza - point
 		twelve_corners - point
 		wcrew1 - water_crew
 	)

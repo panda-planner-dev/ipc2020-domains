@@ -58,6 +58,13 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
+		henrietta_dump - garbage_dump
+		pu2 - police_unit
+		pu1 - police_unit
+		pvan2 - police_van
+		pvan1 - police_van
+		texaco1 - service_station
+		twelve_corners - point
         )
 
 
