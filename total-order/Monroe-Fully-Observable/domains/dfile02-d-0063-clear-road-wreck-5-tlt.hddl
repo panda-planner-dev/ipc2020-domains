@@ -1,5 +1,5 @@
 (define (domain someDomain)
-	(:requirements :typing :hierarchy :negative-preconditions :universal-preconditions)
+	(:requirements :typing :hierarchy :negative-preconditions :universal-preconditions :method-preconditions :equality)
 	(:types
 		bus - vehicle
 		shelter_leader - adult
@@ -58,7 +58,15 @@
                 ebs - callable
                 police_chief - callable
                 very_hazardous - hazardousness
-        )
+ 		ccrew1 - construction_crew
+		backhoe1 - backhoe
+		mendon_pond - park
+		strong - hospital
+		ttdriver1 - tow_truck_driver
+		ttruck1 - tow_truck
+		park_ridge - hospital
+		vehicle_333479 - vehicle
+ 	)
 
 
 	(:predicates
