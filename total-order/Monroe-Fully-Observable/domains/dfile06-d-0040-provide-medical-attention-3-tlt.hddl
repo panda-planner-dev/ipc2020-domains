@@ -53,6 +53,14 @@
 		adult - person
 		person - object
 	)
+        (:constants
+                fema - callable
+                ebs - callable
+                police_chief - callable
+                very_hazardous - hazardousness
+        )
+
+
 	(:predicates
 		(atloc ?arg0 - object ?arg1 - point)
 		(in_vehicle ?arg0 - object ?arg1 - vehicle)
