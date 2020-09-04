@@ -54,20 +54,14 @@
 		person - object
 	)
         (:constants
-		van1 - power_van
-		texaco1 - service_station
-		tdriver1 - truck_driver
-		tcrew1 - tree_crew
-		rochester_general - hospital
-		pvan1 - police_van
-		pu1 - police_unit
-		plow1 - snowplow
+		twelve_corners - point
+		pvan2 - police_van
+		pu2 - police_unit
 		pittsford_plaza - point
-		pcrew1 - power_crew
-		marketplace - mall
-		ht2 - hazard_team
-		dtruck1 - dump_truck
-		brighton_dump - garbage_dump
+		ht1 - hazard_team
+		bus1 - bus
+		brighton_high - school
+		bdriver1 - bus_driver
                 fema - callable
                 ebs - callable
                 police_chief - callable
@@ -98,9 +92,6 @@
 		(l4)
 		(l5)
 		(l6)
-		(l7)
-		(l8)
-		(l9)
 	)
 		(:task tlt
     :parameters ()
@@ -225,8 +216,8 @@
 	(:task cclimb_in
 		:parameters (?obj - person ?veh - vehicle ?objloc - point)
 	)
-	(:task cplace_cones
-		:parameters (?police - work_crew)
+	(:task cclimb_out
+		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
 	)
 		
 (:method m_tlt_set_up_shelter
@@ -570,7 +561,7 @@
 		:task (set_up_cones ?from ?to)
 		:subtasks (and
 		 (task0 (get_to ?crew ?from))
-		 (task1 (cplace_cones ?crew))
+		 (task1 (place_cones ?crew))
 		)
 		:ordering (and
 			(< task0 task1)
@@ -921,7 +912,7 @@
 		:parameters (?obj - person ?p - point ?veh - vehicle)
 		:task (get_out ?obj ?veh)
 		:subtasks (and
-		 (task0 (climb_out ?obj ?veh ?p))
+		 (task0 (cclimb_out ?obj ?veh ?p))
 		)
 	)
 	(:method m_get_out_unload
@@ -938,34 +929,34 @@
 		)
 	)
 	(:method regular_1
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
-		:subtasks (and
-		 (task0 (climb_in ?obj ?veh ?objloc))
-		)
-	)
-	(:method regular_2
-		:parameters (?police - work_crew)
-		:task (cplace_cones ?police)
-		:subtasks (and
-		 (task0 (place_cones ?police))
-		)
-	)
-	(:method regular_3
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:subtasks (and
 		 (task0 (navegate_vehicle ?person ?veh ?loc ?vehloc))
 		)
 	)
+	(:method regular_2
+		:parameters (?obj - person ?objloc - point ?veh - vehicle)
+		:task (cclimb_in ?obj ?veh ?objloc)
+		:subtasks (and
+		 (task0 (climb_in ?obj ?veh ?objloc))
+		)
+	)
+	(:method regular_3
+		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
+		:task (cclimb_out ?obj ?veh ?vehloc)
+		:subtasks (and
+		 (task0 (climb_out ?obj ?veh ?vehloc))
+		)
+	)
 	(:method prefix_1
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person pu1)
-			(= ?veh pvan1)
-			(= ?loc rochester_general)
-			(= ?vehloc pittsford_plaza)
+			(= ?person bdriver1)
+			(= ?veh bus1)
+			(= ?loc twelve_corners)
+			(= ?vehloc brighton_high)
 		)
 		:subtasks (and
 		 (task0 (p_1Navegate_vehicle))
@@ -975,9 +966,9 @@
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person pcrew1)
-			(= ?veh van1)
-			(= ?loc rochester_general)
+			(= ?person pu2)
+			(= ?veh pvan2)
+			(= ?loc brighton_high)
 			(= ?vehloc pittsford_plaza)
 		)
 		:subtasks (and
@@ -985,76 +976,40 @@
 		)
 	)
 	(:method prefix_3
-		:parameters (?police - work_crew)
-		:task (cplace_cones ?police)
+		:parameters (?obj - person ?objloc - point ?veh - vehicle)
+		:task (cclimb_in ?obj ?veh ?objloc)
 		:precondition (and
-			(= ?police pcrew1)
+			(= ?obj ht1)
+			(= ?veh pvan2)
+			(= ?objloc brighton_high)
 		)
 		:subtasks (and
-		 (task0 (p_3Place_cones))
+		 (task0 (p_3Climb_in))
 		)
 	)
 	(:method prefix_4
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person tdriver1)
-			(= ?veh dtruck1)
-			(= ?loc marketplace)
-			(= ?vehloc brighton_dump)
+			(= ?person pu2)
+			(= ?veh pvan2)
+			(= ?loc twelve_corners)
+			(= ?vehloc brighton_high)
 		)
 		:subtasks (and
 		 (task0 (p_4Navegate_vehicle))
 		)
 	)
 	(:method prefix_5
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
+		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
+		:task (cclimb_out ?obj ?veh ?vehloc)
 		:precondition (and
-			(= ?obj ht2)
-			(= ?veh dtruck1)
-			(= ?objloc marketplace)
+			(= ?obj ht1)
+			(= ?veh pvan2)
+			(= ?vehloc twelve_corners)
 		)
 		:subtasks (and
-		 (task0 (p_5Climb_in))
-		)
-	)
-	(:method prefix_6
-		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
-		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
-		:precondition (and
-			(= ?person tdriver1)
-			(= ?veh dtruck1)
-			(= ?loc rochester_general)
-			(= ?vehloc marketplace)
-		)
-		:subtasks (and
-		 (task0 (p_6Navegate_vehicle))
-		)
-	)
-	(:method prefix_7
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
-		:precondition (and
-			(= ?obj tcrew1)
-			(= ?veh plow1)
-			(= ?objloc texaco1)
-		)
-		:subtasks (and
-		 (task0 (p_7Climb_in))
-		)
-	)
-	(:method prefix_8
-		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
-		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
-		:precondition (and
-			(= ?person tdriver1)
-			(= ?veh plow1)
-			(= ?loc rochester_general)
-			(= ?vehloc texaco1)
-		)
-		:subtasks (and
-		 (task0 (p_8Navegate_vehicle))
+		 (task0 (p_5Climb_out))
 		)
 	)
 	(:action navegate_snowplow
@@ -1266,17 +1221,17 @@
 		:parameters ()
 		:precondition 
 			(and
-				(atloc pvan1 pittsford_plaza)
-				(atloc pu1 pittsford_plaza)
-				(can_drive pu1 pvan1)
+				(atloc bus1 brighton_high)
+				(atloc bdriver1 brighton_high)
+				(can_drive bdriver1 bus1)
 				(l1)
 			)
 		:effect
 			(and
-				(atloc pvan1 rochester_general)
-				(atloc pu1 rochester_general)
-				(not (atloc pvan1 pittsford_plaza))
-				(not (atloc pu1 pittsford_plaza))
+				(atloc bus1 twelve_corners)
+				(atloc bdriver1 twelve_corners)
+				(not (atloc bus1 brighton_high))
+				(not (atloc bdriver1 brighton_high))
 				(l2)
 				(not (l1))
 			)
@@ -1285,29 +1240,34 @@
 		:parameters ()
 		:precondition 
 			(and
-				(atloc van1 pittsford_plaza)
-				(atloc pcrew1 pittsford_plaza)
-				(can_drive pcrew1 van1)
+				(atloc pvan2 pittsford_plaza)
+				(atloc pu2 pittsford_plaza)
+				(can_drive pu2 pvan2)
 				(l2)
 			)
 		:effect
 			(and
-				(atloc van1 rochester_general)
-				(atloc pcrew1 rochester_general)
-				(not (atloc van1 pittsford_plaza))
-				(not (atloc pcrew1 pittsford_plaza))
+				(atloc pvan2 brighton_high)
+				(atloc pu2 brighton_high)
+				(not (atloc pvan2 pittsford_plaza))
+				(not (atloc pu2 pittsford_plaza))
 				(l3)
 				(not (l2))
 			)
 	)
-	(:action p_3Place_cones
+	(:action p_3Climb_in
 		:parameters ()
 		:precondition 
 			(and
+				(atloc ht1 brighton_high)
+				(atloc pvan2 brighton_high)
+				(fit_in ht1 pvan2)
 				(l3)
 			)
 		:effect
 			(and
+				(in_vehicle ht1 pvan2)
+				(not (atloc ht1 brighton_high))
 				(l4)
 				(not (l3))
 			)
@@ -1316,91 +1276,35 @@
 		:parameters ()
 		:precondition 
 			(and
-				(atloc dtruck1 brighton_dump)
-				(atloc tdriver1 brighton_dump)
-				(can_drive tdriver1 dtruck1)
+				(atloc pvan2 brighton_high)
+				(atloc pu2 brighton_high)
+				(can_drive pu2 pvan2)
 				(l4)
 			)
 		:effect
 			(and
-				(atloc dtruck1 marketplace)
-				(atloc tdriver1 marketplace)
-				(not (atloc dtruck1 brighton_dump))
-				(not (atloc tdriver1 brighton_dump))
+				(atloc pvan2 twelve_corners)
+				(atloc pu2 twelve_corners)
+				(not (atloc pvan2 brighton_high))
+				(not (atloc pu2 brighton_high))
 				(l5)
 				(not (l4))
 			)
 	)
-	(:action p_5Climb_in
+	(:action p_5Climb_out
 		:parameters ()
 		:precondition 
 			(and
-				(atloc ht2 marketplace)
-				(atloc dtruck1 marketplace)
-				(fit_in ht2 dtruck1)
+				(in_vehicle ht1 pvan2)
+				(atloc pvan2 twelve_corners)
 				(l5)
 			)
 		:effect
 			(and
-				(in_vehicle ht2 dtruck1)
-				(not (atloc ht2 marketplace))
+				(atloc ht1 twelve_corners)
+				(not (in_vehicle ht1 pvan2))
 				(l6)
 				(not (l5))
-			)
-	)
-	(:action p_6Navegate_vehicle
-		:parameters ()
-		:precondition 
-			(and
-				(atloc dtruck1 marketplace)
-				(atloc tdriver1 marketplace)
-				(can_drive tdriver1 dtruck1)
-				(l6)
-			)
-		:effect
-			(and
-				(atloc dtruck1 rochester_general)
-				(atloc tdriver1 rochester_general)
-				(not (atloc dtruck1 marketplace))
-				(not (atloc tdriver1 marketplace))
-				(l7)
-				(not (l6))
-			)
-	)
-	(:action p_7Climb_in
-		:parameters ()
-		:precondition 
-			(and
-				(atloc tcrew1 texaco1)
-				(atloc plow1 texaco1)
-				(fit_in tcrew1 plow1)
-				(l7)
-			)
-		:effect
-			(and
-				(in_vehicle tcrew1 plow1)
-				(not (atloc tcrew1 texaco1))
-				(l8)
-				(not (l7))
-			)
-	)
-	(:action p_8Navegate_vehicle
-		:parameters ()
-		:precondition 
-			(and
-				(atloc plow1 texaco1)
-				(atloc tdriver1 texaco1)
-				(can_drive tdriver1 plow1)
-				(l8)
-			)
-		:effect
-			(and
-				(atloc plow1 rochester_general)
-				(atloc tdriver1 rochester_general)
-				(not (atloc plow1 texaco1))
-				(not (atloc tdriver1 texaco1))
-				(l9)
-				(not (l8))
 			)
 	)
 	(:action SHOP_methodm_clear_road_tree_precondition

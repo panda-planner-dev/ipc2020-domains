@@ -2,13 +2,13 @@
 	(problem someProblem)
 	(:domain  someDomain)
 	(:objects
-		bus1 - bus
 		sleader2 - shelter_leader
 		sleader3 - shelter_leader
 		sleader1 - shelter_leader
 		ccrew1 - construction_crew
-		brighton_high - school
+		van1 - power_van
 		airport - transport_hub
+		texaco1 - service_station
 		normal_hazardous - hazardousness
 		medium_hazardous - hazardousness
 		ttruck1 - tow_truck
@@ -40,18 +40,23 @@
 		irondequoit - town
 		perinton - town
 		scottsville - town
-		pvan2 - police_van
+		pvan1 - police_van
+		marketplace - mall
 		plow2 - snowplow
+		plow1 - snowplow
+		pcrew1 - power_crew
 		amb1 - ambulance
+		tcrew1 - tree_crew
 		head_injury - condition
 		broken_leg - condition
 		heart_attack - condition
 		light_burn - condition
 		bruises - condition
-		bdriver1 - bus_driver
+		dtruck1 - dump_truck
 		backhoe1 - backhoe
 		emt1 - emt_crew
-		ht1 - hazard_team
+		ht2 - hazard_team
+		tdriver1 - truck_driver
 		pdriver2 - plowdriver
 		pdriver1 - plowdriver
 		gen2 - generator
@@ -63,60 +68,74 @@
 		monroe_ge - powerco
 		park_ridge - hospital
 		strong - hospital
+		rochester_general - hospital
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
 		mendon_pond - park
-		pu2 - police_unit
+		pu1 - police_unit
 		food1 - food
 		food2 - food
 		food3 - food
+		brighton_dump - garbage_dump
 		henrietta_dump - garbage_dump
-		twelve_corners - point
 		wcrew1 - water_crew
+		person_158199 - person
 	)
 	(:htn
 ;;		:subtasks (and
-;;		 (task0 (clear_road_hazard rochester_general park_ridge))
+;;		 (task0 (provide_temp_heat person_158199))
 ;;		)
                 :subtasks (and (tlt)
 		)
 	)
 	(:init
-		(hazard_seriousness rochester_general park_ridge medium_hazardous)
-		(atloc food1 twelve_corners)
+		(fit_in person_158199 plow2)
+		(fit_in person_158199 plow1)
+		(fit_in person_158199 ttruck1)
+		(fit_in person_158199 pvan2)
+		(fit_in person_158199 pvan1)
+		(fit_in person_158199 van1)
+		(fit_in person_158199 dtruck1)
+		(fit_in person_158199 bus1)
+		(fit_in person_158199 amb1)
+		(fit_in person_158199 wtruck1)
+		(fit_in person_158199 backhoe1)
+		(can_lift emt1 person_158199)
+		(atloc food1 strong)
 		(atloc food3 brighton_dump)
-		(atloc food2 strong)
-		(atloc pcrew1 pittsford_plaza)
-		(atloc ttdriver1 texaco1)
-		(atloc dtruck1 brighton_dump)
-		(atloc emt1 park_ridge)
+		(atloc food2 pittsford_plaza)
+		(atloc pcrew1 brighton_high)
+		(atloc ttdriver1 brighton_dump)
+		(atloc dtruck1 marketplace)
+		(atloc emt1 twelve_corners)
 		(atloc pu2 pittsford_plaza)
-		(atloc pu1 pittsford_plaza)
+		(atloc pu1 mendon_pond)
 		(atloc bdriver1 brighton_high)
-		(atloc plow1 rochester_general)
-		(atloc sleader3 airport)
-		(atloc sleader2 rochester_general)
-		(atloc gen1 brighton_high)
-		(atloc sleader1 marketplace)
-		(atloc gen2 strong)
-		(atloc plow2 airport)
-		(atloc amb1 park_ridge)
-		(atloc van1 pittsford_plaza)
-		(atloc wtruck1 brighton_dump)
+		(atloc plow1 mendon_pond)
+		(atloc sleader3 texaco1)
+		(atloc sleader2 airport)
+		(atloc gen1 twelve_corners)
+		(atloc sleader1 park_ridge)
+		(atloc gen2 mendon_pond)
+		(atloc plow2 texaco1)
+		(atloc amb1 twelve_corners)
+		(atloc van1 brighton_high)
+		(atloc wtruck1 park_ridge)
 		(atloc bus1 brighton_high)
-		(atloc wcrew1 brighton_dump)
-		(atloc pdriver2 brighton_high)
-		(atloc pdriver1 marketplace)
-		(atloc ttruck1 texaco1)
-		(atloc ht1 strong)
-		(atloc tcrew1 texaco1)
-		(atloc ht2 marketplace)
-		(atloc tdriver1 brighton_dump)
-		(atloc backhoe1 twelve_corners)
-		(atloc ccrew1 twelve_corners)
+		(atloc wcrew1 park_ridge)
+		(atloc pdriver2 marketplace)
+		(atloc pdriver1 henrietta_dump)
+		(atloc ttruck1 brighton_dump)
+		(atloc ht1 brighton_high)
+		(atloc tcrew1 brighton_dump)
+		(atloc ht2 brighton_dump)
+		(atloc tdriver1 marketplace)
+		(atloc backhoe1 airport)
+		(atloc person_158199 brighton_dump)
+		(atloc ccrew1 airport)
 		(atloc pvan2 pittsford_plaza)
-		(atloc pvan1 pittsford_plaza)
+		(atloc pvan1 mendon_pond)
 		(in_town texaco1 brighton)
 		(in_town strong rochester)
 		(in_town park_ridge greece)
@@ -498,7 +517,7 @@
 	)
 	(:goal
 		(and
-		(l9)
+		(l6)
 		)
 	)
 )
