@@ -8,10 +8,10 @@
 		sleader1 - shelter_leader
 		ccrew1 - construction_crew
 		brighton_high - school
-		airport - transport_hub
+		van1 - power_van
+		texaco1 - service_station
 		normal_hazardous - hazardousness
 		medium_hazardous - hazardousness
-		ttruck1 - tow_truck
 		mendon - town
 		sweeden - town
 		henrietta - town
@@ -40,11 +40,13 @@
 		irondequoit - town
 		perinton - town
 		scottsville - town
-		pvan2 - police_van
+		pvan1 - police_van
 		marketplace - mall
 		plow2 - snowplow
 		plow1 - snowplow
+		pcrew1 - power_crew
 		amb1 - ambulance
+		tcrew1 - tree_crew
 		head_injury - condition
 		broken_leg - condition
 		heart_attack - condition
@@ -55,74 +57,71 @@
 		backhoe1 - backhoe
 		emt1 - emt_crew
 		ht2 - hazard_team
-		ht1 - hazard_team
 		tdriver1 - truck_driver
 		pdriver2 - plowdriver
 		pdriver1 - plowdriver
 		gen2 - generator
 		gen1 - generator
-		ttdriver1 - tow_truck_driver
 		wtruck1 - water_truck
 		rge - powerco
 		mendon_ge - powerco
 		monroe_ge - powerco
+		park_ridge - hospital
+		strong - hospital
 		rochester_general - hospital
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
-		mendon_pond - park
-		pu2 - police_unit
+		pu1 - police_unit
 		food1 - food
 		food2 - food
 		food3 - food
-		brighton_dump - garbage_dump
-		henrietta_dump - garbage_dump
 		pittsford_plaza - point
 		twelve_corners - point
 		wcrew1 - water_crew
 	)
 	(:htn
 ;;		:subtasks (and
-;;		 (task0 (clear_road_hazard strong airport))
+;;		 (task0 (clear_road_hazard airport henrietta_dump))
 ;;		)
                 :subtasks (and (tlt)
 		)
 	)
 	(:init
-		(hazard_seriousness strong airport medium_hazardous)
-		(atloc food1 brighton_dump)
-		(atloc food3 park_ridge)
-		(atloc food2 park_ridge)
-		(atloc pcrew1 park_ridge)
-		(atloc ttdriver1 park_ridge)
-		(atloc dtruck1 henrietta_dump)
-		(atloc emt1 brighton_high)
-		(atloc pu2 texaco1)
-		(atloc pu1 texaco1)
-		(atloc bdriver1 mendon_pond)
-		(atloc plow1 park_ridge)
-		(atloc sleader3 henrietta_dump)
-		(atloc sleader2 strong)
-		(atloc gen1 strong)
-		(atloc sleader1 strong)
-		(atloc gen2 brighton_high)
-		(atloc plow2 park_ridge)
-		(atloc amb1 brighton_high)
-		(atloc van1 park_ridge)
-		(atloc wtruck1 henrietta_dump)
-		(atloc bus1 mendon_pond)
-		(atloc wcrew1 henrietta_dump)
-		(atloc pdriver2 strong)
-		(atloc pdriver1 mendon_pond)
-		(atloc ttruck1 park_ridge)
-		(atloc ht1 marketplace)
-		(atloc tcrew1 park_ridge)
-		(atloc ht2 strong)
-		(atloc tdriver1 henrietta_dump)
-		(atloc backhoe1 airport)
-		(atloc ccrew1 airport)
-		(atloc pvan2 texaco1)
-		(atloc pvan1 texaco1)
+		(hazard_seriousness airport henrietta_dump normal_hazardous)
+		(atloc food1 twelve_corners)
+		(atloc food3 brighton_dump)
+		(atloc food2 twelve_corners)
+		(atloc pcrew1 twelve_corners)
+		(atloc ttdriver1 mendon_pond)
+		(atloc dtruck1 brighton_dump)
+		(atloc emt1 henrietta_dump)
+		(atloc pu2 henrietta_dump)
+		(atloc pu1 twelve_corners)
+		(atloc bdriver1 twelve_corners)
+		(atloc plow1 brighton_dump)
+		(atloc sleader3 strong)
+		(atloc sleader2 pittsford_plaza)
+		(atloc gen1 marketplace)
+		(atloc sleader1 marketplace)
+		(atloc gen2 brighton_dump)
+		(atloc plow2 marketplace)
+		(atloc amb1 henrietta_dump)
+		(atloc van1 twelve_corners)
+		(atloc wtruck1 pittsford_plaza)
+		(atloc bus1 twelve_corners)
+		(atloc wcrew1 pittsford_plaza)
+		(atloc pdriver2 park_ridge)
+		(atloc pdriver1 park_ridge)
+		(atloc ttruck1 mendon_pond)
+		(atloc ht1 brighton_dump)
+		(atloc tcrew1 mendon_pond)
+		(atloc ht2 pittsford_plaza)
+		(atloc tdriver1 brighton_dump)
+		(atloc backhoe1 brighton_high)
+		(atloc ccrew1 brighton_high)
+		(atloc pvan2 henrietta_dump)
+		(atloc pvan1 twelve_corners)
 		(in_town texaco1 brighton)
 		(in_town strong rochester)
 		(in_town park_ridge greece)
@@ -504,7 +503,7 @@
 	)
 	(:goal
 		(and
-		(l6)
+		(l7)
 		)
 	)
 )

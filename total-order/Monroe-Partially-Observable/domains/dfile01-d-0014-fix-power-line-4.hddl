@@ -55,15 +55,10 @@
 	)
         (:constants
 		van1 - power_van
-		texaco1 - service_station
-		tcrew1 - tree_crew
-		strong - hospital
-		pvan1 - police_van
-		pu1 - police_unit
+		rge - powerco
+		pittsford_plaza - point
 		pcrew1 - power_crew
-		park_ridge - hospital
-		ht2 - hazard_team
-		airport - transport_hub
+		brighton_dump - garbage_dump
                 fema - callable
                 ebs - callable
                 police_chief - callable
@@ -93,8 +88,6 @@
 		(l3)
 		(l4)
 		(l5)
-		(l6)
-		(l7)
 	)
 		(:task tlt
     :parameters ()
@@ -213,20 +206,17 @@
 	(:task make_full_fuel
 		:parameters (?g0 - generator)
 	)
+	(:task ccall
+		:parameters (?place - callable)
+	)
 	(:task cnavegate_vehicle
 		:parameters (?person - adult ?veh - vehicle ?loc - point ?vehloc - point)
 	)
-	(:task cclean_hazard
-		:parameters (?hazard_team - hazard_team ?from - point ?to - point ?h_compiled_3 - hazardousness)
+	(:task cstring_wire
+		:parameters (?crew - power_crew ?lineloc - point)
 	)
-	(:task cclimb_in
-		:parameters (?obj - person ?veh - vehicle ?objloc - point)
-	)
-	(:task cclimb_out
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
-	)
-	(:task cplace_cones
-		:parameters (?police - work_crew)
+	(:task cremove_wire
+		:parameters (?crew - power_crew ?lineloc - point)
 	)
 		
 (:method m_tlt_set_up_shelter
@@ -468,7 +458,7 @@
 		:parameters (?from - point ?to - point)
 		:task (clean_up_hazard ?from ?to)
 		:subtasks (and
-		 (task0 (call fema))
+		 (task0 (ccall fema))
 		 (task1 (SHOP_methodm_clean_up_hazard_very_hazardous_precondition ?from ?to very_hazardous))
 		)
 		:ordering (and
@@ -476,11 +466,11 @@
 		)
 	)
 	(:method m_clean_up_hazard_normal
-		:parameters (?from - point ?h_compiled_3_ps3 - hazardousness ?ht - hazard_team ?to - point)
+		:parameters (?from - point ?h_compiled_1_ps3 - hazardousness ?ht - hazard_team ?to - point)
 		:task (clean_up_hazard ?from ?to)
 		:subtasks (and
 		 (task0 (get_to ?ht ?from))
-		 (task1 (cclean_hazard ?ht ?from ?to ?h_compiled_3_ps3))
+		 (task1 (clean_hazard ?ht ?from ?to ?h_compiled_1_ps3))
 		 (task2 (SHOP_methodm_clean_up_hazard_normal_precondition ?from ?to very_hazardous))
 		)
 		:ordering (and
@@ -570,7 +560,7 @@
 		:task (set_up_cones ?from ?to)
 		:subtasks (and
 		 (task0 (get_to ?crew ?from))
-		 (task1 (cplace_cones ?crew))
+		 (task1 (place_cones ?crew))
 		)
 		:ordering (and
 			(< task0 task1)
@@ -654,8 +644,8 @@
 		:parameters (?town - town)
 		:task (declare_curfew ?town)
 		:subtasks (and
-		 (task0 (call ebs))
-		 (task1 (call police_chief))
+		 (task0 (ccall ebs))
+		 (task1 (ccall police_chief))
 		)
                 :ordering (and
                    (< task0 task1)
@@ -721,8 +711,8 @@
 		:subtasks (and
 		 (task0 (shut_off_power ?crew ?lineloc))
 		 (task1 (clear_tree ?tree))
-		 (task2 (remove_wire ?crew ?lineloc))
-		 (task3 (string_wire ?crew ?lineloc))
+		 (task2 (cremove_wire ?crew ?lineloc))
+		 (task3 (cstring_wire ?crew ?lineloc))
 		 (task4 (turn_on_power ?crew ?lineloc))
 		 (task5 (SHOP_methodm_repair_line_with_tree_precondition ?tree ?lineloc ?crew))
 		)
@@ -741,8 +731,8 @@
 		:task (repair_line ?crew ?lineloc)
 		:subtasks (and
 		 (task0 (shut_off_power ?crew ?lineloc))
-		 (task1 (remove_wire ?crew ?lineloc))
-		 (task2 (string_wire ?crew ?lineloc))
+		 (task1 (cremove_wire ?crew ?lineloc))
+		 (task2 (cstring_wire ?crew ?lineloc))
 		 (task3 (turn_on_power ?crew ?lineloc))
 		 (task4 (SHOP_methodm_repair_line_without_tree_precondition ?lineloc ?crew))
 		)
@@ -757,7 +747,7 @@
 		:parameters (?crew - power_crew ?loc - point ?powerco - powerco ?town - town)
 		:task (shut_off_power ?crew ?loc)
 		:subtasks (and
-		 (task0 (call ?powerco))
+		 (task0 (ccall ?powerco))
 		 (task1 (SHOP_methodm_shut_off_power_precondition ?loc ?town ?powerco))
 		)
 		:ordering (and
@@ -768,7 +758,7 @@
 		:parameters (?crew - power_crew ?loc - point ?powerco - powerco ?town - town)
 		:task (turn_on_power ?crew ?loc)
 		:subtasks (and
-		 (task0 (call ?powerco))
+		 (task0 (ccall ?powerco))
 		 (task1 (SHOP_methodm_turn_on_power_precondition ?loc ?town ?powerco))
 		)
 		:ordering (and
@@ -779,7 +769,7 @@
 		:parameters (?from - point ?to - point ?town - town ?waterco - waterco)
 		:task (shut_off_water ?from ?to)
 		:subtasks (and
-		 (task0 (call ?waterco))
+		 (task0 (ccall ?waterco))
 		 (task1 (SHOP_methodm_shut_off_water_precondition ?from ?town ?waterco))
 		)
 		:ordering (and
@@ -790,7 +780,7 @@
 		:parameters (?from - point ?to - point ?town - town ?waterco - waterco)
 		:task (turn_on_water ?from ?to)
 		:subtasks (and
-		 (task0 (call ?waterco))
+		 (task0 (ccall ?waterco))
 		 (task1 (SHOP_methodm_turn_on_water_precondition ?from ?town ?waterco))
 		)
 		:ordering (and
@@ -897,7 +887,7 @@
 		:parameters (?obj - person ?objloc - point ?veh - vehicle)
 		:task (get_in ?obj ?veh)
 		:subtasks (and
-		 (task0 (cclimb_in ?obj ?veh ?objloc))
+		 (task0 (climb_in ?obj ?veh ?objloc))
 		 (task1 (SHOP_methodm_get_in_ambulatory_person_precondition ?obj ?objloc ?veh))
 		)
 		:ordering (and
@@ -921,7 +911,7 @@
 		:parameters (?obj - person ?p - point ?veh - vehicle)
 		:task (get_out ?obj ?veh)
 		:subtasks (and
-		 (task0 (cclimb_out ?obj ?veh ?p))
+		 (task0 (climb_out ?obj ?veh ?p))
 		)
 	)
 	(:method m_get_out_unload
@@ -938,34 +928,27 @@
 		)
 	)
 	(:method regular_1
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
-		:task (cclimb_out ?obj ?veh ?vehloc)
+		:parameters (?crew - power_crew ?lineloc - point)
+		:task (cstring_wire ?crew ?lineloc)
 		:subtasks (and
-		 (task0 (climb_out ?obj ?veh ?vehloc))
+		 (task0 (string_wire ?crew ?lineloc))
 		)
 	)
 	(:method regular_2
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
+		:parameters (?place - callable)
+		:task (ccall ?place)
 		:subtasks (and
-		 (task0 (climb_in ?obj ?veh ?objloc))
+		 (task0 (call ?place))
 		)
 	)
 	(:method regular_3
-		:parameters (?police - work_crew)
-		:task (cplace_cones ?police)
+		:parameters (?crew - power_crew ?lineloc - point)
+		:task (cremove_wire ?crew ?lineloc)
 		:subtasks (and
-		 (task0 (place_cones ?police))
+		 (task0 (remove_wire ?crew ?lineloc))
 		)
 	)
 	(:method regular_4
-		:parameters (?from - point ?h_compiled_1_ps2 - hazardousness ?hazard_team - hazard_team ?to - point)
-		:task (cclean_hazard ?hazard_team ?from ?to ?h_compiled_1_ps2)
-		:subtasks (and
-		 (task0 (clean_hazard ?hazard_team ?from ?to ?h_compiled_1_ps2))
-		)
-	)
-	(:method regular_5
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:subtasks (and
@@ -976,72 +959,45 @@
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person pu1)
-			(= ?veh pvan1)
-			(= ?loc strong)
-			(= ?vehloc texaco1)
+			(= ?person pcrew1)
+			(= ?veh van1)
+			(= ?loc brighton_dump)
+			(= ?vehloc pittsford_plaza)
 		)
 		:subtasks (and
 		 (task0 (p_1Navegate_vehicle))
 		)
 	)
 	(:method prefix_2
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
+		:parameters (?place - callable)
+		:task (ccall ?place)
 		:precondition (and
-			(= ?obj tcrew1)
-			(= ?veh van1)
-			(= ?objloc park_ridge)
+			(= ?place rge)
 		)
 		:subtasks (and
-		 (task0 (p_2Climb_in))
+		 (task0 (p_2Call))
 		)
 	)
 	(:method prefix_3
-		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
-		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
+		:parameters (?crew - power_crew ?lineloc - point)
+		:task (cremove_wire ?crew ?lineloc)
 		:precondition (and
-			(= ?person pcrew1)
-			(= ?veh van1)
-			(= ?loc strong)
-			(= ?vehloc park_ridge)
+			(= ?crew pcrew1)
+			(= ?lineloc brighton_dump)
 		)
 		:subtasks (and
-		 (task0 (p_3Navegate_vehicle))
+		 (task0 (p_3Remove_wire))
 		)
 	)
 	(:method prefix_4
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
-		:task (cclimb_out ?obj ?veh ?vehloc)
+		:parameters (?crew - power_crew ?lineloc - point)
+		:task (cstring_wire ?crew ?lineloc)
 		:precondition (and
-			(= ?obj tcrew1)
-			(= ?veh van1)
-			(= ?vehloc strong)
+			(= ?crew pcrew1)
+			(= ?lineloc brighton_dump)
 		)
 		:subtasks (and
-		 (task0 (p_4Climb_out))
-		)
-	)
-	(:method prefix_5
-		:parameters (?police - work_crew)
-		:task (cplace_cones ?police)
-		:precondition (and
-			(= ?police tcrew1)
-		)
-		:subtasks (and
-		 (task0 (p_5Place_cones))
-		)
-	)
-	(:method prefix_6
-		:parameters (?from - point ?h_compiled_2_ps2 - hazardousness ?hazard_team - hazard_team ?to - point)
-		:task (cclean_hazard ?hazard_team ?from ?to ?h_compiled_2_ps2)
-		:precondition (and
-			(= ?hazard_team ht2)
-			(= ?from strong)
-			(= ?to airport)
-		)
-		:subtasks (and
-		 (task0 (p_6Clean_hazard ?h_compiled_2_ps2))
+		 (task0 (p_4String_wire))
 		)
 	)
 	(:action navegate_snowplow
@@ -1253,97 +1209,55 @@
 		:parameters ()
 		:precondition 
 			(and
-				(atloc pvan1 texaco1)
-				(atloc pu1 texaco1)
-				(can_drive pu1 pvan1)
+				(atloc van1 pittsford_plaza)
+				(atloc pcrew1 pittsford_plaza)
+				(can_drive pcrew1 van1)
 				(l1)
 			)
 		:effect
 			(and
-				(atloc pvan1 strong)
-				(atloc pu1 strong)
-				(not (atloc pvan1 texaco1))
-				(not (atloc pu1 texaco1))
+				(atloc van1 brighton_dump)
+				(atloc pcrew1 brighton_dump)
+				(not (atloc van1 pittsford_plaza))
+				(not (atloc pcrew1 pittsford_plaza))
 				(l2)
 				(not (l1))
 			)
 	)
-	(:action p_2Climb_in
+	(:action p_2Call
 		:parameters ()
 		:precondition 
 			(and
-				(atloc tcrew1 park_ridge)
-				(atloc van1 park_ridge)
-				(fit_in tcrew1 van1)
 				(l2)
 			)
 		:effect
 			(and
-				(in_vehicle tcrew1 van1)
-				(not (atloc tcrew1 park_ridge))
 				(l3)
 				(not (l2))
 			)
 	)
-	(:action p_3Navegate_vehicle
+	(:action p_3Remove_wire
 		:parameters ()
 		:precondition 
 			(and
-				(atloc van1 park_ridge)
-				(atloc pcrew1 park_ridge)
-				(can_drive pcrew1 van1)
 				(l3)
 			)
 		:effect
 			(and
-				(atloc van1 strong)
-				(atloc pcrew1 strong)
-				(not (atloc van1 park_ridge))
-				(not (atloc pcrew1 park_ridge))
 				(l4)
 				(not (l3))
 			)
 	)
-	(:action p_4Climb_out
+	(:action p_4String_wire
 		:parameters ()
 		:precondition 
 			(and
-				(in_vehicle tcrew1 van1)
-				(atloc van1 strong)
 				(l4)
 			)
 		:effect
 			(and
-				(atloc tcrew1 strong)
-				(not (in_vehicle tcrew1 van1))
 				(l5)
 				(not (l4))
-			)
-	)
-	(:action p_5Place_cones
-		:parameters ()
-		:precondition 
-			(and
-				(l5)
-			)
-		:effect
-			(and
-				(l6)
-				(not (l5))
-			)
-	)
-	(:action p_6Clean_hazard
-		:parameters (?h_compiled_2 - hazardousness)
-		:precondition 
-			(and
-				(hazard_seriousness strong airport ?h_compiled_2)
-				(not (hazard_seriousness strong airport very_hazardous))
-				(l6)
-			)
-		:effect
-			(and
-				(l7)
-				(not (l6))
 			)
 	)
 	(:action SHOP_methodm_clear_road_tree_precondition

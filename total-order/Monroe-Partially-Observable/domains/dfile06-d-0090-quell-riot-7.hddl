@@ -56,11 +56,11 @@
         (:constants
 		strong - hospital
 		rochester_general - hospital
-		pvan2 - police_van
+		pvan1 - police_van
 		pu2 - police_unit
 		pu1 - police_unit
 
-		mendon_pond - park
+		park_ridge - hospital
 
                 fema - callable
                 ebs - callable
@@ -219,9 +219,6 @@
 	)
 	(:task cclimb_in
 		:parameters (?obj - person ?veh - vehicle ?objloc - point)
-	)
-	(:task cclimb_out
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
 	)
 		
 (:method m_tlt_set_up_shelter
@@ -916,7 +913,7 @@
 		:parameters (?obj - person ?p - point ?veh - vehicle)
 		:task (get_out ?obj ?veh)
 		:subtasks (and
-		 (task0 (cclimb_out ?obj ?veh ?p))
+		 (task0 (climb_out ?obj ?veh ?p))
 		)
 	)
 	(:method m_get_out_unload
@@ -933,27 +930,20 @@
 		)
 	)
 	(:method regular_1
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
-		:task (cclimb_out ?obj ?veh ?vehloc)
-		:subtasks (and
-		 (task0 (climb_out ?obj ?veh ?vehloc))
-		)
-	)
-	(:method regular_2
 		:parameters (?obj - person ?objloc - point ?veh - vehicle)
 		:task (cclimb_in ?obj ?veh ?objloc)
 		:subtasks (and
 		 (task0 (climb_in ?obj ?veh ?objloc))
 		)
 	)
-	(:method regular_3
+	(:method regular_2
 		:parameters (?place - callable)
 		:task (ccall ?place)
 		:subtasks (and
 		 (task0 (call ?place))
 		)
 	)
-	(:method regular_4
+	(:method regular_3
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:subtasks (and
@@ -964,7 +954,7 @@
 		:parameters (?place - callable)
 		:task (ccall ?place)
 		:precondition (and
-			(= ?place police_chief)
+			(= ?place ebs)
 		)
 		:subtasks (and
 		 (task0 (p_1Call))
@@ -974,7 +964,7 @@
 		:parameters (?place - callable)
 		:task (ccall ?place)
 		:precondition (and
-			(= ?place ebs)
+			(= ?place police_chief)
 		)
 		:subtasks (and
 		 (task0 (p_2Call))
@@ -984,50 +974,51 @@
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person pu2)
-			(= ?veh pvan2)
-			(= ?loc mendon_pond)
-			(= ?vehloc rochester_general)
+			(= ?person pu1)
+			(= ?veh pvan1)
+			(= ?loc rochester_general)
+			(= ?vehloc strong)
 		)
 		:subtasks (and
 		 (task0 (p_3Navegate_vehicle))
 		)
 	)
 	(:method prefix_4
-		:parameters (?obj - person ?objloc - point ?veh - vehicle)
-		:task (cclimb_in ?obj ?veh ?objloc)
-		:precondition (and
-			(= ?obj pu1)
-			(= ?veh pvan2)
-			(= ?objloc mendon_pond)
-		)
-		:subtasks (and
-		 (task0 (p_4Climb_in))
-		)
-	)
-	(:method prefix_5
 		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
 		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?person pu2)
-			(= ?veh pvan2)
-			(= ?loc strong)
-			(= ?vehloc mendon_pond)
+			(= ?person pu1)
+			(= ?veh pvan1)
+			(= ?loc park_ridge)
+			(= ?vehloc rochester_general)
 		)
 		:subtasks (and
-		 (task0 (p_5Navegate_vehicle))
+		 (task0 (p_4Navegate_vehicle))
+		)
+	)
+	(:method prefix_5
+		:parameters (?obj - person ?objloc - point ?veh - vehicle)
+		:task (cclimb_in ?obj ?veh ?objloc)
+		:precondition (and
+			(= ?obj pu2)
+			(= ?veh pvan1)
+			(= ?objloc park_ridge)
+		)
+		:subtasks (and
+		 (task0 (p_5Climb_in))
 		)
 	)
 	(:method prefix_6
-		:parameters (?obj - person ?veh - vehicle ?vehloc - point)
-		:task (cclimb_out ?obj ?veh ?vehloc)
+		:parameters (?loc - point ?person - adult ?veh - vehicle ?vehloc - point)
+		:task (cnavegate_vehicle ?person ?veh ?loc ?vehloc)
 		:precondition (and
-			(= ?obj pu1)
-			(= ?veh pvan2)
-			(= ?vehloc strong)
+			(= ?person pu1)
+			(= ?veh pvan1)
+			(= ?loc rochester_general)
+			(= ?vehloc park_ridge)
 		)
 		:subtasks (and
-		 (task0 (p_6Climb_out))
+		 (task0 (p_6Navegate_vehicle))
 		)
 	)
 	(:action navegate_snowplow
@@ -1263,69 +1254,72 @@
 		:parameters ()
 		:precondition 
 			(and
-				(atloc pvan2 rochester_general)
-				(atloc pu2 rochester_general)
-				(can_drive pu2 pvan2)
+				(atloc pvan1 strong)
+				(atloc pu1 strong)
+				(can_drive pu1 pvan1)
 				(l3)
 			)
 		:effect
 			(and
-				(atloc pvan2 mendon_pond)
-				(atloc pu2 mendon_pond)
-				(not (atloc pvan2 rochester_general))
-				(not (atloc pu2 rochester_general))
+				(atloc pvan1 rochester_general)
+				(atloc pu1 rochester_general)
+				(not (atloc pvan1 strong))
+				(not (atloc pu1 strong))
 				(l4)
 				(not (l3))
 			)
 	)
-	(:action p_4Climb_in
+	(:action p_4Navegate_vehicle
 		:parameters ()
 		:precondition 
 			(and
-				(atloc pu1 mendon_pond)
-				(atloc pvan2 mendon_pond)
-				(fit_in pu1 pvan2)
+				(atloc pvan1 rochester_general)
+				(atloc pu1 rochester_general)
+				(can_drive pu1 pvan1)
 				(l4)
 			)
 		:effect
 			(and
-				(in_vehicle pu1 pvan2)
-				(not (atloc pu1 mendon_pond))
+				(atloc pvan1 park_ridge)
+				(atloc pu1 park_ridge)
+				(not (atloc pvan1 rochester_general))
+				(not (atloc pu1 rochester_general))
 				(l5)
 				(not (l4))
 			)
 	)
-	(:action p_5Navegate_vehicle
+	(:action p_5Climb_in
 		:parameters ()
 		:precondition 
 			(and
-				(atloc pvan2 mendon_pond)
-				(atloc pu2 mendon_pond)
-				(can_drive pu2 pvan2)
+				(atloc pu2 park_ridge)
+				(atloc pvan1 park_ridge)
+				(fit_in pu2 pvan1)
 				(l5)
 			)
 		:effect
 			(and
-				(atloc pvan2 strong)
-				(atloc pu2 strong)
-				(not (atloc pvan2 mendon_pond))
-				(not (atloc pu2 mendon_pond))
+				(in_vehicle pu2 pvan1)
+				(not (atloc pu2 park_ridge))
 				(l6)
 				(not (l5))
 			)
 	)
-	(:action p_6Climb_out
+	(:action p_6Navegate_vehicle
 		:parameters ()
 		:precondition 
 			(and
-				(in_vehicle pu1 pvan2)
-				(atloc pvan2 strong)
+				(atloc pvan1 park_ridge)
+				(atloc pu1 park_ridge)
+				(can_drive pu1 pvan1)
 				(l6)
 			)
 		:effect
 			(and
-				(atloc pu1 strong)
-				(not (in_vehicle pu1 pvan2))
+				(atloc pvan1 rochester_general)
+				(atloc pu1 rochester_general)
+				(not (atloc pvan1 park_ridge))
+				(not (atloc pu1 park_ridge))
 				(l7)
 				(not (l6))
 			)

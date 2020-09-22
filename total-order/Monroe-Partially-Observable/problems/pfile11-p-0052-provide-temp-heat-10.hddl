@@ -2,18 +2,14 @@
 	(problem someProblem)
 	(:domain  someDomain)
 	(:objects
-		bus1 - bus
 		sleader2 - shelter_leader
 		sleader3 - shelter_leader
 		sleader1 - shelter_leader
-		ccrew1 - construction_crew
 		brighton_high - school
 		van1 - power_van
 		airport - transport_hub
-		texaco1 - service_station
 		normal_hazardous - hazardousness
 		medium_hazardous - hazardousness
-		ttruck1 - tow_truck
 		mendon - town
 		sweeden - town
 		henrietta - town
@@ -42,6 +38,7 @@
 		irondequoit - town
 		perinton - town
 		scottsville - town
+		pvan2 - police_van
 		pvan1 - police_van
 		marketplace - mall
 		plow2 - snowplow
@@ -54,7 +51,6 @@
 		heart_attack - condition
 		light_burn - condition
 		bruises - condition
-		bdriver1 - bus_driver
 		dtruck1 - dump_truck
 		backhoe1 - backhoe
 		emt1 - emt_crew
@@ -64,66 +60,77 @@
 		pdriver2 - plowdriver
 		pdriver1 - plowdriver
 		gen2 - generator
-		gen1 - generator
-		ttdriver1 - tow_truck_driver
-		wtruck1 - water_truck
 		rge - powerco
 		mendon_ge - powerco
 		monroe_ge - powerco
 		park_ridge - hospital
+		rochester_general - hospital
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
+		mendon_pond - park
+		pu2 - police_unit
+		pu1 - police_unit
 		food1 - food
 		food2 - food
 		food3 - food
-		brighton_dump - garbage_dump
-		henrietta_dump - garbage_dump
 		pittsford_plaza - point
-		twelve_corners - point
-		wcrew1 - water_crew
+		person_272609 - person
 	)
 	(:htn
 ;;		:subtasks (and
-;;		 (task0 (quell_riot strong))
+;;		 (task0 (provide_temp_heat person_272609))
 ;;		)
                 :subtasks (and (tlt)
 		)
 	)
 	(:init
-		(atloc food1 twelve_corners)
-		(atloc food3 henrietta_dump)
-		(atloc food2 pittsford_plaza)
-		(atloc pcrew1 airport)
+		(fit_in person_272609 plow2)
+		(fit_in person_272609 plow1)
+		(fit_in person_272609 ttruck1)
+		(fit_in person_272609 pvan2)
+		(fit_in person_272609 pvan1)
+		(fit_in person_272609 van1)
+		(fit_in person_272609 dtruck1)
+		(fit_in person_272609 bus1)
+		(fit_in person_272609 amb1)
+		(fit_in person_272609 wtruck1)
+		(fit_in person_272609 backhoe1)
+		(can_lift emt1 person_272609)
+		(atloc food1 airport)
+		(atloc food3 texaco1)
+		(atloc food2 park_ridge)
+		(atloc pcrew1 brighton_high)
 		(atloc ttdriver1 henrietta_dump)
-		(atloc dtruck1 rochester_general)
-		(atloc emt1 pittsford_plaza)
-		(atloc pu2 rochester_general)
-		(atloc pu1 mendon_pond)
-		(atloc bdriver1 park_ridge)
-		(atloc plow1 brighton_dump)
-		(atloc sleader3 twelve_corners)
-		(atloc sleader2 strong)
-		(atloc gen1 brighton_high)
-		(atloc sleader1 marketplace)
-		(atloc gen2 airport)
-		(atloc plow2 marketplace)
-		(atloc amb1 pittsford_plaza)
-		(atloc van1 airport)
-		(atloc wtruck1 park_ridge)
-		(atloc bus1 park_ridge)
-		(atloc wcrew1 park_ridge)
-		(atloc pdriver2 airport)
-		(atloc pdriver1 park_ridge)
+		(atloc dtruck1 brighton_dump)
+		(atloc emt1 park_ridge)
+		(atloc pu2 marketplace)
+		(atloc pu1 henrietta_dump)
+		(atloc bdriver1 twelve_corners)
+		(atloc plow1 mendon_pond)
+		(atloc sleader3 brighton_dump)
+		(atloc sleader2 brighton_high)
+		(atloc gen1 brighton_dump)
+		(atloc sleader1 strong)
+		(atloc gen2 brighton_dump)
+		(atloc plow2 twelve_corners)
+		(atloc amb1 park_ridge)
+		(atloc van1 brighton_high)
+		(atloc wtruck1 twelve_corners)
+		(atloc bus1 twelve_corners)
+		(atloc person_272609 pittsford_plaza)
+		(atloc wcrew1 twelve_corners)
+		(atloc pdriver2 henrietta_dump)
+		(atloc pdriver1 brighton_high)
 		(atloc ttruck1 henrietta_dump)
-		(atloc ht1 rochester_general)
+		(atloc ht1 texaco1)
 		(atloc tcrew1 henrietta_dump)
-		(atloc ht2 park_ridge)
-		(atloc tdriver1 rochester_general)
-		(atloc backhoe1 marketplace)
-		(atloc ccrew1 marketplace)
-		(atloc pvan2 rochester_general)
-		(atloc pvan1 mendon_pond)
+		(atloc ht2 pittsford_plaza)
+		(atloc tdriver1 brighton_dump)
+		(atloc backhoe1 strong)
+		(atloc ccrew1 strong)
+		(atloc pvan2 marketplace)
+		(atloc pvan1 henrietta_dump)
 		(in_town texaco1 brighton)
 		(in_town strong rochester)
 		(in_town park_ridge greece)
@@ -505,7 +512,7 @@
 	)
 	(:goal
 		(and
-		(l7)
+		(l8)
 		)
 	)
 )

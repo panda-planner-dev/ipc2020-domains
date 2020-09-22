@@ -41,6 +41,7 @@
 		irondequoit - town
 		perinton - town
 		scottsville - town
+		pvan2 - police_van
 		pvan1 - police_van
 		marketplace - mall
 		plow2 - snowplow
@@ -65,66 +66,65 @@
 		gen1 - generator
 		ttdriver1 - tow_truck_driver
 		wtruck1 - water_truck
-		rge - powerco
 		mendon_ge - powerco
 		monroe_ge - powerco
+		park_ridge - hospital
 		strong - hospital
 		rochester_general - hospital
 		roch_water - waterco
 		monroe_water - waterco
 		mendon_water - waterco
 		mendon_pond - park
+		pu2 - police_unit
 		pu1 - police_unit
 		food1 - food
 		food2 - food
 		food3 - food
 		henrietta_dump - garbage_dump
-		pittsford_plaza - point
 		twelve_corners - point
 		wcrew1 - water_crew
 	)
 	(:htn
 ;;		:subtasks (and
-;;		 (task0 (clear_road_hazard brighton_dump brighton_high))
+;;		 (task0 (fix_power_line brighton_dump))
 ;;		)
                 :subtasks (and (tlt)
 		)
 	)
 	(:init
-		(hazard_seriousness brighton_dump brighton_high medium_hazardous)
-		(atloc food1 twelve_corners)
-		(atloc food3 brighton_high)
+		(atloc food1 texaco1)
+		(atloc food3 texaco1)
 		(atloc food2 henrietta_dump)
-		(atloc pcrew1 park_ridge)
-		(atloc ttdriver1 strong)
-		(atloc dtruck1 brighton_dump)
-		(atloc emt1 rochester_general)
-		(atloc pu2 park_ridge)
-		(atloc pu1 airport)
+		(atloc pcrew1 pittsford_plaza)
+		(atloc ttdriver1 rochester_general)
+		(atloc dtruck1 strong)
+		(atloc emt1 texaco1)
+		(atloc pu2 texaco1)
+		(atloc pu1 brighton_dump)
 		(atloc bdriver1 twelve_corners)
-		(atloc plow1 twelve_corners)
+		(atloc plow1 marketplace)
 		(atloc sleader3 twelve_corners)
-		(atloc sleader2 rochester_general)
+		(atloc sleader2 pittsford_plaza)
 		(atloc gen1 pittsford_plaza)
-		(atloc sleader1 henrietta_dump)
+		(atloc sleader1 rochester_general)
 		(atloc gen2 marketplace)
-		(atloc plow2 park_ridge)
-		(atloc amb1 rochester_general)
-		(atloc van1 park_ridge)
-		(atloc wtruck1 mendon_pond)
+		(atloc plow2 rochester_general)
+		(atloc amb1 texaco1)
+		(atloc van1 pittsford_plaza)
+		(atloc wtruck1 park_ridge)
 		(atloc bus1 twelve_corners)
-		(atloc wcrew1 mendon_pond)
-		(atloc pdriver2 twelve_corners)
-		(atloc pdriver1 strong)
-		(atloc ttruck1 strong)
-		(atloc ht1 airport)
-		(atloc tcrew1 strong)
-		(atloc ht2 park_ridge)
-		(atloc tdriver1 brighton_dump)
-		(atloc backhoe1 rochester_general)
-		(atloc ccrew1 rochester_general)
-		(atloc pvan2 park_ridge)
-		(atloc pvan1 airport)
+		(atloc wcrew1 park_ridge)
+		(atloc pdriver2 airport)
+		(atloc pdriver1 park_ridge)
+		(atloc ttruck1 rochester_general)
+		(atloc ht1 brighton_dump)
+		(atloc tcrew1 rochester_general)
+		(atloc ht2 airport)
+		(atloc tdriver1 strong)
+		(atloc backhoe1 pittsford_plaza)
+		(atloc ccrew1 pittsford_plaza)
+		(atloc pvan2 texaco1)
+		(atloc pvan1 brighton_dump)
 		(in_town texaco1 brighton)
 		(in_town strong rochester)
 		(in_town park_ridge greece)
