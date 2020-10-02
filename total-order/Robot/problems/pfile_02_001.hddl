@@ -1,0 +1,27 @@
+(define
+ (problem pfile_02_001)
+
+ (:domain robot)
+
+(:objects o1 - PACKAGE c r1 r2 - ROOM d02 d01 - ROOMDOOR)
+ (:htn
+  :ordered-tasks (and
+    (task0 (achieve-goals))
+  )
+ )
+(:init
+(rloc c)
+(armempty)
+(door c r1 d01)
+(door c r2 d02)
+(door r1 c d01)
+(door r2 c d02)
+(closed d02)
+(in o1 r2)
+(goal_in o1 r1)
+)
+
+ (:goal (and
+(in o1 r1)		
+		))
+)
