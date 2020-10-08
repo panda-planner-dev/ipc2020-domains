@@ -1,0 +1,136 @@
+; woodworking task with 5 parts and 100% wood
+; Machines:
+;   3 highspeed_saw
+;   3 glazer
+;   3 grinder
+;   3 immersion_varnisher
+;   3 planer
+;   3 saw
+;   3 spray_varnisher
+
+(define (problem wood-prob)
+  (:domain woodworking)
+  (:objects
+    highspeed_saw0 highspeed_saw1 highspeed_saw2 - highspeed_saw
+    glazer0 glazer1 glazer2 - glazer
+    grinder0 grinder1 grinder2 - grinder
+    immersion_varnisher0 immersion_varnisher1 immersion_varnisher2 - immersion_varnisher
+    planer0 planer1 planer2 - planer
+    saw0 saw1 saw2 - saw
+    spray_varnisher0 spray_varnisher1 spray_varnisher2 - spray_varnisher
+    white black blue green - acolour
+    pine walnut - awood
+    p0 p1 p2 p3 p4 - part
+    b0 b1 b2 - board
+    s0 s1 s2 s3 s4 s5 s6 - aboardsize
+  )
+  (:htn
+    :parameters (
+      ?v_1_1 - acolour ?v_1_2 - surface ?v_1_3 - surface
+      ?v_2_1 - acolour ?v_2_2 - surface ?v_2_3 - surface
+      ?v_3_1 - acolour ?v_3_2 - surface ?v_3_3 - surface
+      ?v_4_1 - acolour ?v_4_2 - surface ?v_4_3 - surface
+      ?v_5_1 - acolour ?v_5_2 - surface ?v_5_3 - surface
+    )
+    :ordered-subtasks (and
+      (taskp0 (process p0 ?v_1_1 ?v_1_2 ?v_1_3))
+      (taskp1 (process p1 ?v_2_1 ?v_2_2 ?v_2_3))
+      (taskp2 (process p2 ?v_3_1 ?v_3_2 ?v_3_3))
+      (taskp3 (process p3 ?v_4_1 ?v_4_2 ?v_4_3))
+      (taskp4 (process p4 ?v_5_1 ?v_5_2 ?v_5_3))
+    )
+  )
+  (:init
+    (grind_treatment_change varnished colourfragments)
+    (grind_treatment_change glazed untreated)
+    (grind_treatment_change untreated untreated)
+    (grind_treatment_change colourfragments untreated)
+    (is_smooth smooth)
+    (is_smooth verysmooth)
+    (boardsize_successor s0 s1)
+    (boardsize_successor s1 s2)
+    (boardsize_successor s2 s3)
+    (boardsize_successor s3 s4)
+    (boardsize_successor s4 s5)
+    (boardsize_successor s5 s6)
+    (machine_present highspeed_saw0)
+    (machine_present highspeed_saw1)
+    (machine_present highspeed_saw2)
+    (machine_present glazer0)
+    (has_colour glazer0 natural)
+    (has_colour glazer0 white)
+    (machine_present glazer1)
+    (has_colour glazer1 white)
+    (machine_present glazer2)
+    (has_colour glazer2 natural)
+    (machine_present grinder0)
+    (machine_present grinder1)
+    (machine_present grinder2)
+    (machine_present immersion_varnisher0)
+    (has_colour immersion_varnisher0 green)
+    (has_colour immersion_varnisher0 natural)
+    (machine_present immersion_varnisher1)
+    (has_colour immersion_varnisher1 green)
+    (machine_present immersion_varnisher2)
+    (has_colour immersion_varnisher2 green)
+    (machine_present planer0)
+    (machine_present planer1)
+    (machine_present planer2)
+    (machine_present saw0)
+    (machine_present saw1)
+    (machine_present saw2)
+    (machine_present spray_varnisher0)
+    (has_colour spray_varnisher0 natural)
+    (machine_present spray_varnisher1)
+    (has_colour spray_varnisher1 green)
+    (machine_present spray_varnisher2)
+    (has_colour spray_varnisher2 green)
+    (unused p0)
+    (goalsize p0 medium)
+    (unused p1)
+    (goalsize p1 small)
+    (unused p2)
+    (goalsize p2 large)
+    (unused p3)
+    (goalsize p3 large)
+    (unused p4)
+    (goalsize p4 small)
+    (boardsize b0 s6)
+    (wood b0 pine)
+    (surface_condition b0 rough)
+    (available b0)
+    (boardsize b1 s1)
+    (wood b1 pine)
+    (surface_condition b1 rough)
+    (available b1)
+    (boardsize b2 s3)
+    (wood b2 walnut)
+    (surface_condition b2 rough)
+    (available b2)
+  )
+  (:goal
+    (and
+    (available p0)
+    (colour p0 green)
+    (wood p0 pine)
+    (treatment p0 varnished)
+    (surface_condition p0 verysmooth)
+    (available p1)
+    (colour p1 natural)
+    (surface_condition p1 verysmooth)
+    (available p2)
+    (colour p2 white)
+    (wood p2 pine)
+    (surface_condition p2 verysmooth)
+    (treatment p2 glazed)
+    (available p3)
+    (colour p3 natural)
+    (surface_condition p3 smooth)
+    (available p4)
+    (colour p4 natural)
+    (wood p4 pine)
+    (surface_condition p4 verysmooth)
+    (treatment p4 glazed)
+    )
+  )
+)

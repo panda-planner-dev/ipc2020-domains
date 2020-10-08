@@ -35,6 +35,7 @@
 		smooth - surface
 		rough - surface
 		
+		colourfragments - treatmentstatus
 		untreated - treatmentstatus
 		glazed - treatmentstatus
 		varnished - treatmentstatus
@@ -135,6 +136,22 @@
 		)
 	)
 
+	(:method method4b
+		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize)
+		:task (cut_board ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4)
+		:subtasks (and
+		 (task0 (cut_board_medium ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 medium natural untreated))
+		)
+	)
+
+	(:method method4c
+		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize)
+		:task (cut_board ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4)
+		:subtasks (and
+		 (task0 (cut_board_large ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 large natural untreated))
+		)
+	)
+
 	(:method method5
 		:parameters (?do_saw_small_instance_2_argument_0 - board ?do_saw_small_instance_2_argument_1 - part ?do_saw_small_instance_2_argument_2 - awood ?do_saw_small_instance_2_argument_3 - surface ?do_saw_small_instance_2_argument_4 - aboardsize ?do_saw_small_instance_2_argument_5 - aboardsize)
 		:task (do_saw ?do_saw_small_instance_2_argument_0 ?do_saw_small_instance_2_argument_1 ?do_saw_small_instance_2_argument_2 ?do_saw_small_instance_2_argument_3)
@@ -161,9 +178,9 @@
 		:parameters (?do_plane_instance_2_argument_0 - part ?do_plane_instance_2_argument_1 - surface ?do_plane_instance_2_argument_2 - acolour ?do_plane_instance_2_argument_3 - treatmentstatus ?grindNplane_variable4 - surface ?grindNplane_variable5 - acolour ?grindNplane_variable6 - treatmentstatus)
 		:task (grindNplane ?do_plane_instance_2_argument_0 ?do_plane_instance_2_argument_1 ?do_plane_instance_2_argument_2 ?do_plane_instance_2_argument_3 ?grindNplane_variable4 ?grindNplane_variable5 ?grindNplane_variable6)
 		:precondition (and
-			(= ?grindNplane_variable4 smooth)
-			(= ?grindNplane_variable5 natural)
-			(= ?grindNplane_variable6 untreated)
+			;(= ?grindNplane_variable4 smooth)
+			;(= ?grindNplane_variable5 natural)
+			;(= ?grindNplane_variable6 untreated)
 		)
 		:subtasks (and
 		 (task0 (do_plane ?do_plane_instance_2_argument_0 ?do_plane_instance_2_argument_1 ?do_plane_instance_2_argument_2 ?do_plane_instance_2_argument_3 smooth untreated natural))
@@ -436,8 +453,8 @@
 		:parameters (?do_plane_x - part ?do_plane_oldsurface - surface ?do_plane_oldcolour - acolour ?do_plane_oldtreatment - treatmentstatus ?ConstantVariable1637010447 - surface ?ConstantVariable1288755959 - treatmentstatus ?ConstantVariable1631726897 - acolour)
 		:precondition 
 			(and
-				(available ?do_plane_x)
-				(surface_condition ?do_plane_x ?do_plane_oldsurface)
+				;(available ?do_plane_x)
+				;(surface_condition ?do_plane_x ?do_plane_oldsurface)
 				(treatment ?do_plane_x ?do_plane_oldtreatment)
 				(colour ?do_plane_x ?do_plane_oldcolour)
 			)

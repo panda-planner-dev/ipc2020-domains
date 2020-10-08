@@ -35,6 +35,7 @@
 		smooth - surface
 		rough - surface
 		
+		colourfragments - treatmentstatus
 		untreated - treatmentstatus
 		glazed - treatmentstatus
 		varnished - treatmentstatus
@@ -123,6 +124,22 @@
 		:task (cut_board ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10)
 		:subtasks (and
 		 (task0 (cut_board_small ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10 ?cutBoardSmall_variable11 ?cutBoardSmall_variable12))
+		)
+	)
+
+	(:method method4b
+		:parameters (?cutBoardSmall_variable10 - surface ?cutBoardSmall_variable11 - aboardsize ?cutBoardSmall_variable12 - aboardsize ?cutBoardSmall_variable6 - board ?cutBoardSmall_variable7 - part ?cutBoardSmall_variable8 - highspeed_saw ?cutBoardSmall_variable9 - awood)
+		:task (cut_board ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10)
+		:subtasks (and
+		 (task0 (cut_board_medium ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10 ?cutBoardSmall_variable11 ?cutBoardSmall_variable12))
+		)
+	)
+
+	(:method method4c
+		:parameters (?cutBoardSmall_variable10 - surface ?cutBoardSmall_variable11 - aboardsize ?cutBoardSmall_variable12 - aboardsize ?cutBoardSmall_variable6 - board ?cutBoardSmall_variable7 - part ?cutBoardSmall_variable8 - highspeed_saw ?cutBoardSmall_variable9 - awood)
+		:task (cut_board ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10)
+		:subtasks (and
+		 (task0 (cut_board_large ?cutBoardSmall_variable6 ?cutBoardSmall_variable7 ?cutBoardSmall_variable8 ?cutBoardSmall_variable9 ?cutBoardSmall_variable10 ?cutBoardSmall_variable11 ?cutBoardSmall_variable12))
 		)
 	)
 

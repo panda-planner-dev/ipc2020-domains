@@ -1,0 +1,162 @@
+; woodworking task with 7 parts and 100% wood
+; Machines:
+;   3 highspeed_saw
+;   3 glazer
+;   3 grinder
+;   3 immersion_varnisher
+;   3 planer
+;   3 saw
+;   3 spray_varnisher
+
+(define (problem wood-prob)
+  (:domain woodworking)
+  (:objects
+    highspeed_saw0 highspeed_saw1 highspeed_saw2 - highspeed_saw
+    glazer0 glazer1 glazer2 - glazer
+    grinder0 grinder1 grinder2 - grinder
+    immersion_varnisher0 immersion_varnisher1 immersion_varnisher2 - immersion_varnisher
+    planer0 planer1 planer2 - planer
+    saw0 saw1 saw2 - saw
+    spray_varnisher0 spray_varnisher1 spray_varnisher2 - spray_varnisher
+    green black mauve blue red - acolour
+    walnut teak - awood
+    p0 p1 p2 p3 p4 p5 p6 - part
+    b0 b1 b2 - board
+    s0 s1 s2 s3 s4 s5 s6 s7 - aboardsize
+  )
+  (:htn
+    :parameters (
+      ?v_1_1 - acolour ?v_1_2 - surface ?v_1_3 - surface
+      ?v_2_1 - acolour ?v_2_2 - surface ?v_2_3 - surface
+      ?v_3_1 - acolour ?v_3_2 - surface ?v_3_3 - surface
+      ?v_4_1 - acolour ?v_4_2 - surface ?v_4_3 - surface
+      ?v_5_1 - acolour ?v_5_2 - surface ?v_5_3 - surface
+      ?v_6_1 - acolour ?v_6_2 - surface ?v_6_3 - surface
+      ?v_7_1 - acolour ?v_7_2 - surface ?v_7_3 - surface
+    )
+    :ordered-subtasks (and
+      (taskp0 (process p0 ?v_1_1 ?v_1_2 ?v_1_3))
+      (taskp1 (process p1 ?v_2_1 ?v_2_2 ?v_2_3))
+      (taskp2 (process p2 ?v_3_1 ?v_3_2 ?v_3_3))
+      (taskp3 (process p3 ?v_4_1 ?v_4_2 ?v_4_3))
+      (taskp4 (process p4 ?v_5_1 ?v_5_2 ?v_5_3))
+      (taskp5 (process p5 ?v_6_1 ?v_6_2 ?v_6_3))
+      (taskp6 (process p6 ?v_7_1 ?v_7_2 ?v_7_3))
+    )
+  )
+  (:init
+    (grind_treatment_change varnished colourfragments)
+    (grind_treatment_change glazed untreated)
+    (grind_treatment_change untreated untreated)
+    (grind_treatment_change colourfragments untreated)
+    (is_smooth smooth)
+    (is_smooth verysmooth)
+    (boardsize_successor s0 s1)
+    (boardsize_successor s1 s2)
+    (boardsize_successor s2 s3)
+    (boardsize_successor s3 s4)
+    (boardsize_successor s4 s5)
+    (boardsize_successor s5 s6)
+    (boardsize_successor s6 s7)
+    (machine_present highspeed_saw0)
+    (machine_present highspeed_saw1)
+    (machine_present highspeed_saw2)
+    (machine_present glazer0)
+    (has_colour glazer0 black)
+    (has_colour glazer0 mauve)
+    (machine_present glazer1)
+    (has_colour glazer1 mauve)
+    (machine_present glazer2)
+    (has_colour glazer2 black)
+    (machine_present grinder0)
+    (machine_present grinder1)
+    (machine_present grinder2)
+    (machine_present immersion_varnisher0)
+    (has_colour immersion_varnisher0 red)
+    (machine_present immersion_varnisher1)
+    (has_colour immersion_varnisher1 red)
+    (has_colour immersion_varnisher1 black)
+    (machine_present immersion_varnisher2)
+    (has_colour immersion_varnisher2 black)
+    (machine_present planer0)
+    (machine_present planer1)
+    (machine_present planer2)
+    (machine_present saw0)
+    (machine_present saw1)
+    (machine_present saw2)
+    (machine_present spray_varnisher0)
+    (has_colour spray_varnisher0 red)
+    (machine_present spray_varnisher1)
+    (has_colour spray_varnisher1 red)
+    (has_colour spray_varnisher1 black)
+    (machine_present spray_varnisher2)
+    (has_colour spray_varnisher2 black)
+    (unused p0)
+    (goalsize p0 medium)
+    (unused p1)
+    (goalsize p1 large)
+    (available p2)
+    (treatment p2 varnished)
+    (surface_condition p2 rough)
+    (wood p2 walnut)
+    (colour p2 green)
+    (goalsize p2 medium)
+    (unused p3)
+    (goalsize p3 medium)
+    (unused p4)
+    (goalsize p4 small)
+    (available p5)
+    (treatment p5 colourfragments)
+    (surface_condition p5 verysmooth)
+    (wood p5 walnut)
+    (colour p5 green)
+    (goalsize p5 medium)
+    (unused p6)
+    (goalsize p6 large)
+    (boardsize b0 s7)
+    (wood b0 walnut)
+    (surface_condition b0 rough)
+    (available b0)
+    (boardsize b1 s1)
+    (wood b1 walnut)
+    (surface_condition b1 rough)
+    (available b1)
+    (boardsize b2 s3)
+    (wood b2 teak)
+    (surface_condition b2 smooth)
+    (available b2)
+  )
+  (:goal
+    (and
+    (available p0)
+    (treatment p0 varnished)
+    (wood p0 walnut)
+    (surface_condition p0 verysmooth)
+    (available p1)
+    (treatment p1 varnished)
+    (colour p1 red)
+    (available p2)
+    (treatment p2 varnished)
+    (colour p2 black)
+    (wood p2 walnut)
+    (surface_condition p2 verysmooth)
+    (available p3)
+    (treatment p3 glazed)
+    (wood p3 walnut)
+    (colour p3 mauve)
+    (available p4)
+    (treatment p4 glazed)
+    (colour p4 black)
+    (wood p4 walnut)
+    (surface_condition p4 verysmooth)
+    (available p5)
+    (treatment p5 glazed)
+    (surface_condition p5 verysmooth)
+    (wood p5 walnut)
+    (colour p5 black)
+    (available p6)
+    (wood p6 walnut)
+    (surface_condition p6 smooth)
+    )
+  )
+)
