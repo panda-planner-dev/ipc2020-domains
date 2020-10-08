@@ -137,18 +137,18 @@
 	)
 
 	(:method method4b
-		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize)
+		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize ?cut_board_small_instance_2_argument_7 - aboardsize)
 		:task (cut_board ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4)
 		:subtasks (and
-		 (task0 (cut_board_medium ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 medium natural untreated))
+		 (task0 (cut_board_medium ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 ?cut_board_small_instance_2_argument_7 medium natural untreated))
 		)
 	)
 
 	(:method method4c
-		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize)
+		:parameters (?cut_board_small_instance_2_argument_0 - board ?cut_board_small_instance_2_argument_1 - part ?cut_board_small_instance_2_argument_2 - highspeed_saw ?cut_board_small_instance_2_argument_3 - awood ?cut_board_small_instance_2_argument_4 - surface ?cut_board_small_instance_2_argument_5 - aboardsize ?cut_board_small_instance_2_argument_6 - aboardsize ?cut_board_small_instance_2_argument_7 - aboardsize ?cut_board_small_instance_2_argument_8 - aboardsize)
 		:task (cut_board ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4)
 		:subtasks (and
-		 (task0 (cut_board_large ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 large natural untreated))
+		 (task0 (cut_board_large ?cut_board_small_instance_2_argument_0 ?cut_board_small_instance_2_argument_1 ?cut_board_small_instance_2_argument_2 ?cut_board_small_instance_2_argument_3 ?cut_board_small_instance_2_argument_4 ?cut_board_small_instance_2_argument_5 ?cut_board_small_instance_2_argument_6 ?cut_board_small_instance_2_argument_7 ?cut_board_small_instance_2_argument_8 large natural untreated))
 		)
 	)
 
