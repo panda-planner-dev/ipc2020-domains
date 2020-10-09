@@ -178,9 +178,9 @@
 		:parameters (?do_plane_instance_2_argument_0 - part ?do_plane_instance_2_argument_1 - surface ?do_plane_instance_2_argument_2 - acolour ?do_plane_instance_2_argument_3 - treatmentstatus ?grindNplane_variable4 - surface ?grindNplane_variable5 - acolour ?grindNplane_variable6 - treatmentstatus)
 		:task (grindNplane ?do_plane_instance_2_argument_0 ?do_plane_instance_2_argument_1 ?do_plane_instance_2_argument_2 ?do_plane_instance_2_argument_3 ?grindNplane_variable4 ?grindNplane_variable5 ?grindNplane_variable6)
 		:precondition (and
-			;(= ?grindNplane_variable4 smooth)
-			;(= ?grindNplane_variable5 natural)
-			;(= ?grindNplane_variable6 untreated)
+			(= ?grindNplane_variable4 smooth)
+			(= ?grindNplane_variable5 natural)
+			(= ?grindNplane_variable6 untreated)
 		)
 		:subtasks (and
 		 (task0 (do_plane ?do_plane_instance_2_argument_0 ?do_plane_instance_2_argument_1 ?do_plane_instance_2_argument_2 ?do_plane_instance_2_argument_3 smooth untreated natural))
@@ -453,8 +453,8 @@
 		:parameters (?do_plane_x - part ?do_plane_oldsurface - surface ?do_plane_oldcolour - acolour ?do_plane_oldtreatment - treatmentstatus ?ConstantVariable1637010447 - surface ?ConstantVariable1288755959 - treatmentstatus ?ConstantVariable1631726897 - acolour)
 		:precondition 
 			(and
-				;(available ?do_plane_x)
-				;(surface_condition ?do_plane_x ?do_plane_oldsurface)
+				(available ?do_plane_x)
+				(surface_condition ?do_plane_x ?do_plane_oldsurface)
 				(treatment ?do_plane_x ?do_plane_oldtreatment)
 				(colour ?do_plane_x ?do_plane_oldcolour)
 			)
