@@ -9,7 +9,7 @@
 ;   15 spray_varnisher
 
 (define (problem wood-prob)
-  (:domain woodworking)
+  (:domain  woodworking_legal_fewer_htn_groundings)
   (:objects
     highspeed_saw0 highspeed_saw1 highspeed_saw2 highspeed_saw3 highspeed_saw4 highspeed_saw5 highspeed_saw6 highspeed_saw7 highspeed_saw8 highspeed_saw9 highspeed_saw10 highspeed_saw11 highspeed_saw12 highspeed_saw13 highspeed_saw14 - highspeed_saw
     glazer0 glazer1 glazer2 glazer3 glazer4 glazer5 glazer6 glazer7 glazer8 glazer9 glazer10 glazer11 glazer12 glazer13 glazer14 - glazer
