@@ -1,12 +1,12 @@
-(define (problem roverprob42) (:domain Rover)
+(define (problem roverprob42) (:domain rover)
 (:objects
-	general - Lander
-	colour high_res low_res - Mode
-	rover0 rover1 rover2 rover3 rover4 rover5 rover6 rover7 rover8 rover9 rover10 rover11 rover12 - Rover
-	rover0store rover1store rover2store rover3store rover4store rover5store rover6store rover7store rover8store rover9store rover10store rover11store rover12store - Store
-	waypoint0 waypoint1 waypoint2 waypoint3 waypoint4 waypoint5 waypoint6 waypoint7 waypoint8 waypoint9 waypoint10 waypoint11 waypoint12 waypoint13 waypoint14 waypoint15 waypoint16 waypoint17 waypoint18 waypoint19 waypoint20 waypoint21 waypoint22 waypoint23 waypoint24 waypoint25 waypoint26 waypoint27 waypoint28 waypoint29 waypoint30 waypoint31 waypoint32 waypoint33 waypoint34 waypoint35 waypoint36 waypoint37 waypoint38 waypoint39 waypoint40 waypoint41 waypoint42 waypoint43 waypoint44 waypoint45 waypoint46 waypoint47 waypoint48 waypoint49 waypoint50 waypoint51 waypoint52 waypoint53 waypoint54 waypoint55 waypoint56 waypoint57 waypoint58 waypoint59 waypoint60 waypoint61 waypoint62 waypoint63 waypoint64 waypoint65 waypoint66 waypoint67 waypoint68 waypoint69 - Waypoint
+	general - lander
+	colour high_res low_res - mode
+	rover0 rover1 rover2 rover3 rover4 rover5 rover6 rover7 rover8 rover9 rover10 rover11 rover12 - rover
+	rover0store rover1store rover2store rover3store rover4store rover5store rover6store rover7store rover8store rover9store rover10store rover11store rover12store - store
+	waypoint0 waypoint1 waypoint2 waypoint3 waypoint4 waypoint5 waypoint6 waypoint7 waypoint8 waypoint9 waypoint10 waypoint11 waypoint12 waypoint13 waypoint14 waypoint15 waypoint16 waypoint17 waypoint18 waypoint19 waypoint20 waypoint21 waypoint22 waypoint23 waypoint24 waypoint25 waypoint26 waypoint27 waypoint28 waypoint29 waypoint30 waypoint31 waypoint32 waypoint33 waypoint34 waypoint35 waypoint36 waypoint37 waypoint38 waypoint39 waypoint40 waypoint41 waypoint42 waypoint43 waypoint44 waypoint45 waypoint46 waypoint47 waypoint48 waypoint49 waypoint50 waypoint51 waypoint52 waypoint53 waypoint54 waypoint55 waypoint56 waypoint57 waypoint58 waypoint59 waypoint60 waypoint61 waypoint62 waypoint63 waypoint64 waypoint65 waypoint66 waypoint67 waypoint68 waypoint69 - waypoint
 	camera0 camera1 camera2 camera3 camera4 camera5 camera6 camera7 camera8 camera9 camera10 camera11 camera12 camera13 camera14 camera15 camera16 - Camera
-	objective0 objective1 objective2 objective3 objective4 objective5 objective6 objective7 objective8 objective9 - Objective
+	objective0 objective1 objective2 objective3 objective4 objective5 objective6 objective7 objective8 objective9 - objective
 	)
 
 (:htn :parameters () :ordered-subtasks (and
