@@ -8,6 +8,7 @@ using namespace std;
 #include <cstdlib>
 #include <cstdio>
 #include <ctime>
+#include <set>
 
 int rnd(int limit) {
     return 1+(int) ((((double)((long int)limit)*random()))/(RAND_MAX+1.0));
@@ -223,22 +224,38 @@ public:
 
 
         o << ")\n\n(:htn :parameters () :ordered-subtasks (and\n";
+		// for the HTN, the output needs to be in the correct order, i.e. the one in which we have to stack the crates
+		set<int> stacked;
+		int outCount = 0;
+		int numOut = 0;
         for(int i = 0;i < crates.size();++i)
         {
             if(crates[i].dpallet)
             {
-                if(crates[i].dsurface)
+                if(!crates[i].dsurface)
                 {
-                    o << "\t\t(task" << i << " (do_put_on crate" << i << " crate" <<
-                            crates[i].dsurface-1 << "))\n";
-                }
-                else
-                {
-                    o << "\t\t(task" << i << " (do_put_on crate" << i << " pallet" <<
-                            crates[i].dpallet-1 << "))\n";
+                    o << "\t\t(task" << outCount++ << " (do_put_on crate" << i << " pallet" << crates[i].dpallet-1 << "))\n";
+					stacked.insert(i);
                 };
+				numOut++;
             };
         };
+
+
+		while (outCount != numOut){
+			for(int i = 0;i < crates.size();++i)
+        	{
+				if (stacked.count(i)) continue;
+        	    if(crates[i].dpallet)
+        	    {
+        	        if(crates[i].dsurface && stacked.count(crates[i].dsurface-1))
+        	        {
+        	            o << "\t\t(task" << outCount++ << " (do_put_on crate" << i << " crate" << crates[i].dsurface-1 << "))\n";
+						stacked.insert(i);
+        	        }
+        	    };
+        	};
+		}
         o << "\t)";
 
 
