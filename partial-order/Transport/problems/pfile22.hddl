@@ -1,5 +1,5 @@
 (define (problem p)
- (:domain transport)
+ (:domain  domain_htn)
  (:objects
   city-loc-0 city-loc-1 city-loc-2 city-loc-3 city-loc-4 city-loc-5 city-loc-6 city-loc-7 city-loc-8 city-loc-9 - location
   truck-0 truck-1 truck-2 - vehicle
