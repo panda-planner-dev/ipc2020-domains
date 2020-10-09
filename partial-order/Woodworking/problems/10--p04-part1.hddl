@@ -2,6 +2,16 @@
 	(problem p10__p04_part1)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
+		blue - acolour
+		white - acolour
+		green - acolour
+		red - acolour
+		black - acolour
+		mauve - acolour
+		oak - awood
+		pine - awood
+		beech - awood
+		colourfragments - treatmentstatus
 		s5 - aboardsize
 		s0 - aboardsize
 		s3 - aboardsize
@@ -13,26 +23,16 @@
 		s6 - aboardsize
 		s7 - aboardsize
 		s4 - aboardsize
-		blue - acolour
-		white - acolour
-		green - acolour
-		red - acolour
-		black - acolour
-		mauve - acolour
-		oak - awood
-		pine - awood
-		beech - awood
+		highspeed_saw0 - highspeed_saw
+		glazer0 - glazer
+		grinder0 - grinder
+		immersion_varnisher0 - immersion_varnisher
+		planer0 - planer
+		spray_varnisher0 - spray_varnisher
 		b0 - board
 		b1 - board
 		b2 - board
 		b3 - board
-		glazer0 - glazer
-		grinder0 - grinder
-		highspeed_saw0 - highspeed_saw
-		immersion_varnisher0 - immersion_varnisher
-		planer0 - planer
-		spray_varnisher0 - spray_varnisher
-		colourfragments - treatmentstatus
 		p4 - part
 		p0 - part
 		p1 - part
@@ -44,30 +44,35 @@
 		p2 - part
 	)
 	(:htn
-		:parameters (?planstep_2_argument_1_p1_process_process_colourVar - acolour ?planstep_2_argument_2_p1_process_process_oldSurfaceVar - surface ?planstep_3_argument_1_p2_process_process_colourVar - acolour ?planstep_3_argument_2_p2_process_process_oldSurfaceVar - surface ?planstep_4_argument_1_p3_process_process_colourVar - acolour ?planstep_4_argument_2_p3_process_process_oldSurfaceVar - surface ?planstep_5_argument_2_p0_process_process_oldSurfaceVar - surface ?planstep_6_argument_0_p4_process_process_partVar - part ?planstep_6_argument_1_p4_process_process_colourVar - acolour ?planstep_6_argument_2_p4_process_process_oldSurfaceVar - surface ?planstep_6_argument_3_p4_process_process_newSurfaceVar - surface)
+		:parameters (?p0_process_process_oldSurfaceVar - surface ?p1_process_process_colourVar - acolour ?p1_process_process_oldSurfaceVar - surface ?p2_process_process_colourVar - acolour ?p2_process_process_oldSurfaceVar - surface ?p3_process_process_colourVar - acolour ?p3_process_process_oldSurfaceVar - surface ?p4_process_process_colourVar - acolour ?p4_process_process_newSurfaceVar - surface ?p4_process_process_oldSurfaceVar - surface ?p4_process_process_partVar - part)
 		:subtasks (and
-		 (task0 (process p1 ?planstep_2_argument_1_p1_process_process_colourVar ?planstep_2_argument_2_p1_process_process_oldSurfaceVar verysmooth))
-		 (task1 (process p2 ?planstep_3_argument_1_p2_process_process_colourVar ?planstep_3_argument_2_p2_process_process_oldSurfaceVar verysmooth))
-		 (task2 (process p3 ?planstep_4_argument_1_p3_process_process_colourVar ?planstep_4_argument_2_p3_process_process_oldSurfaceVar verysmooth))
-		 (task3 (process p0 red ?planstep_5_argument_2_p0_process_process_oldSurfaceVar verysmooth))
-		 (task4 (process ?planstep_6_argument_0_p4_process_process_partVar ?planstep_6_argument_1_p4_process_process_colourVar ?planstep_6_argument_2_p4_process_process_oldSurfaceVar ?planstep_6_argument_3_p4_process_process_newSurfaceVar))
-		)
-		:ordering (and
-			(< task3 task0)
-			(< task0 task1)
-			(< task4 task3)
-			(< task2 task4)
+		 (task0 (process p1 ?p1_process_process_colourVar ?p1_process_process_oldSurfaceVar verysmooth))
+		 (task1 (process p2 ?p2_process_process_colourVar ?p2_process_process_oldSurfaceVar verysmooth))
+		 (task2 (process p3 ?p3_process_process_colourVar ?p3_process_process_oldSurfaceVar verysmooth))
+		 (task3 (process p0 red ?p0_process_process_oldSurfaceVar verysmooth))
+		 (task4 (process ?p4_process_process_partVar ?p4_process_process_colourVar ?p4_process_process_oldSurfaceVar ?p4_process_process_newSurfaceVar))
 		)
 	)
 	(:init
-		(available b0)
-		(available b1)
-		(available b2)
-		(available b3)
-		(boardsize b0 s6)
-		(boardsize b1 s7)
-		(boardsize b2 s6)
-		(boardsize b3 s7)
+		(has_colour spray_varnisher0 mauve)
+		(has_colour spray_varnisher0 white)
+		(has_colour spray_varnisher0 red)
+		(has_colour spray_varnisher0 natural)
+		(has_colour immersion_varnisher0 black)
+		(has_colour immersion_varnisher0 mauve)
+		(has_colour immersion_varnisher0 red)
+		(has_colour immersion_varnisher0 natural)
+		(has_colour glazer0 white)
+		(has_colour glazer0 red)
+		(machine_present grinder0)
+		(machine_present planer0)
+		(is_smooth smooth)
+		(is_smooth verysmooth)
+		(empty highspeed_saw0)
+		(grind_treatment_change glazed untreated)
+		(grind_treatment_change colourfragments untreated)
+		(grind_treatment_change untreated untreated)
+		(grind_treatment_change varnished colourfragments)
 		(boardsize_successor s0 s1)
 		(boardsize_successor s1 s2)
 		(boardsize_successor s2 s3)
@@ -78,43 +83,33 @@
 		(boardsize_successor s7 s8)
 		(boardsize_successor s8 s9)
 		(boardsize_successor s9 s10)
-		(empty highspeed_saw0)
-		(goalsize p0 medium)
-		(goalsize p1 medium)
-		(goalsize p2 small)
-		(goalsize p3 small)
-		(goalsize p4 large)
-		(grind_treatment_change colourfragments untreated)
-		(grind_treatment_change glazed untreated)
-		(grind_treatment_change untreated untreated)
-		(grind_treatment_change varnished colourfragments)
-		(has_colour glazer0 red)
-		(has_colour glazer0 white)
-		(has_colour immersion_varnisher0 black)
-		(has_colour immersion_varnisher0 mauve)
-		(has_colour immersion_varnisher0 natural)
-		(has_colour immersion_varnisher0 red)
-		(has_colour spray_varnisher0 mauve)
-		(has_colour spray_varnisher0 natural)
-		(has_colour spray_varnisher0 red)
-		(has_colour spray_varnisher0 white)
-		(is_smooth smooth)
-		(is_smooth verysmooth)
-		(machine_present grinder0)
-		(machine_present planer0)
-		(surface_condition b0 rough)
-		(surface_condition b1 rough)
-		(surface_condition b2 rough)
-		(surface_condition b3 rough)
 		(unused p0)
-		(unused p1)
-		(unused p2)
-		(unused p3)
-		(unused p4)
+		(goalsize p0 medium)
+		(available b0)
+		(boardsize b0 s6)
+		(surface_condition b0 rough)
 		(wood b0 beech)
+		(boardsize b1 s7)
 		(wood b1 beech)
+		(surface_condition b1 rough)
+		(available b1)
+		(boardsize b2 s6)
 		(wood b2 oak)
+		(surface_condition b2 rough)
+		(available b2)
+		(boardsize b3 s7)
 		(wood b3 pine)
+		(surface_condition b3 rough)
+		(available b3)
+		(unused p1)
+		(goalsize p1 medium)
+		(unused p2)
+		(goalsize p2 small)
+		(unused p3)
+		(goalsize p3 small)
+		(unused p4)
+		(goalsize p4 large)
+		(grind_treatment_change varnished colourfragments)
 	)
 	(:goal
 		(and

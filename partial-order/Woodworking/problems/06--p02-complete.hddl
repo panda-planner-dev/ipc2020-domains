@@ -2,24 +2,24 @@
 	(problem p06__p02_complete)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
-		s5 - aboardsize
-		s6 - aboardsize
-		s4 - aboardsize
 		blue - acolour
 		red - acolour
 		black - acolour
 		mauve - acolour
 		walnut - awood
 		mahogany - awood
-		b0 - board
+		colourfragments - treatmentstatus
+		s5 - aboardsize
+		s6 - aboardsize
+		s4 - aboardsize
+		highspeed_saw0 - highspeed_saw
 		glazer0 - glazer
 		grinder0 - grinder
-		highspeed_saw0 - highspeed_saw
 		immersion_varnisher0 - immersion_varnisher
 		planer0 - planer
-		spray_varnisher0 - spray_varnisher
 		saw0 - saw
-		colourfragments - treatmentstatus
+		spray_varnisher0 - spray_varnisher
+		b0 - board
 		p4 - part
 		p0 - part
 		p1 - part
@@ -28,21 +28,14 @@
 		p2 - part
 	)
 	(:htn
-		:parameters (?planstep_2_argument_3_a_process_process_newSurfaceVar - surface ?planstep_3_argument_1_b_process_process_colourVar - acolour ?planstep_3_argument_2_b_process_process_oldSurfaceVar - surface ?planstep_5_argument_1_d_process_process_process_colourVar - acolour ?planstep_5_argument_2_d_process_process_process_oldSurfaceVar - surface ?planstep_6_argument_1_f_process_process_colourVar - acolour ?planstep_7_argument_2_c_process_process_oldSurfaceVar - surface)
+		:parameters (?a_process_process_newSurfaceVar - surface ?b_process_process_colourVar - acolour ?b_process_process_oldSurfaceVar - surface ?c_process_process_oldSurfaceVar - surface ?d_process_process_process_colourVar - acolour ?d_process_process_process_oldSurfaceVar - surface ?f_process_process_colourVar - acolour)
 		:subtasks (and
-		 (task0 (process p0 black verysmooth ?planstep_2_argument_3_a_process_process_newSurfaceVar))
-		 (task1 (process p1 ?planstep_3_argument_1_b_process_process_colourVar ?planstep_3_argument_2_b_process_process_oldSurfaceVar smooth))
+		 (task0 (process p0 black verysmooth ?a_process_process_newSurfaceVar))
+		 (task1 (process p1 ?b_process_process_colourVar ?b_process_process_oldSurfaceVar smooth))
 		 (task2 (process p4 mauve verysmooth smooth))
-		 (task3 (process p3 ?planstep_5_argument_1_d_process_process_process_colourVar ?planstep_5_argument_2_d_process_process_process_oldSurfaceVar smooth))
-		 (task4 (process p5 ?planstep_6_argument_1_f_process_process_colourVar rough smooth))
-		 (task5 (process p2 blue ?planstep_7_argument_2_c_process_process_oldSurfaceVar verysmooth))
-		)
-		:ordering (and
-			(< task3 task0)
-			(< task1 task2)
-			(< task4 task3)
-			(< task5 task4)
-			(< task2 task5)
+		 (task3 (process p3 ?d_process_process_process_colourVar ?d_process_process_process_oldSurfaceVar smooth))
+		 (task4 (process p5 ?f_process_process_colourVar rough smooth))
+		 (task5 (process p2 blue ?c_process_process_oldSurfaceVar verysmooth))
 		)
 	)
 	(:init

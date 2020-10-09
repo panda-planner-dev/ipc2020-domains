@@ -2,15 +2,15 @@
 	(problem p04__p02_part3)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
+		blue - acolour
+		walnut - awood
+		colourfragments - treatmentstatus
 		s4 - aboardsize
 		s5 - aboardsize
 		s6 - aboardsize
-		blue - acolour
-		walnut - awood
-		b0 - board
 		glazer0 - glazer
 		spray_varnisher0 - spray_varnisher
-		colourfragments - treatmentstatus
+		b0 - board
 		p0 - part
 		p1 - part
 		p5 - part
@@ -21,10 +21,6 @@
 		 (task0 (process p0 blue verysmooth verysmooth))
 		 (task1 (process p1 blue smooth smooth))
 		 (task2 (process p5 blue rough smooth))
-		)
-		:ordering (and
-			(< task1 task0)
-			(< task0 task2)
 		)
 	)
 	(:init

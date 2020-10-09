@@ -2,37 +2,30 @@
 	(problem p02__p02_part1)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
+		red - acolour
+		pine - awood
+		teak - awood
+		colourfragments - treatmentstatus
 		s0 - aboardsize
 		s1 - aboardsize
 		s2 - aboardsize
 		s3 - aboardsize
-		red - acolour
-		pine - awood
-		teak - awood
-		b0 - board
-		glazer0 - glazer
 		highspeed_saw0 - highspeed_saw
-		colourfragments - treatmentstatus
+		glazer0 - glazer
+		b0 - board
 		p0 - part
 		p1 - part
 		p2 - part
 	)
 	(:htn
-		:parameters (?planstep_2_argument_5_a_grindNplane_newcolor - acolour ?planstep_3_argument_5_b_grindNPlane_newcolor - acolour ?planstep_4_argument_1_c_grindNplane_grindNplane_variable1 - surface ?planstep_4_argument_2_c_grindNplane_grindNplane_variable2 - acolour ?planstep_4_argument_3_c_grindNplane_grindNplane_variable3 - treatmentstatus ?planstep_4_argument_5_c_grindNplane_grindNplane_variable5 - acolour ?planstep_7_argument_1_f_colour_do_colour_variable1 - acolour)
+		:parameters (?a_grindNplane_newcolor - acolour ?b_grindNPlane_newcolor - acolour ?c_grindNplane_grindNplane_variable1 - surface ?c_grindNplane_grindNplane_variable2 - acolour ?c_grindNplane_grindNplane_variable3 - treatmentstatus ?c_grindNplane_grindNplane_variable5 - acolour ?f_colour_do_colour_variable1 - acolour)
 		:subtasks (and
-		 (task0 (grindNplane p0 smooth red varnished smooth ?planstep_2_argument_5_a_grindNplane_newcolor untreated))
-		 (task1 (grindNplane p1 rough red glazed smooth ?planstep_3_argument_5_b_grindNPlane_newcolor untreated))
-		 (task2 (grindNplane p2 ?planstep_4_argument_1_c_grindNplane_grindNplane_variable1 ?planstep_4_argument_2_c_grindNplane_grindNplane_variable2 ?planstep_4_argument_3_c_grindNplane_grindNplane_variable3 smooth ?planstep_4_argument_5_c_grindNplane_grindNplane_variable5 untreated))
+		 (task0 (grindNplane p0 smooth red varnished smooth ?a_grindNplane_newcolor untreated))
+		 (task1 (grindNplane p1 rough red glazed smooth ?b_grindNPlane_newcolor untreated))
+		 (task2 (grindNplane p2 ?c_grindNplane_grindNplane_variable1 ?c_grindNplane_grindNplane_variable2 ?c_grindNplane_grindNplane_variable3 smooth ?c_grindNplane_grindNplane_variable5 untreated))
 		 (task3 (do_saw b0 p1 pine rough))
-		 (task4 (do_colour p1 red glazer0 untreated))
-		 (task5 (do_colour p2 ?planstep_7_argument_1_f_colour_do_colour_variable1 glazer0 untreated))
-		)
-		:ordering (and
-			(< task4 task1)
-			(< task3 task2)
-			(< task0 task3)
-			(< task2 task4)
-			(< task1 task5)
+		 (task4 (do_colour p1 red glazer0))
+		 (task5 (do_colour p2 ?f_colour_do_colour_variable1 glazer0))
 		)
 	)
 	(:init

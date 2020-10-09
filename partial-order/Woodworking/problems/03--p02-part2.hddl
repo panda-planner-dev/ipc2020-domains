@@ -2,25 +2,22 @@
 	(problem p03__p02_part2)
 	(:domain  woodworking_legal_fewer_htn_groundings)
 	(:objects
+		walnut - awood
+		colourfragments - treatmentstatus
 		s4 - aboardsize
 		s5 - aboardsize
 		s6 - aboardsize
-		walnut - awood
-		b0 - board
 		highspeed_saw0 - highspeed_saw
 		spray_varnisher0 - spray_varnisher
-		colourfragments - treatmentstatus
+		b0 - board
 		p0 - part
 		p1 - part
 	)
 	(:htn
-		:parameters (?planstep_2_argument_1_a_process_color - acolour ?planstep_3_argument_2_b_process_oldsurface - surface)
+		:parameters (?a_process_color - acolour ?b_process_color - acolour ?b_process_oldsurface - surface)
 		:subtasks (and
-		 (task0 (process p0 ?planstep_2_argument_1_a_process_color verysmooth verysmooth))
-		 (task1 (process p1 natural ?planstep_3_argument_2_b_process_oldsurface smooth))
-		)
-		:ordering (and
-			(< task1 task0)
+		 (task0 (process p0 ?a_process_color verysmooth verysmooth))
+		 (task1 (process p1 ?b_process_color ?b_process_oldsurface smooth))
 		)
 	)
 	(:init
