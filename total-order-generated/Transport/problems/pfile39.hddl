@@ -1,5 +1,5 @@
 (define (problem p)
- (:domain transport)
+ (:domain  domain_htn)
  (:objects
   city-loc-0 city-loc-1 city-loc-2 city-loc-3 city-loc-4 city-loc-5 city-loc-6 city-loc-7 city-loc-8 city-loc-9 city-loc-10 city-loc-11 city-loc-12 city-loc-13 city-loc-14 city-loc-15 city-loc-16 city-loc-17 city-loc-18 city-loc-19 city-loc-20 city-loc-21 city-loc-22 city-loc-23 city-loc-24 city-loc-25 city-loc-26 city-loc-27 city-loc-28 city-loc-29 city-loc-30 city-loc-31 city-loc-32 city-loc-33 city-loc-34 city-loc-35 city-loc-36 city-loc-37 city-loc-38 city-loc-39 city-loc-40 city-loc-41 city-loc-42 city-loc-43 city-loc-44 city-loc-45 city-loc-46 city-loc-47 city-loc-48 city-loc-49 city-loc-50 city-loc-51 city-loc-52 city-loc-53 city-loc-54 city-loc-55 city-loc-56 city-loc-57 city-loc-58 city-loc-59 city-loc-60 city-loc-61 city-loc-62 city-loc-63 city-loc-64 city-loc-65 city-loc-66 city-loc-67 city-loc-68 city-loc-69 city-loc-70 city-loc-71 city-loc-72 city-loc-73 city-loc-74 - location
   truck-0 truck-1 truck-2 truck-3 truck-4 truck-5 truck-6 truck-7 truck-8 truck-9 - vehicle
