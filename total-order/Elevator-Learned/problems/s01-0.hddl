@@ -9,9 +9,6 @@
 	:tasks (and
 	(task0 (ACHIEVE-SERVED P0))
 	)
-:ordering (
-)
-:constraints ( )
 )
 (:init
         (ABOVE F0 F1)
