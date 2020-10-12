@@ -69,8 +69,7 @@
    (deliver package-58 city-loc-27)
    (deliver package-59 city-loc-16)
    )
-  :ordering ( )
-  :constraints ( ))
+  )
  (:init
   (capacity_predecessor capacity-0 capacity-1)
   (capacity_predecessor capacity-1 capacity-2)
