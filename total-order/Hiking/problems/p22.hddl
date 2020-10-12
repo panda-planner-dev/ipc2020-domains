@@ -4,7 +4,7 @@
 car0 car1 car2 car3 car4 car5 car6 car7 - car
 tent0 tent1 tent2 tent3 tent4 tent5 tent6 - tent
 couple0 couple1 couple2 couple3 couple4 couple5 couple6 - couple
-place0 place1 place2 place3 place4 place5 place6 - place
+place0 place1 place2 place3 place4 place5 place6 place7 - place
 guy0 girl0 guy1 girl1 guy2 girl2 guy3 girl3 guy4 girl4 guy5 girl5 guy6 girl6 - person
 )
 (:htn :parameters () :ordered-subtasks (and
