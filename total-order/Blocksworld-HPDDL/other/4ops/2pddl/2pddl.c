@@ -90,12 +90,13 @@ int main( int argc, char *argv[] )
   }
 
   printf("\n\n(define (problem BW-rand-%d)", gn);
-  printf("\n(:domain blocksworld)");
+  printf("\n(:domain blocks)");
   printf("\n(:objects ");
   for ( i = 0; i < gn; i++ ) printf("b%d ", i+1);
-  printf(")");
+  printf(" - BLOCK)");
+  printf("\n (:htn\n  :ordered-tasks (and\n    (task0 (achieve-goals))\n  )\n)");
   printf("\n(:init");
-  printf("\n(arm-empty)");
+  printf("\n(hand-empty)");
   for ( i = 1; i < gn + 1; i++ ) {
     if ( initial[i] == 0 ) {
       printf("\n(on-table b%d)", i);
@@ -111,14 +112,35 @@ int main( int argc, char *argv[] )
     if ( j < gn + 1 ) continue;
     printf("\n(clear b%d)", i);
   }
+  int * written = (int*) calloc(gn,sizeof(int));
+  for ( i = 1; i < gn + 1; i++ )
+	  written[i-1] = 0;
+  
+  for ( i = 1; i < gn + 1; i++ ) {
+    if ( goal[i] == 0 ) {
+      printf("\n(goal_on-table b%d)", i);
+    } else {
+      printf("\n(goal_on b%d b%d)", i, goal[i]);
+	  written[goal[i]-1] = 1;
+    }
+  }
+  for ( i = 1; i < gn + 1; i++ ) {
+	  if (!written[i-1])
+      	printf("\n(goal_clear b%d)", i);
+  }
   printf("\n)");
   printf("\n(:goal");
   printf("\n(and");
   for ( i = 1; i < gn + 1; i++ ) {
     if ( goal[i] == 0 ) {
+      printf("\n(on-table b%d)", i);
     } else {
       printf("\n(on b%d b%d)", i, goal[i]);
     }
+  }
+  for ( i = 1; i < gn + 1; i++ ) {
+	  if (!written[i-1])
+      	printf("\n(clear b%d)", i);
   }
   printf(")\n)\n)\n\n\n");
   

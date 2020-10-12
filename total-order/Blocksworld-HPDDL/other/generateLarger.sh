@@ -2,13 +2,13 @@
 
 make
 
-./blocksworld 3 50 > ../problems/p21.hddl
-./blocksworld 3 75 > ../problems/p22.hddl
-./blocksworld 3 100 > ../problems/p23.hddl
-./blocksworld 3 150 > ../problems/p24.hddl
-./blocksworld 3 200 > ../problems/p25.hddl
-./blocksworld 3 300 > ../problems/p26.hddl
-./blocksworld 3 400 > ../problems/p27.hddl
-./blocksworld 3 600 > ../problems/p28.hddl
-./blocksworld 3 800 > ../problems/p29.hddl
-./blocksworld 3 1000 > ../problems/p30.hddl
+./blocksworld 4 150 >  ../problems/pfile_150.hddl
+./blocksworld 4 200 >  ../problems/pfile_200.hddl
+./blocksworld 4 250 >  ../problems/pfile_250.hddl
+./blocksworld 4 300 >  ../problems/pfile_300.hddl
+./blocksworld 4 400 >  ../problems/pfile_400.hddl
+./blocksworld 4 500 >  ../problems/pfile_500.hddl
+./blocksworld 4 600 >  ../problems/pfile_600.hddl
+./blocksworld 4 700 >  ../problems/pfile_700.hddl
+./blocksworld 4 850 >  ../problems/pfile_850.hddl
+./blocksworld 4 1000 > ../problems/pfile_1000.hddl
