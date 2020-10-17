@@ -446,6 +446,11 @@ d4149
 d1768
 d2072
 - ROOMDOOR)
+(:htn
+  :ordered-tasks (and
+    (task0 (achieve-goals))
+  )
+ )
 (:init
 (rloc c)
 (armempty)
