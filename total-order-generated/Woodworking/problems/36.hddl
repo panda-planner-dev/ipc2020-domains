@@ -9,7 +9,7 @@
 ;   40 spray_varnisher
 
 (define (problem wood-prob)
-  (:domain woodworking)
+  (:domain  woodworking_legal_fewer_htn_groundings)
   (:objects
     highspeed_saw0 highspeed_saw1 highspeed_saw2 highspeed_saw3 highspeed_saw4 highspeed_saw5 highspeed_saw6 highspeed_saw7 highspeed_saw8 highspeed_saw9 highspeed_saw10 highspeed_saw11 highspeed_saw12 highspeed_saw13 highspeed_saw14 highspeed_saw15 highspeed_saw16 highspeed_saw17 highspeed_saw18 highspeed_saw19 highspeed_saw20 highspeed_saw21 highspeed_saw22 highspeed_saw23 highspeed_saw24 highspeed_saw25 highspeed_saw26 highspeed_saw27 highspeed_saw28 highspeed_saw29 highspeed_saw30 highspeed_saw31 highspeed_saw32 highspeed_saw33 highspeed_saw34 highspeed_saw35 highspeed_saw36 highspeed_saw37 highspeed_saw38 highspeed_saw39 - highspeed_saw
     glazer0 glazer1 glazer2 glazer3 glazer4 glazer5 glazer6 glazer7 glazer8 glazer9 glazer10 glazer11 glazer12 glazer13 glazer14 glazer15 glazer16 glazer17 glazer18 glazer19 glazer20 glazer21 glazer22 glazer23 glazer24 glazer25 glazer26 glazer27 glazer28 glazer29 glazer30 glazer31 glazer32 glazer33 glazer34 glazer35 glazer36 glazer37 glazer38 glazer39 - glazer
