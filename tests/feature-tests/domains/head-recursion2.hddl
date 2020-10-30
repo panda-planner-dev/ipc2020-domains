@@ -1,0 +1,46 @@
+(define (domain test-domain)
+	(:requirements :negative-preconditions :typing :hierarchy)
+
+	(:types A)
+	
+	(:predicates
+		(pre ?b ?a - A)
+		(foo ?a - A)
+	)
+
+	(:task task1 :parameters ())
+	(:task task2 :parameters ())
+
+	(:method iterate-1
+		:parameters (?a - A)
+		:task (task1)
+		:ordered-subtasks (and
+			(task2)
+			(do ?a)
+		)
+	)
+
+	(:method iterate-2
+		:parameters (?a - A)
+		:task (task2)
+		:ordered-subtasks (and
+			(task2)
+			(do ?a)
+		)
+	)
+
+	(:method done
+		:parameters (?a - A)
+		:task (task2)
+		:ordered-subtasks (and
+		)
+	)
+	
+	(:action do
+		:parameters (?a - A)
+		:precondition (exists (?b - A) (and (foo ?b) (pre ?b ?a)))
+		:effect (and
+			(foo ?a)
+		)
+	)
+)

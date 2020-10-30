@@ -1,0 +1,92 @@
+(define (domain test-domain)
+	(:requirements :negative-preconditions :typing :hierarchy)
+
+	
+	(:predicates
+		(goal)
+	)
+
+	(:task S :parameters ())
+	(:task A :parameters ())
+	(:task B :parameters ())
+	(:task C :parameters ())
+	(:task T :parameters ())
+
+	(:method m1
+		:parameters ()
+		:task (S)
+		:ordered-subtasks (and
+			(T)
+		)
+	)
+
+	(:method m2
+		:parameters ()
+		:task (S)
+		:ordered-subtasks (and
+			(C)
+			(g)
+		)
+	)
+
+	(:method m3
+		:parameters ()
+		:task (T)
+		:ordered-subtasks (and
+			(A)
+			(B)
+		)
+	)
+
+	(:method m4
+		:parameters ()
+		:task (C)
+		:ordered-subtasks (and
+			(x)
+			(T)
+		)
+	)
+
+	(:method m5
+		:parameters ()
+		:task (A)
+		:ordered-subtasks (and
+			(y)
+			(z)
+		)
+	)
+
+	(:method m6
+		:parameters ()
+		:task (B)
+		:ordered-subtasks (and
+			(z)
+		)
+	)
+
+	(:action x
+		:parameters ()
+		:precondition ()
+		:effect (and
+		)
+	)
+	(:action y
+		:parameters ()
+		:precondition ()
+		:effect (and
+		)
+	)
+	(:action z
+		:parameters ()
+		:precondition ()
+		:effect (and
+		)
+	)
+	(:action g
+		:parameters ()
+		:precondition ()
+		:effect (and
+			(goal)
+		)
+	)
+)
