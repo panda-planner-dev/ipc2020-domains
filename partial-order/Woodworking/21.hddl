@@ -57,7 +57,7 @@
       ?v_29_1 - acolour ?v_29_2 - surface ?v_29_3 - surface
       ?v_30_1 - acolour ?v_30_2 - surface ?v_30_3 - surface
     )
-    :ordered-subtasks (and
+    :subtasks (and
       (taskp0 (process p0 ?v_1_1 ?v_1_2 ?v_1_3))
       (taskp1 (process p1 ?v_2_1 ?v_2_2 ?v_2_3))
       (taskp2 (process p2 ?v_3_1 ?v_3_2 ?v_3_3))
