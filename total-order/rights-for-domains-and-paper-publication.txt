@@ -146,3 +146,29 @@ Towers
     ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
 (c) Werden sie ein Papier einreichen?
     ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+
+
+Pro Domäne folgende Infos:
+(a) Haben wir Nutzungsrecht?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+(c) Werden sie ein Papier einreichen?
+    ja / nein / sie überlegen noch / haben noch nicht angefragt / haben angefragt, aber noch keine Antwort
+
+--> 7 Domänen
+
+
+
+
+
+Rover-PANDA
+Satellite-PANDA
+SmartPhone
+Transport
+UM-Translog  --->  Wollten wir nicht nutzen
+Woodworking
+--> gehören alle uns, nichts zusätzlich zu vermerken.
+
+
+Zenotravel
+--> siehe PO-Domäne
