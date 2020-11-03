@@ -7,6 +7,7 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 
 [1] paper describing HDDL:
 
+```
 @InProceedings{Hoeller2020HDDL,
    author    = {Daniel H\"oller and Gregor Behnke and Pascal Bercher and
 Susanne Biundo and Humbert Fiorino and Damien Pellier and Ron Alford},
@@ -19,3 +20,4 @@ Intelligence (AAAI 2020)},
    publisher = {AAAI Press},
    doi       = {10.1609/aaai.v34i06.6542}
 } 
+```
