@@ -9,12 +9,9 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 
 ```
 @InProceedings{Hoeller2020HDDL,
-   author    = {Daniel H\"oller and Gregor Behnke and Pascal Bercher and
-Susanne Biundo and Humbert Fiorino and Damien Pellier and Ron Alford},
-   title     = {HDDL: An Extension to PDDL for Expressing Hierarchical
-Planning Problems},
-   booktitle = {Proceedings of the 34th AAAI Conference on Artificial
-Intelligence (AAAI 2020)},
+   author    = {Daniel H\"oller and Gregor Behnke and Pascal Bercher and Susanne Biundo and Humbert Fiorino and Damien Pellier and Ron Alford},
+   title     = {HDDL: An Extension to PDDL for Expressing Hierarchical Planning Problems},
+   booktitle = {Proceedings of the 34th AAAI Conference on Artificial Intelligence (AAAI 2020)},
    year      = {2020},
    pages     = {9883--9891},
    publisher = {AAAI Press},
