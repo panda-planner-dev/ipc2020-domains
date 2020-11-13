@@ -3,6 +3,9 @@
 ## Author
 Mauricio Cecilio Magnaguagno <mauricio.magnaguagno@acad.pucrs.br>
 
+## Link Main Repository
+[https://github.com/Maumagnaguagno/Snake](Repository)
+
 ## Paper
 Not yet published
 
