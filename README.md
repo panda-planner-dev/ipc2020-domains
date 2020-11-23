@@ -7,7 +7,7 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 
 [1] paper describing HDDL:
 
-```
+```bibtex
 @InProceedings{Hoeller2020HDDL,
    author    = {Daniel H\"oller and Gregor Behnke and Pascal Bercher and Susanne Biundo and Humbert Fiorino and Damien Pellier and Ron Alford},
    title     = {HDDL: An Extension to PDDL for Expressing Hierarchical Planning Problems},

@@ -5,6 +5,7 @@ edited (removed "hybrid" features) by Gregor Behnke <behnkeg@informatik.uni-frei
 
 ## Paper
 
+```bibtex
 @PhdThesis{Schattenberg09HybridPlanningAndScheduling,
   author    = {Bernd Schattenberg},
   title     = {Hybrid Planning \& Scheduling},
@@ -12,3 +13,4 @@ edited (removed "hybrid" features) by Gregor Behnke <behnkeg@informatik.uni-frei
   year      = {2009},
   doi       = {10.18725/OPARU-1045},
 }
+```
