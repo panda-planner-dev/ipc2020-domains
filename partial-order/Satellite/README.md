@@ -14,3 +14,5 @@ edited (removed "hybrid" features) by Gregor Behnke <behnkeg@informatik.uni-frei
   doi       = {10.18725/OPARU-1045},
 }
 ```
+
+[PDF](https://oparu.uni-ulm.de/xmlui/handle/123456789/1072)

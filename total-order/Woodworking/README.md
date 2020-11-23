@@ -7,4 +7,4 @@ edited (removed "hybrid" features and converted to TO domain) by Gregor Behnke <
 ## Paper
 
 The domain was converted to a totally ordered domain for the following paper:
-totSAT-Totally-ordered hierarchical planning through SAT, Gregor Behnke, Daniel Höller, Susanne Biundo, AAAI, 2018
+totSAT-Totally-ordered hierarchical planning through SAT, Gregor Behnke, Daniel Höller, Susanne Biundo, AAAI, 2018. [PDF](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181)
