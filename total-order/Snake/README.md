@@ -1,16 +1,16 @@
 # Snake
+**Snake game descriptions for automated planning**
 
 ## Author
 Mauricio Cecilio Magnaguagno <mauricio.magnaguagno@acad.pucrs.br>
 
-## Link Main Repository
-[https://github.com/Maumagnaguagno/Snake](Repository)
+## Repository
+https://github.com/Maumagnaguagno/Snake
 
 ## Paper
 Not yet published
 
-**Snake game descriptions for automated planning**
-
+## Description
 Convert text based files to a snake problem describing a grid-based scenario with:
 - ``Space`` as clear cell
 - ``@`` as snake head cell

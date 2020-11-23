@@ -1,6 +1,5 @@
-## Author
-Bernd Schattenberg <mail@berndschattenberg.de>
-
+## Authors
+Bernd Schattenberg <mail@berndschattenberg.de>  
 Pascal Bercher <pascal.bercher@anu.edu.au>
 
 edited (removed "hybrid" features and converted to TO domain) by Gregor Behnke <behnkeg@informatik.uni-freiburg.de>

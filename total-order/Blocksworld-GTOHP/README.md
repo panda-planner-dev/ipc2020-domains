@@ -1,6 +1,6 @@
-## Author
-Humbert Fiorino <humbert.fiorino@univ-grenoble-alpes.fr>
-Abdeldjalil Ramoul <abdeldjalil.ramoul@univ-grenoble-alpes.fr>
+## Authors
+Humbert Fiorino <humbert.fiorino@univ-grenoble-alpes.fr>  
+Abdeldjalil Ramoul <abdeldjalil.ramoul@univ-grenoble-alpes.fr>  
 Damien Pellier <damien.pellier@univ-grenoble-alpes.fr>
 
 ## Paper
