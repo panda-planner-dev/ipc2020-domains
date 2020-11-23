@@ -1,7 +1,7 @@
 # ipc2020-domains
 This repository contains all Hierarchical Task Network (HTN) domains and problem instances that were used for the [International Planning Competition (IPC) 2020](http://ipc2020.hierarchical-task.net), which was devoted exclusively to HTN planning. Please refer to the IPC booklet (to appear) for further information on these domains and problem instances.
 
-All domains and problem instances are described in HDDL, the hierarchical domain description language [1].
+All domains and problem instances are described in HDDL, the hierarchical domain description language [1] [(PDF)](https://ojs.aaai.org/index.php/AAAI/article/view/6542/6398).
 
 The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher. If you have any questions, please contact us!
 
