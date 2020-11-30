@@ -145,7 +145,7 @@
     :parameters (?loc1 ?locP - location ?t ?t2 - blocktype)
     :task (placeblockabstract ?loc1 ?t)
     :precondition (and (blockat ?loc1 ?t2) (reachable ?locP ?loc1) (player-at ?locP))
-    :subtasks (and 
+    :ordered-subtasks (and 
         (removeblock ?loc1 ?t2)
         (placeblock ?loc1 ?t)
       )
