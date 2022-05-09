@@ -1,0 +1,229 @@
+diff --color -Naur PCPSolver_ver3/generator.cpp PCPSolver_ver3.1/generator.cpp
+--- PCPSolver_ver3/generator.cpp	2003-11-18 18:37:48.000000000 +1100
++++ PCPSolver_ver3.1/generator.cpp	2021-04-24 17:16:07.090642500 +1000
+@@ -146,9 +146,9 @@
+ // you can use define NODE_EXCEEDED_EXIT in def.h to allow the process to
+ // stop when it exceeds some node counts. Make sure you set node_num_threshold
+ // and cutoff_num_threshold properly in main.cpp.
+-void CRandomGenerator::GenerateHardInstance(int size, int width, char *sol_file_name, int sol_len, int number_tried)
++void CRandomGenerator::GenerateHardInstance(int size, int width, char *sol_file_name, int sol_len, int number)
+ {
+-	int generated_number_bound = number_tried;
++	int generated_number_bound = number;
+ 	int generated_number = 0;
+ 	time_t time_start,time_end,time_tips;
+     int sol_count = 0;
+@@ -158,19 +158,11 @@
+     if (!sol_file) printerr("Open file error!");
+ 
+     Iterative_Flag = 1;
+-    
+-    FILE *output = fopen("out.txt", "w");
+ 
+     rand_init();
+ 
+-    while(1)
++    while(generated_number < generated_number_bound)
+ 	{
+-		// generate a PCP instance
+-		generated_number++;
+-        if (generated_number%100==0) printf("%d\n", generated_number);
+-        if (generated_number>generated_number_bound)
+-            break;
+-		
+ 
+ 		RandomGenerator(&PCP, size, width, NULL);
+         
+@@ -181,22 +173,24 @@
+ 		time_tips = time_end-time_start;
+ 		
+ 		if (solution_count>=1 && solution_length>=sol_len) // have solution
+-		{
+-            fprintf(sol_file, "Instance %d:\n", ++sol_count);
++		{   
++            // fprintf(sol_file, "Instance %d:\n", ++sol_count);
++
++            if (generated_number_bound > 1) fprintf(sol_file, "Instance %d:\n", ++sol_count);
+ 
+ 			PCP.sol_len = solution_length;
+             PCP.sol_num = solution_count;
+             PCP.sol_time[0] = time_tips;
+ 
+ 			CIO::writeInstance(sol_file, &PCP);
+-            fprintf(sol_file, "\n");
+             
+-			if (!FindShortestSolution_Flag)
+-				fprintf(sol_file, "This may not be the shortest solution.\n");           
++			// if (!FindShortestSolution_Flag)
++			//	 fprintf(sol_file, "This may not be the shortest solution.\n");           
+ 
+-			CSolver::OutputSolvingInfo(&PCP, sol_file, time_tips, "Solvable!");
++			// CSolver::OutputSolvingInfo(&PCP, sol_file, time_tips, "Solvable!");
+             fflush(sol_file);
+ 
++            generated_number++;
+ 		}
+         
+ 		// clear hash table for next PCP instance
+diff --color -Naur PCPSolver_ver3/interface.cpp PCPSolver_ver3.1/interface.cpp
+--- PCPSolver_ver3/interface.cpp	2004-09-22 05:56:24.000000000 +1000
++++ PCPSolver_ver3.1/interface.cpp	2021-04-24 17:14:57.691346000 +1000
+@@ -34,13 +34,13 @@
+ 	printf("       2. Scan a PCP subclass:\n");
+ 	printf("          pcp -scan -s size -w width -d depth\n\n");
+ 	printf("       3. Randomly generate difficult solvable instances:\n");
+-	printf("          pcp -ran -s size -w width -d depth -t times -l sol_lim\n"); 
++	printf("          pcp -ran -s size -w width -d depth -n number -l sol_lim\n"); 
+     printf("              -o ofilename\n\n"); 
+ 	printf("          run     - number of runs\n");
+ 	printf("          ni      - no iterative search\n");
+ 	printf("          di      - depth increment\n");
+ 	printf("          depth   - search depth\n");
+-	printf("          times   - number of instances to be tried\n");
++	printf("          number   - number of generated instances\n");
+ 	printf("          sol_lim - min optimal solution length (only instances satisfying\n");
+ 	printf("                    it will be recorded)\n\n");
+ 
+@@ -117,7 +117,7 @@
+ int CInterface::ProcessArgRan(int arg, char *argv[])
+ {
+     // default value
+-    int times = 1000;
++    int number = 1;
+ 	int size = 4;
+ 	int width = 4;
+ 	int len_lim = 4;
+@@ -145,11 +145,11 @@
+             sscanf(argv[i], "%d", &depth);
+ 			CheckValue(depth, "depth");
+         }
+-		else if (!strcmp("-t", argv[i])) // times
++		else if (!strcmp("-n", argv[i])) // times
+         {
+-            if (++i==arg) LackValueError("times");
+-            sscanf(argv[i], "%d", &times);
+-			CheckValue(times, "times");
++            if (++i==arg) LackValueError("number");
++            sscanf(argv[i], "%d", &number);
++			CheckValue(number, "number");
+         }
+ 		else if (!strcmp("-l", argv[i])) // len_lim
+         {
+@@ -170,10 +170,10 @@
+ 	FINAL_DEPTH_THRESHOLD = depth;
+ 	
+ 	printf("Randomly try instances in PCP[%d,%d] ", size, width);
+-	printf("(search depth=%d, try %d times)\n", depth, times);
++	printf("(search depth=%d, require %d instance(s))\n", depth, number);
+ 	printf("(only sol_len>=%d recorded in %s):\n\n", len_lim, ofilename);
+ 	CRandomGenerator::GenerateHardInstance(size, width, ofilename, 
+-			                               len_lim, times);
++			                               len_lim, number);
+ 	
+ 	// normalize all instances if you uncomment the next two lines
+ 	// char normalized_ofilename[] = "norm.txt";
+diff --color -Naur PCPSolver_ver3/readwrite.cpp PCPSolver_ver3.1/readwrite.cpp
+--- PCPSolver_ver3/readwrite.cpp	2003-11-18 18:37:50.000000000 +1100
++++ PCPSolver_ver3.1/readwrite.cpp	2021-04-24 17:14:57.701384200 +1000
+@@ -215,11 +215,14 @@
+ 				             pPCP->node_num[pPCP->poi+1], pPCP->cutoff_num[pPCP->poi+1], 
+ 		    				 (pPCP->sol_time[0])/(float)data_clocks_per_sec);
+ 			break;
++
++		case NULLMODE:
++			break;
+ 	}
+ 
+-	// write all up strings   
+ 	for (i=0;i<size;i++)
+-	{
++	{	
++		//write the first string
+ 		k = 0;
+ 		ch = (char)pPCP->arrPair[i].up[k++];
+ 		count = 0;
+@@ -227,6 +230,7 @@
+ 		do 
+ 		{
+ 			fprintf(infile, "%c", ch+'0');
++			fprintf(infile, " "); // add space between characters
+ 			ch = (char)pPCP->arrPair[i].up[k++];
+ 			count++;
+ 		} while (ch!=SENTINEL);
+@@ -234,45 +238,26 @@
+ 		if (count!=pPCP->arrPair[i].uplen) 
+ 			printerr("Error in writing PCP instance!");
+ 
+-		for (j=pPCP->arrPair[i].uplen;j<=pPCP->width+1;j++)
+-			fprintf(infile, " ");
+-	}
++		// write seperator
++		fprintf(infile, "-");
++		fprintf(infile, " ");
+ 
+-	fprintf(infile, "\n");
+-    // write all down strings   
+-	for (i=0;i<size;i++)
+-	{
++		// write the second string
+ 		k = 0;
+ 		ch = (char)pPCP->arrPair[i].down[k++];
+ 		count = 0;
+ 
+-		do 
++		do
+ 		{
+ 			fprintf(infile, "%c", ch+'0');
++			fprintf(infile, " "); // add space
+ 			ch = (char)pPCP->arrPair[i].down[k++];
+ 			count++;
+-		} while (ch!=SENTINEL);
++		}while (ch!= SENTINEL);
+ 
+-		if (count!=pPCP->arrPair[i].downlen) 
+-			printerr("Error in reading PCP instance!");
+-
+-		for (j=pPCP->arrPair[i].downlen;j<=pPCP->width+1;j++)
+-			fprintf(infile, " ");
++		fprintf(infile, "\n");
+ 	}
+ 
+-    fprintf(infile, "\n");
+-
+-    // Test element difference
+-/*    for (i=0;i<size;i++)
+-        fprintf(infile, "%d %d |", pPCP->arrPair[i].diff0,   pPCP->arrPair[i].diff1);
+-    fprintf(infile, "\n");
+-    fprintf(infile, "%d %d %d %d\n", pPCP->up_0drop, pPCP->down_0drop, 
+-					pPCP->up_1drop, pPCP->down_1drop);
+-    for (i=1;i<=pPCP->poi;i++)
+-        fprintf(infile, "%3d: %10d %6d %10d\n", pPCP->depth[i], 
+-		pPCP->node_num[i], pPCP->cutoff_num[i], pPCP->sol_time[i]);
+-*/    
+-	
+ 	fflush(infile);
+ 
+ 	return 1;
+diff --color -Naur PCPSolver_ver3/readwrite.h PCPSolver_ver3.1/readwrite.h
+--- PCPSolver_ver3/readwrite.h	2003-11-18 18:37:50.000000000 +1100
++++ PCPSolver_ver3.1/readwrite.h	2021-04-24 17:14:57.704892600 +1000
+@@ -18,8 +18,8 @@
+ 	NORMALMODE= 1, // the first line contains size and width
+ 	CHECKMODE = 2, // solution number & length are in the 1st line too
+ 	EXPMODE   = 3, // solving time are in the 1st line too
+-	FULLMODE  = 4  // cutoff number and node number are included too
+-
++	FULLMODE  = 4,  // cutoff number and node number are included too
++	NULLMODE  = 5
+ };
+ 
+ class CIO
+@@ -29,7 +29,7 @@
+ 	
+ public:
+ 	static int readInstance(FILE *infile, CPCPInstance *pPCP, READWRITEMODE readmode=NORMALMODE); 
+-	static int writeInstance(FILE *infile, CPCPInstance *pPCP, READWRITEMODE writemode=EXPMODE);
++	static int writeInstance(FILE *infile, CPCPInstance *pPCP, READWRITEMODE writemode=NULLMODE);
+ 	static int writeInstanceLATEX(FILE *infile, CPCPInstance *pPCP, int No);
+ 	static int RemoveInstances(char *smallFile, char *largeFile, char *outFile);
+ };
