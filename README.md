@@ -32,7 +32,7 @@ Domain | Problems | Papers | License
 [Childsnack](total-order/Childsnack) | 30 | [Paper](https://www.researchgate.net/publication/320492086_Grounding_of_HTN_Planning_Domain "Grounding of HTN Planning Domain") | ?
 [Depots](total-order/Depots) | 30 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/3502/3370 "Tree-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning") | ?
 [Elevator-Learned-ECAI-16](total-order/Elevator-Learned-ECAI-16) | 147 | [Paper1](https://pdfs.semanticscholar.org/93e8/f422f8ce4ab102b2a4d2e4cd57af19e605b8.pdf "Constructing hierarchical task models using invariance analysis") [Paper2](https://www.tdx.cat/handle/10803/458525#page=1 "Novel approaches for generalized planning") | ?
-[Entertainment](total-order/Entertainment) | 12 | [Paper1](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181 "totSAT-Totally-ordered hierarchical planning through SAT") [Paper2](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
+[Entertainment](total-order/Entertainment) | 12 | [Paper1](https://ojs.aaai.org/index.php/AAAI/article/view/12083 "totSAT-Totally-ordered hierarchical planning through SAT") [Paper2](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
 [Factories-simple](total-order/Factories-simple) | 20 | TBA | CC BY-NC-SA 4.0
 [Freecell-Learned-ECAI-16](total-order/Freecell-Learned-ECAI-16) | 60 | [Paper1](https://pdfs.semanticscholar.org/93e8/f422f8ce4ab102b2a4d2e4cd57af19e605b8.pdf "Constructing hierarchical task models using invariance analysis") [Paper2](https://www.tdx.cat/handle/10803/458525#page=1 "Novel approaches for generalized planning") | ?
 [Hiking](total-order/Hiking) | 30 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/3502/3370 "Tree-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning") | ?
@@ -47,8 +47,8 @@ Domain | Problems | Papers | License
 [Satellite-GTOHP](total-order/Satellite-GTOHP) | 20 | [Paper](https://www.researchgate.net/publication/320492086_Grounding_of_HTN_Planning_Domain "Grounding of HTN Planning Domain") | ?
 [Snake](total-order/Snake) | 20 | TBA | MIT
 [Towers](total-order/Towers) | 20 | [Paper](https://www.aaai.org/ocs/index.php/ICAPS/ICAPS16/paper/view/13174/12657 "Bound to Plan: Exploiting Classical Heuristics via Automatic Translations of Tail-Recursive HTN Problems") | ?
-[Transport](total-order/Transport) | 40 | [Paper](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
-[Woodworking](total-order/Woodworking) | 40 | [Paper](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
+[Transport](total-order/Transport) | 40 | [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/12083 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
+[Woodworking](total-order/Woodworking) | 40 | [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/12083 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
 
 **Partial Order**
 Domain | Problems | Papers | License
