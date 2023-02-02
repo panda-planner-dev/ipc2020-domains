@@ -23,6 +23,7 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 ## Domains
 
 **Total Order**
+Note: The domains Robot and Woodworking in this repository contain 30 and 40 instances respectively. In the IPC 2020 only 20 and 30 were used for evaluating the planners. Since we generated the instances, we felt it proper to include them in this repository as well.
 Domain | Problems | Papers | License
 --- | ---: | --- | ---
 [AssemblyHierarchical](total-order/AssemblyHierarchical) | 30 | - | ?
@@ -50,7 +51,9 @@ Domain | Problems | Papers | License
 [Transport](total-order/Transport) | 40 | [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/12083 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
 [Woodworking](total-order/Woodworking) | 40 | [Paper](https://ojs.aaai.org/index.php/AAAI/article/view/12083 "totSAT-Totally-ordered hierarchical planning through SAT") | ?
 
+
 **Partial Order**
+Note that the initial presentation of results of the IPC 2020 did include a table without the Barman-BDI domain. This was an oversight when creating the presentation. The competition was run with Barman-BDI. You can find the correct slides [here](https://ipc2020.hierarchical-task.net/results/results).
 Domain | Problems | Papers | License
 --- | ---: | --- | ---
 [Barman-BDI](partial-order/Barman-BDI) | 20 | - | ?
