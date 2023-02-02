@@ -32,7 +32,7 @@ Domain | Problems | Papers | License
 [Childsnack](total-order/Childsnack) | 30 | [Paper](https://www.researchgate.net/publication/320492086_Grounding_of_HTN_Planning_Domain "Grounding of HTN Planning Domain") | ?
 [Depots](total-order/Depots) | 30 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/3502/3370 "Tree-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning") | ?
 [Elevator-Learned-ECAI-16](total-order/Elevator-Learned-ECAI-16) | 147 | [Paper1](https://pdfs.semanticscholar.org/93e8/f422f8ce4ab102b2a4d2e4cd57af19e605b8.pdf "Constructing hierarchical task models using invariance analysis") [Paper2](https://www.tdx.cat/handle/10803/458525#page=1 "Novel approaches for generalized planning") | ?
-[Entertainment](total-order/Entertainment) | 12 | [Paper1](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181 "totSAT-Totally-ordered hierarchical planning through SAT") [Paper2](https://aaai.org/ocs/index.php/ICAPS/ICAPS18/paper/view/17764/16969 "A generic method to guide HTN progression search with classical heuristics") | ?
+[Entertainment](total-order/Entertainment) | 12 | [Paper1](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16820/16181 "totSAT-Totally-ordered hierarchical planning through SAT") [Paper2](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
 [Factories-simple](total-order/Factories-simple) | 20 | TBA | CC BY-NC-SA 4.0
 [Freecell-Learned-ECAI-16](total-order/Freecell-Learned-ECAI-16) | 60 | [Paper1](https://pdfs.semanticscholar.org/93e8/f422f8ce4ab102b2a4d2e4cd57af19e605b8.pdf "Constructing hierarchical task models using invariance analysis") [Paper2](https://www.tdx.cat/handle/10803/458525#page=1 "Novel approaches for generalized planning") | ?
 [Hiking](total-order/Hiking) | 30 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/3502/3370 "Tree-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning") | ?
@@ -56,9 +56,9 @@ Domain | Problems | Papers | License
 [Barman-BDI](partial-order/Barman-BDI) | 20 | - | ?
 [Monroe-Fully-Observable](partial-order/Monroe-Fully-Observable) | 25 | [Paper](https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.090/Publikationen/2018/Hoeller2018PlanRec.pdf "Plan and goal recognition as HTN planning") | ?
 [Monroe-Partially-Observable](partial-order/Monroe-Partially-Observable) | 25 | [Paper](https://www.uni-ulm.de/fileadmin/website_uni_ulm/iui.inst.090/Publikationen/2018/Hoeller2018PlanRec.pdf "Plan and goal recognition as HTN planning") | ?
-[PCP](partial-order/PCP) | 17 | [Paper](https://aaai.org/ocs/index.php/ICAPS/ICAPS18/paper/view/17764/16969 "A generic method to guide HTN progression search with classical heuristics") | ?
-[Rover](partial-order/Rover) | 20 | [Paper](https://aaai.org/ocs/index.php/ICAPS/ICAPS18/paper/view/17764/16969 "A generic method to guide HTN progression search with classical heuristics") | ?
-[Satellite](partial-order/Satellite) | 25 | [Paper](https://oparu.uni-ulm.de/xmlui/handle/123456789/1072, "Hybrid Planning & Scheduling") | ?
-[Transport](partial-order/Transport) | 40 | [Paper](https://aaai.org/ocs/index.php/ICAPS/ICAPS18/paper/view/17764/16969 "A generic method to guide HTN progression search with classical heuristics") | ?
+[PCP](partial-order/PCP) | 17 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
+[Rover](partial-order/Rover) | 20 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
+[Satellite](partial-order/Satellite) | 25 | [Paper](https://oparu.uni-ulm.de/xmlui/handle/123456789/1072 "Hybrid Planning & Scheduling") | ?
+[Transport](partial-order/Transport) | 40 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/13900 "A generic method to guide HTN progression search with classical heuristics") | ?
 [UM-Translog](partial-order/UM-Translog) | 22 | [Paper](https://oparu.uni-ulm.de/xmlui/handle/123456789/1072 "Hybrid Planning & Scheduling") | ?
 [Woodworking](partial-order/Woodworking) | 30 | - | ?
