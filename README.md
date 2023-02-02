@@ -26,7 +26,7 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 Note: The domains Robot and Woodworking in this repository contain 30 and 40 instances respectively. In the IPC 2020 only 20 and 30 were used for evaluating the planners. Since we generated the instances, we felt it proper to include them in this repository as well.
 Domain | Problems | Papers | License
 --- | ---: | --- | ---
-[AssemblyHierarchical](total-order/AssemblyHierarchical) | 30 | - | ?
+[AssemblyHierarchical](total-order/AssemblyHierarchical) | 30 | - | CC BY-NC-SA 4.0
 [Barman-BDI](total-order/Barman-BDI) | 20 | - | ?
 [Blocksworld-GTOHP](total-order/Blocksworld-GTOHP) | 30 | [Paper](https://ojs.aaai.org/index.php/ICAPS/article/view/3502/3370 "Tree-REX: SAT-based Tree Exploration for Efficient and High-Quality HTN Planning") | ?
 [Blocksworld-HPDDL](total-order/Blocksworld-HPDDL) | 30 | [Paper](https://www.aaai.org/ocs/index.php/ICAPS/ICAPS16/paper/view/13174/12657 "Bound to Plan: Exploiting Classical Heuristics via Automatic Translations of Tail-Recursive HTN Problems") | ?
