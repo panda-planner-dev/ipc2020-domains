@@ -20,6 +20,12 @@ The IPC 2020 was organized by Gregor Behnke, Daniel Höller, and Pascal Bercher.
 }
 ```
 
+## Disclaimer
+
+Note that some of the instances in the IPC 2020 benchmark set might be (too) hard to be grounded.
+In fact, at the moment, several instances can not be ground using the existing HTN grounders under reasonable time and memory constraints.
+For the PANDA grounder, please refer to its (repo)[https://github.com/panda-planner-dev/pandaPIgrounder] for more information.
+
 ## Domains
 
 **Total Order**
